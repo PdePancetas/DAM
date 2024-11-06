@@ -194,8 +194,7 @@ public class Func {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-//		String ficheroJasper = config.getProperty("fileJasper");
-		String ficheroJasper = "C:\\Users\\blanc\\JaspersoftWorkspace\\MyReports\\infoLibros.jasper";
+		String ficheroJasper = config.getProperty("fileJasper");
 		
 		String informePdf = config.getProperty("pathPDF");
 
