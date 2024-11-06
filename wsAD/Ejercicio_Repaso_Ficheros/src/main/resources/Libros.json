@@ -1,13 +1,13 @@
 [
 	{ 
 		"titulo" : "Acceso a Datos",
-		"autores" : ["Pepito", "Juanito"],
-		"stock" : 18 
+		"autores" : ["Pepito", "Eva"],
+		"stock" : 181 
 	},
 	
 	{ 
-		"titulo" : "Acceso a Datos",
+		"titulo" : "Desarrollo de Interfaces",
 		"autores" : ["Pepito", "Juanito"],
-		"stock" : 18 
+		"stock" : 123 
 	}
 ]

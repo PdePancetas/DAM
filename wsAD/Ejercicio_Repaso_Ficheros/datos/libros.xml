@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<libros>
+    <libro>
+        <titulo>Acceso a Datos</titulo>
+        <autores>
+            <autor>Pepito</autor>
+            <autor>Eva</autor>
+        </autores>
+        <stock>181</stock>
+    </libro>
+    <libro>
+        <titulo>Desarrollo de Interfaces</titulo>
+        <autores>
+            <autor>Pepito</autor>
+            <autor>Juanito</autor>
+        </autores>
+        <stock>123</stock>
+    </libro>
+</libros>
