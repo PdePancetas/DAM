@@ -5,7 +5,7 @@
 	<groupId>com.pancetas</groupId>
 	<artifactId>HELP</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>HELPs</name>
+	<name>HELP</name>
 	<dependencies>
 
 		<!-- JSON -->
