@@ -1,11 +1,18 @@
 package logic;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
 import org.json.JSONArray;
+
+import beans.Libros;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
 
 public class Func {
 
@@ -14,7 +21,7 @@ public class Func {
 		String texto = "";
 		String linea;
 		InputStream is = Main.class.getClassLoader().getResourceAsStream(nombreFichero);
-		
+
 		try (BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
 			while ((linea = br.readLine()) != null)
 				texto += linea;
@@ -24,32 +31,28 @@ public class Func {
 
 		return libros;
 	}
-	
+
 	public static Libros leerFichero(File f) throws JAXBException {
-	// Leer el documento xml (leer contenido y pasar a objeto Libros)
+		// Leer el documento xml (leer contenido y pasar a objeto Libros)
 
-	// Contexto : Clase Raiz JAXBContext jaxbContext =
-	JAXBContext.newInstance(Raiz.class);
+		JAXBContext jaxbContext = JAXBContext.newInstance(Libros.class);
 
-	// Como el parser Unmarshaller unmarshaller =
-	jaxbContext.createUnmarshaller();
-//
-//	// Traspaso de fichero a objeto 
-	Raiz raiz = (Raiz) unmarshaller.unmarshal(f);
+		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 
-	return raiz;
-}
+		Libros libros = (Libros) unmarshaller.unmarshal(f);
 
-public static void escribirFichero(Objeto objeto) throws JAXBException {
-  
-  JAXBContext jaxbContext = JAXBContext.newInstance(Raiz.class); 
-  
-  Marshaller marshaller = jaxbContext.createMarshaller();
-  
-  
-	marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+		return libros;
+	}
 
-	marshaller.marshal(objeto, new File(""));
-}
+	public static void escribirFichero(Libros libros) throws JAXBException {
+
+		JAXBContext jaxbContext = JAXBContext.newInstance(Libros.class);
+
+		Marshaller marshaller = jaxbContext.createMarshaller();
+
+		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+
+		marshaller.marshal(libros, new File("datos/libros.xml"));
+	}
 
 }
