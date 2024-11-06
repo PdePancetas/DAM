@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Ejercicio_Json_y_JasperReports&apos;" deleteContents="false" description="Delete resource &apos;Ejercicio_Json_y_JasperReports&apos;" element1="/Ejercicio_Json_y_JasperReports" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1730748351303"/>&#x0A;<refactoring comment="Delete 3 resources" deleteContents="true" description="Delete 3 resources" element1="/aaMETODOS y ARCHIVOS" element2="/SAXB Maven Dependencies" element3="/logs Maven Dependencies" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1730905585257"/>
+</session>

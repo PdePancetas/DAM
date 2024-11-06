@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.jdt.ui.wizards.JavaProjectWizard"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.jdt.ui.java"/>
+		</list>
+	</section>
+	<section name="SmartImportWizard">
+		<item key="SmartImportRootWizardPage.STORE_HIDE_ALREADY_OPEN" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_CLOSE_IMPORTED" value="false"/>
+		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
+		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
+		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\blanc\eclipse-workspace"/>
+			<item value="C:\Users\blanc\eclipse-workspace\Examen"/>
+			<item value="F:\INSTITUTO\Pancetas\DAMN\PROGRAMACIÓN\Proyectos\App_BuscadorTerminos"/>
+			<item value="F:\INSTITUTO\Pancetas\DAMN\PROGRAMACIÓN\Proyectos\Ejemplo_AccesoFicheros"/>
+			<item value="C:\Users\blanc\Escritorio\JAR"/>
+			<item value="C:\Users\blanc\eclipse-workspace\App_Biblioteca"/>
+			<item value="C:\Users\blanc\eclipse-workspace\App_GestionPedidos_Ficheros"/>
+			<item value="C:\Users\blanc\eclipse-workspace\BoletinesNotas"/>
+			<item value="C:\Users\blanc\eclipse-workspace\Práctica_Aplicación_FCT"/>
+			<item value="C:\Users\blanc\eclipse-workspace\Editor De Texto"/>
+			<item value="C:\Users\blanc\eclipse-workspace\EjerciciosInterfacesGraficas"/>
+			<item value="C:\Users\blanc\eclipse-workspace\Ejercicios(1-3)Excepciones"/>
+			<item value="C:\Users\blanc\eclipse-workspace\EjerciciosColecciones"/>
+			<item value="C:\Users\blanc\eclipse-workspace\EjemploExcepciones"/>
+			<item value="C:\Users\blanc\eclipse-workspace\Calculadora"/>
+			<item value="C:\Users\blanc\eclipse-workspace\Ejercicio3Colecciones"/>
+			<item value="C:\Users\blanc\eclipse-workspace\JerarquíaDeColecciones"/>
+			<item value="C:\Users\blanc\eclipse-workspace\Estructuras Dinámicas"/>
+			<item value="C:\Users\blanc\eclipse-workspace\AppAlumnos"/>
+			<item value="C:\Users\blanc\eclipse-workspace\HerenciaEjs"/>
+			<item value="C:\Users\blanc\eclipse-workspace\AppClientesPedidos"/>
+		</list>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item key="WizardProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
+		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\blanc\eclipse-workspace\EjemploInterfacesEmpleados"/>
+			<item value="C:\Users\blanc\eclipse-workspace\EjemploComparable"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="SaveAsDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="619"/>
+		<item key="DIALOG_Y_ORIGIN" value="94"/>
+		<item key="DIALOG_WIDTH" value="700"/>
+		<item key="DIALOG_HEIGHT" value="645"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="611"/>
+		<item key="DIALOG_Y_ORIGIN" value="274"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+</section>

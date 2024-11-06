@@ -1,0 +1,62 @@
+package practicaTema1;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintStream;
+
+public class Main {
+
+	/*
+	 * Main: se encarga de lanzar los otros procesos, comunicar con ellos y de
+	 * comunicarse con el usuario. 
+	 * 
+	 * DataReader: se encarga de leer un fichero grande
+	 * con una secuencia muy grande de datos dentro (data.dat) 
+	 * 
+	 * NumberCounter: recibe una secuencia de datos y cuenta cuantos unos, cuantos dos, cuantos tres… hay
+	 * en esa secuencia. Después los envías al Main en algún formato. 
+	 * 
+	 * El objetivo es que el Main ejecute un DataReader y varios NumberCounter.
+	 * El DataReader leerá una secuencia (grande) de datos, se la pasará al Main y este la repartirá
+	 * entre los NumberCounter. 
+	 * 
+	 * Al final el Main leerá la respuesta de los varios NumberCounter y sacará por pantalla la cantidad de unos, dos, tres…
+	 * del fichero.
+	 * 
+	 */
+
+	public static void main(String[] args) {
+
+		ProcessBuilder DataReaderBuilder = new ProcessBuilder("java", "-cp", "./bin", "practicaTema1.DataReader");
+		ProcessBuilder NumberCounterBuilder = new ProcessBuilder("java", "-cp", "./bin", "practicaTema1.NumberCounter");
+
+		try {
+			Process dataReader = DataReaderBuilder.start();
+			//Lectura para dataReader
+			BufferedReader brDataReader = new BufferedReader(new InputStreamReader(dataReader.getInputStream()));
+			
+			String datos="";
+			String linea;
+			while((linea=brDataReader.readLine())!=null)
+				datos+=linea;
+			
+			Process numberCounter = NumberCounterBuilder.start();
+			//Escritura y lectura para numberCounter
+			BufferedReader brNumberCounter = new BufferedReader(new InputStreamReader(numberCounter.getInputStream()));
+			PrintStream psNumberCounter = new PrintStream(numberCounter.getOutputStream(),true);
+			
+			psNumberCounter.println(datos);
+			String lineaCounter;
+			while((lineaCounter=brNumberCounter.readLine())!=null)
+				System.out.println(lineaCounter);
+		} catch (IOException e) {
+			
+		}
+
+	}
+
+}

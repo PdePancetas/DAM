@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;ListaEnlazada.ListaEnlazada&apos; to &apos;MyLinkedList&apos;&#x0D;&#x0A;- Original project: &apos;Estructuras Dinámicas&apos;&#x0D;&#x0A;- Original element: &apos;ListaEnlazada.ListaEnlazada&apos;&#x0D;&#x0A;- Renamed element: &apos;ListaEnlazada.MyLinkedList&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ListaEnlazada&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;ListaEnlazada{ListaEnlazada.java[ListaEnlazada" matchStrategy="1" name="MyLinkedList" qualified="false" references="true" similarDeclarations="false" stamp="1708963567114" textual="false" version="1.0"/>
+</session>

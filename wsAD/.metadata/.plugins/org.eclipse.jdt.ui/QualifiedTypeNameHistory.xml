@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.nio.file.StandardCopyOption"/>
+    <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+    <fullyQualifiedTypeName name="org.junit.Before"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeAll"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.BeforeEach"/>
+    <fullyQualifiedTypeName name="org.junit.jupiter.api.AfterEach"/>
+    <fullyQualifiedTypeName name="org.apache.logging.log4j.util.PropertiesUtil"/>
+    <fullyQualifiedTypeName name="logs.Logger"/>
+    <fullyQualifiedTypeName name="org.apache.logging.log4j.Logger"/>
+    <fullyQualifiedTypeName name="org.apache.logging.log4j.core.Logger"/>
+    <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilder"/>
+    <fullyQualifiedTypeName name="java.util.Properties"/>
+    <fullyQualifiedTypeName name="data.Datos"/>
+    <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.impl.xs.opti.DefaultDocument"/>
+    <fullyQualifiedTypeName name="javax.lang.model.element.Element"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.nio.file.Files"/>
+    <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.NodeList"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Element"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Node"/>
+    <fullyQualifiedTypeName name="org.w3c.dom.Attr"/>
+    <fullyQualifiedTypeName name="logic.Funcionalidades"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlRootElement"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlElement"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.Marshaller"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.JAXBContext"/>
+    <fullyQualifiedTypeName name="beans.Alumnos"/>
+    <fullyQualifiedTypeName name="java.beans.PropertyEditorSupport"/>
+    <fullyQualifiedTypeName name="java.beans.PropertyEditor"/>
+    <fullyQualifiedTypeName name="beans.Alumno"/>
+    <fullyQualifiedTypeName name="logica.Funcionalidades"/>
+    <fullyQualifiedTypeName name="java.util.TreeSet"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="java.io.BufferedReader"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlAttribute"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlTransient"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlType"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlElementWrapper"/>
+</qualifiedTypeNameHistroy>

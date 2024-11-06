@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pedidos>
+    <pedido>
+        <cliente>
+            <nombre>generico1</nombre>
+            <nif>nif1</nif>
+        </cliente>
+        <producto>
+            <descripcion>desc1</descripcion>
+            <precio>12.0</precio>
+            <cantidad>3</cantidad>
+        </producto>
+    </pedido>
+</pedidos>

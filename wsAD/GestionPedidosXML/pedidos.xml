@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pedidos>
+	<pedido>
+		<cliente>
+			<nombre>miguel</nombre>
+			<nif>1234hola</nif>
+		</cliente>
+		<producto>
+			<descripcion>teclado</descripcion>
+			<precio>2.55</precio>
+			<cantidad>2</cantidad>
+		</producto>
+	</pedido>
+	<pedido>
+		<cliente>
+			<nombre>ruben</nombre>
+			<nif>4321adios</nif>
+		</cliente>
+		<producto>
+			<descripcion>monitor 4k 120Hz</descripcion>
+			<precio>199.99</precio>
+			<cantidad>1</cantidad>
+		</producto>
+	</pedido>
+	<pedido>
+		<cliente>
+			<nombre>roberto</nombre>
+			<nif>2134buenas</nif>
+		</cliente>
+		<producto>
+			<descripcion>cable HDMI 3m</descripcion>
+			<precio>14.89</precio>
+			<cantidad>2</cantidad>
+		</producto>
+	</pedido>
+	<pedido>
+		<cliente>
+			<nombre>alberto</nombre>
+			<nif>1234hola</nif>
+		</cliente>
+		<producto>
+			<descripcion>raton gaming</descripcion>
+			<precio>45.5</precio>
+			<cantidad>2</cantidad>
+		</producto>
+	</pedido>
+</pedidos>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<alumnos>
+    <alumno nif="0">
+        <direccion>Calle 0</direccion>
+        <nombre>Javier</nombre>
+        <nota>10.0</nota>
+    </alumno>
+    <alumno nif="1">
+        <direccion>Calle 1</direccion>
+        <nombre>Habibi</nombre>
+        <nota>10.0</nota>
+    </alumno>
+    <alumno nif="3">
+        <direccion>Calle 4</direccion>
+        <nombre>Miguel</nombre>
+        <nota>10.0</nota>
+    </alumno>
+    <alumno nif="4">
+        <direccion>Calle 5</direccion>
+        <nombre>Emanuel</nombre>
+        <nota>7.5</nota>
+    </alumno>
+    <alumno nif="5">
+        <direccion>Calle 5</direccion>
+        <nombre>Wilfredo</nombre>
+        <nota>3.49</nota>
+    </alumno>
+    <alumno nif="10">
+        <direccion>Calle 10</direccion>
+        <nombre>Alvaro</nombre>
+        <nota>2.0</nota>
+    </alumno>
+</alumnos>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pedidos>
+	<pedido>
+		<cliente>
+			<nombre>Juan</nombre>
+			<nif>1111</nif>
+		</cliente>
+		<producto>
+			<descripcion>Rotus</descripcion>
+			<precio>20</precio>
+			<cantidad>50</cantidad>
+		</producto>
+		<producto>
+			<descripcion>Bolis</descripcion>
+			<precio>40</precio>
+			<cantidad>50</cantidad>
+		</producto>
+	</pedido>
+	<pedido>
+		<cliente>
+			<nombre>Pepe</nombre>
+			<nif>2222</nif>
+		</cliente>
+		<producto>
+			<descripcion>Gomas</descripcion>
+			<precio>10</precio>
+			<cantidad>20</cantidad>
+		</producto>
+	</pedido>
+</pedidos>

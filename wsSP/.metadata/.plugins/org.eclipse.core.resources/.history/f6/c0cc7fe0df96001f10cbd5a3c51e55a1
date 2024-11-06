@@ -1,0 +1,40 @@
+package Consumidor_Productor;
+
+public class Consumidor implements Runnable {
+
+	private Productos productos;
+
+	@Override
+	public void run() {
+
+		while (true) {
+			boolean seEstaComprando = false;
+
+			if (productos.getProductos().size() > 0) {
+				seEstaComprando = true;
+			}
+			int cant = productos.getProductos().size();
+			try {
+				Thread.sleep(999);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+			if (productos.getProductos().size() == cant) {
+				productos.comprar();
+			}
+
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	public Consumidor(Productos productos) {
+		super();
+		this.productos = productos;
+	}
+}

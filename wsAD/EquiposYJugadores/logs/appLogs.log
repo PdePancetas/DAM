@@ -1,0 +1,19 @@
+2024-10-07 20:45:18 INFO  Main:33 - Aplicacion arrancada
+2024-10-07 20:45:18 INFO  Main:42 - Fichero cargado desde: ./datos/equipos.txt
+2024-10-07 20:45:35 INFO  Main:179 - Se hizo un listado de todos los equipos
+2024-10-07 20:45:58 INFO  Main:69 - Equipo b creado
+2024-10-07 20:46:08 INFO  Main:98 - Se inscribio al jugador a1 en el equipo a
+2024-10-07 20:46:23 INFO  Main:145 - Se actualizo la posicion de a1 a 33
+2024-10-07 20:46:27 INFO  Main:179 - Se hizo un listado de todos los equipos
+2024-10-07 20:46:33 INFO  Main:163 - Se hizo un listado de los jugadores de a
+2024-10-07 20:46:53 INFO  Main:33 - Aplicacion arrancada
+2024-10-07 20:46:53 INFO  Main:42 - Fichero cargado desde: ./datos/equipos.txt
+2024-10-07 20:46:58 INFO  Main:192 - Se cerro la aplicacion
+2024-10-07 20:47:25 INFO  Main:33 - Aplicacion arrancada
+2024-10-07 20:47:25 INFO  Main:42 - Fichero cargado desde: ./datos/equipos.txt
+2024-10-07 20:47:28 INFO  Main:69 - Equipo  creado
+2024-10-07 20:47:52 INFO  Main:98 - Se inscribio al jugador a1 en el equipo 
+2024-10-07 20:47:57 INFO  Main:179 - Se hizo un listado de todos los equipos
+2024-10-07 20:48:02 INFO  Main:163 - Se hizo un listado de los jugadores de 
+2024-10-07 20:48:34 INFO  Main:98 - Se inscribio al jugador a1 en el equipo 
+2024-10-07 20:48:39 INFO  Main:163 - Se hizo un listado de los jugadores de 
