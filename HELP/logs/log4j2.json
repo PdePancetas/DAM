@@ -1,0 +1,71 @@
+{
+    "configuration": {
+        "status": "error",
+        "name": "JSONConfigDemo",
+        "ThresholdFilter": {
+            "level": "debug"
+        },
+        "appenders": {
+            "Console": {
+                "name": "STDOUT",
+                "PatternLayout": {
+                    "pattern": "%d [%t] %-5p %c - %m%n"
+                }
+            },
+			"File": {
+				 "name":"FileAppender",
+				  "fileName":"logs/appLogs.log",
+				  "PatternLayout": {
+				        "pattern":"%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"
+				   }
+			}
+			
+			,
+			
+			"RollingFile": {
+			            "name":"File",
+			            "fileName":"logs/appSecuenciado.log",
+			            "filePattern":"logs/app-backup-%d{MM-dd-yy-HH-mm-ss}-%i.log.gz",
+			            "PatternLayout": {
+			               "pattern":"%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"
+			            },
+			            "Policies": {
+			               "SizeBasedTriggeringPolicy": {
+			                  "size":"10 MB"
+			               }
+			            },
+			            "DefaultRolloverStrategy": {
+			               "max":"10"
+			            }
+			         }
+        },
+        "loggers": {
+			"logger": [
+			        {
+			          "name": "logica.Main",
+			          "level": "DEBUG",
+			          "additivity": false,
+			          "appender-ref": [
+			            { "ref": "STDOUT" },
+			            { "ref": "FileAppender" }
+			          ]
+			        },
+				     {
+				        "name": "utils",
+				        "level": "DEBUG",
+				        "additivity": false,
+				        "appender-ref": [
+				           { "ref": "STDOUT" }
+				         ]
+				      }
+			      ],
+            "root": {
+                "level": "ERROR",
+                "AppenderRef": [				
+				      { "ref": "STDOUT" },
+				      { "ref": "File" }
+				]
+            }
+        }
+    }
+}
