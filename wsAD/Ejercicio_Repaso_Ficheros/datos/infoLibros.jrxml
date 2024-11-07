@@ -1,0 +1,59 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="listadoPedidos" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="361417b0-0aca-47c6-aeb1-4797c1f83a9a">
+	<dataset name="Dataset1" uuid="d26e0b22-c702-456a-87b1-71e5316f67fd">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<query language="sql"><![CDATA[]]></query>
+		<field name="autor" class="java.lang.String"/>
+	</dataset>
+	<field name="titulo" class="java.lang.String"/>
+	<field name="autoresCadena" class="java.lang.String"/>
+	<field name="stock" class="java.lang.Integer"/>
+	<variable name="StockTotal" calculation="Sum" class="java.lang.Integer">
+		<expression><![CDATA[$F{stock}]]></expression>
+	</variable>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="f95b3784-2e31-49bd-bc92-e5067cb6160c" x="80" y="30" width="400" height="49" rotation="None" fontSize="29.0" strikeThrough="false" italic="false" underline="true" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Libros]]></text>
+		</element>
+	</title>
+	<columnHeader height="36" splitType="Stretch">
+		<element kind="staticText" uuid="43b7b7d4-2b19-4658-a066-af2aecb4ebe6" x="230" y="0" width="100" height="36" fontName="Georgia" underline="true" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Autores]]></text>
+		</element>
+		<element kind="staticText" uuid="7d9f8c05-a5d4-495d-b5d9-7b8800cf4010" x="80" y="0" width="100" height="36" fontName="Georgia" italic="false" underline="true" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Título]]></text>
+		</element>
+		<element kind="staticText" uuid="43213a2d-3509-4f10-a679-8a96701146d2" x="380" y="0" width="100" height="36" fontName="Georgia" underline="true" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Stock]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<element kind="textField" uuid="c94b3fca-fc73-4fd5-88ca-1129f2b83a77" x="80" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{titulo}]]></expression>
+			</element>
+			<element kind="textField" uuid="b2992076-a5cc-4d20-9f29-66107c9f8d65" x="380" y="0" width="100" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{stock} + " u"]]></expression>
+			</element>
+			<element kind="textField" uuid="d05c65e1-88b7-459f-8ac3-1e5b1e7b2e7d" x="180" y="0" width="200" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{autoresCadena}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a7032a7c-fae2-4e02-9d03-39547fbcb265"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="74" splitType="Stretch"/>
+	<lastPageFooter height="71">
+		<element kind="textField" uuid="2927a23d-0cfa-4c59-9a8b-ba68b20599d0" x="180" y="0" width="200" height="32" evaluationTime="Report" linkType="None" linkTarget="Self">
+			<expression><![CDATA["Stock total de la librería: " + $V{StockTotal} + " u"]]></expression>
+		</element>
+		<element kind="textField" uuid="3107e201-3011-495c-b15d-b07d61d932db" x="480" y="1" width="95" height="31" evaluationTime="Report" pattern="MMMM d, yyyy" hTextAlign="Center">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+		<element kind="staticText" uuid="005012ca-5ec1-45de-845b-d3a07ab5403a" x="440" y="41" width="130" height="30" fontName="Georgia" italic="true" bold="false" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Librerías Blanco]]></text>
+		</element>
+	</lastPageFooter>
+</jasperReport>

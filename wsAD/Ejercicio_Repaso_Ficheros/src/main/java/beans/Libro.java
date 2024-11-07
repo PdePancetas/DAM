@@ -10,7 +10,8 @@ import jakarta.xml.bind.annotation.XmlType;
 public class Libro {
 
 	private String titulo;
-	private ArrayList<String> autores;
+	private ArrayList<String> autores = new ArrayList<>();
+	private String autoresCadena = autores.toString();
 	private int stock;
 
 	public Libro(String titulo, ArrayList<String> autores, int stock) {
@@ -19,6 +20,15 @@ public class Libro {
 		this.autores = autores;
 		this.stock = stock;
 	}
+	
+
+	public Libro(String titulo, String autoresCadena, int stock) {
+		super();
+		this.titulo = titulo;
+		this.autoresCadena = autoresCadena;
+		this.stock = stock;
+	}
+
 
 	public Libro() {
 		super();
@@ -48,6 +58,14 @@ public class Libro {
 
 	public void setStock(int stock) {
 		this.stock = stock;
+	}
+
+	public String getAutoresCadena() {
+		return autoresCadena;
+	}
+
+	public void setAutoresCadena(String autoresCadena) {
+		this.autoresCadena = autoresCadena;
 	}
 
 }

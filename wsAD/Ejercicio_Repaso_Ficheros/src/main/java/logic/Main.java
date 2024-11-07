@@ -31,7 +31,6 @@ public class Main {
 			System.out.println("1. Mostrar libros por autor");
 			System.out.println("2. Pasar informacion a XML");
 			System.out.println("3. Mostrar libros con stock menor");
-			System.out.println("4. Generar informe de libros");
 			System.out.println("0. Salir");
 			System.out.print("\n -> ");
 
@@ -79,15 +78,33 @@ public class Main {
 					else {
 						System.out.print("Introduce un stock: ");
 						int stock = Teclado.leerEntero();
-						
+
 						try {
 							if (Func.mostrarLibrosConStockMenor(stock).size() != 0) {
 								System.out.println();
 								System.out.println("Libros con stock menor a " + stock + ": ");
 								for (Libro l : Func.mostrarLibrosConStockMenor(stock))
-									System.out.println("- " + l.getTitulo()+", stock: "+l.getStock()+" u");
+									System.out.println("- " + l.getTitulo() + ", stock: " + l.getStock() + " u");
+								System.out.print("\nQuiere generar un informe de estos libros?\n-> ");
+								switch (Teclado.leerCadena()) {
+								case "si":
+									try {
+										Func.genInforme(Func.mostrarLibrosConStockMenor(stock));
+										System.out.println("Informe generado en ./datos/");
+									} catch (ParserConfigurationException e) {
+										e.printStackTrace();
+									} catch (SAXException e) {
+										e.printStackTrace();
+									} catch (JRException e) {
+										e.printStackTrace();
+									}
+									break;
+								case "no":
+									System.out.println("Volviendo al menu principal");
+									break;
+								}
 							} else
-								System.out.println("No se han encontrado libros con stock menor a "+stock+".");
+								System.out.println("No se han encontrado libros con stock menor a " + stock + ".");
 						} catch (FileNotFoundException e) {
 							e.printStackTrace();
 						} catch (ParserConfigurationException e) {
@@ -98,17 +115,6 @@ public class Main {
 							e.printStackTrace();
 						}
 					}
-					break;
-				case 4:
-					System.out.println("Informe generado en ./datos/");
-					try {
-						Func.genInforme(Func.getLibrosJson());
-					} catch (JRException e) {
-						e.printStackTrace();
-					} catch (IOException e) {
-						e.printStackTrace();
-					}
-					
 					break;
 				case 0:
 					System.out.println("Saliendo..");

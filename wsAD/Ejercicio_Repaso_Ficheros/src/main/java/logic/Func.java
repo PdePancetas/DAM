@@ -171,20 +171,21 @@ public class Func {
 		for (int i = 0; i < nodosLibros.getLength(); i++) {
 			Element libro = (Element) nodosLibros.item(i);
 			NodeList nodoAutores = libro.getElementsByTagName("autor");
-			ArrayList<String> autores = new ArrayList<>();
+			String autoresCadena="";
 			for(int j=0;j<nodoAutores.getLength();j++) {
-				autores.add(nodoAutores.item(j).getTextContent());
+				autoresCadena+= nodoAutores.item(j).getTextContent()+", ";
 			}
 			int stock = Integer.parseInt(libro.getElementsByTagName("stock").item(0).getTextContent());
 			if (stock < stockDado) {
-				libros.add(new Libro(libro.getElementsByTagName("titulo").item(0).getTextContent(), autores, stock));
+				autoresCadena = autoresCadena.substring(0, autoresCadena.length()-2);
+				libros.add(new Libro(libro.getElementsByTagName("titulo").item(0).getTextContent(), autoresCadena, stock));
 			}
 		}
 
 		return libros;
 	}
 	
-	public static void genInforme(Libros libros) throws JRException {
+	public static void genInforme(ArrayList<Libro> libros) throws JRException {
 
 		Properties config = new Properties();
 		try {
@@ -198,7 +199,7 @@ public class Func {
 		
 		String informePdf = config.getProperty("pathPDF");
 
-		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource(libros.getLibros());
+		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource(libros);
 	
 		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(ficheroJasper);
 
