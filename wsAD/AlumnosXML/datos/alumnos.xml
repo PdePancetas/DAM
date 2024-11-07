@@ -25,9 +25,9 @@
         <nombre>Wilfredo</nombre>
         <nota>3.49</nota>
     </alumno>
-    <alumno nif="10">
-        <direccion>Calle 10</direccion>
+    <alumno nif="15">
+        <direccion>Calle 15</direccion>
         <nombre>Alvaro</nombre>
-        <nota>2.0</nota>
+        <nota>8.0</nota>
     </alumno>
 </alumnos>
