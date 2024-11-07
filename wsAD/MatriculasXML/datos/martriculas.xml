@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<matriculas>
+    <matricula>
+        <alumno>alberticus</alumno>
+        <asignaturas>
+            <asignatura>
+                <precio>200.0</precio>
+                <nombre>lengua</nombre>
+            </asignatura>
+            <asignatura>
+                <precio>300.0</precio>
+                <nombre>mates</nombre>
+            </asignatura>
+        </asignaturas>
+    </matricula>
+    <matricula>
+        <alumno>ale</alumno>
+        <asignaturas>
+            <asignatura>
+                <precio>250.0</precio>
+                <nombre>historia</nombre>
+            </asignatura>
+        </asignaturas>
+    </matricula>
+    <matricula>
+        <alumno>jose</alumno>
+        <asignaturas>
+            <asignatura>
+                <precio>1000.0</precio>
+                <nombre>historia</nombre>
+            </asignatura>
+            <asignatura>
+                <precio>150.0</precio>
+                <nombre>lengua</nombre>
+            </asignatura>
+            <asignatura>
+                <precio>75.0</precio>
+                <nombre>musica</nombre>
+            </asignatura>
+        </asignaturas>
+    </matricula>
+</matriculas>

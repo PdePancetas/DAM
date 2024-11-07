@@ -1,0 +1,12 @@
+[
+	 {
+		"nombre":"bolis",
+	 	"cantidad":"5",
+	 	"precio":"6.7"
+	 },
+	 {
+		"nombre":"rotus",
+	 	"cantidad":"7",
+		"precio":"12.9"
+	 }
+]

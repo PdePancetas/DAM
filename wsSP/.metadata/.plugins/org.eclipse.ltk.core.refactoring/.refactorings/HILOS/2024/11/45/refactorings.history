@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete 5 elements from project &apos;HILOS&apos;&#x0D;&#x0A;- Original project: &apos;HILOS&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     Consumidor_Productor.Consumidor.java&#x0D;&#x0A;     Consumidor_Productor.Lanzador.java&#x0D;&#x0A;     Consumidor_Productor.Producto.java&#x0D;&#x0A;     Consumidor_Productor.Productor.java&#x0D;&#x0A;     Consumidor_Productor.Productos.java" description="Delete elements" element1="/src&lt;Consumidor_Productor{Producto.java" element2="/src&lt;Consumidor_Productor{Lanzador.java" element3="/src&lt;Consumidor_Productor{Productor.java" element4="/src&lt;Consumidor_Productor{Productos.java" element5="/src&lt;Consumidor_Productor{Consumidor.java" elements="5" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1730705759125" subPackages="false" version="1.0"/>
+</session>

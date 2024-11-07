@@ -1,0 +1,12 @@
+
+Haciendo ping a www.google.com [216.239.38.120] con 32 bytes de datos:
+Respuesta desde 216.239.38.120: bytes=32 tiempo=6ms TTL=108
+Respuesta desde 216.239.38.120: bytes=32 tiempo=7ms TTL=108
+Respuesta desde 216.239.38.120: bytes=32 tiempo=7ms TTL=108
+Respuesta desde 216.239.38.120: bytes=32 tiempo=7ms TTL=108
+
+Estad¡sticas de ping para 216.239.38.120:
+    Paquetes: enviados = 4, recibidos = 4, perdidos = 0
+    (0% perdidos),
+Tiempos aproximados de ida y vuelta en milisegundos:
+    M¡nimo = 6ms, M ximo = 7ms, Media = 6ms

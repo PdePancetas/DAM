@@ -1,0 +1,20 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.accesodatos</groupId>
+	<artifactId>Tema_1_Ficheros_SAXB</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Tema_1_Ficheros_SAXB</name>
+
+	<dependencies>
+	
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20240303</version>
+		</dependency>
+
+	</dependencies>
+</project>

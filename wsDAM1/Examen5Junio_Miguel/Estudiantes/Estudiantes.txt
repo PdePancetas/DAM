@@ -1,0 +1,8 @@
+19,Sara,1
+18,Marcos,1
+31,Rebeca,2
+12,Miguel,1
+13,John,2
+11,Alex,1
+13,Edison,2
+14,Claudia,1

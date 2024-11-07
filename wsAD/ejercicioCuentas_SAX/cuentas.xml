@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cuentas>
+	<cuenta>
+		<idCuenta>1</idCuenta>
+		<titulares>
+			<nombreTitular>Bea</nombreTitular>
+			<nombreTitular>Marcos</nombreTitular>
+		</titulares>
+		<cantidad>281560</cantidad>
+	</cuenta>
+	<cuenta>
+		<idCuenta>2</idCuenta>
+		<titulares>
+			<nombreTitular>Alex</nombreTitular>
+			<nombreTitular>Bea</nombreTitular>
+		</titulares>
+		<cantidad>35392</cantidad>
+	</cuenta>
+</cuentas>

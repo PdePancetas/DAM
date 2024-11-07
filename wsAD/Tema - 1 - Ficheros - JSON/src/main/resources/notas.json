@@ -1,0 +1,12 @@
+[{"nombre":"carlos",
+	"notas":[{"materia":"mates","nota":10},
+	{"materia":"lengua","nota":8}]
+	},
+	
+{"nombre":"maria",
+	"notas":[{"materia":"mates","nota":8},
+	{"materia":"lengua","nota":10},
+	{"materia":"fisica","nota":5}]
+	}
+]
+

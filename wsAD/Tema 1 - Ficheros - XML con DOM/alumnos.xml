@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<alumnos>
+
+
+	<alumno>
+
+
+		<nombre>Javier</nombre>
+
+
+		<nota>7</nota>
+
+
+	</alumno>
+
+
+	<alumno>
+
+
+		<nombre>Eva</nombre>
+
+
+		<nota>8</nota>
+
+
+	</alumno>
+
+
+	<alumno>
+
+
+		<nombre>Pepe</nombre>
+
+
+		<nota>3</nota>
+
+
+	</alumno>
+
+
+	<alumno>
+
+		<nombre>Marcos</nombre>
+
+		<nota>9</nota>
+
+	</alumno>
+
+	<alumno>
+		<nombre>Alberticus</nombre>
+		<nota>10</nota>
+	</alumno>
+</alumnos>

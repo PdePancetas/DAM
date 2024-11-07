@@ -1,0 +1,27 @@
+package Consumidor_Productor;
+
+import java.util.ArrayList;
+import Consumidor_Productor.Consumidor;
+import Consumidor_Productor.Productor;
+
+public class Lanzador {
+
+	public static void main(String[] args) {
+
+		Productos productos = new Productos(10);
+		Productor productor = new Productor(productos);
+		ArrayList<Thread> consumidores = new ArrayList<>();
+		Consumidor c;
+		for (int i = 0; i < 5; i++) {
+			Thread cons = new Consumidor(productos);
+			consumidores.add(cons);
+		}
+		
+		Thread t = new Productor
+//		for(Consumidor c: consumidores)
+//			c
+		
+		
+	}
+
+}

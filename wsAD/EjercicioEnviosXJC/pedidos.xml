@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<shiporder orderid="1">
+    <orderperson>1536723</orderperson>
+    <shipto>
+        <name>Miguel</name>
+        <address>Calle x</address>
+        <city>Madrid</city>
+        <country>España</country>
+    </shipto>
+    <item>
+        <title>boli</title>
+        <note>bolis</note>
+        <quantity>437</quantity>
+        <price>10.0</price>
+    </item>
+    <item>
+        <title>ratón</title>
+        <note>ratones</note>
+        <quantity>90</quantity>
+        <price>34.99</price>
+    </item>
+    <item>
+        <title>goma</title>
+        <note>gomas</note>
+        <quantity>657</quantity>
+        <price>12.5</price>
+    </item>
+    <item>
+        <title>tipex</title>
+        <note>tipex</note>
+        <quantity>2430</quantity>
+        <price>139.0</price>
+    </item>
+</shiporder>

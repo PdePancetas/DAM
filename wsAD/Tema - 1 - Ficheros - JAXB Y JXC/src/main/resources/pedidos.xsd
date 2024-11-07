@@ -1,0 +1,42 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="pedidos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="pedido" maxOccurs="unbounded"
+					minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="cliente">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element type="xs:string" name="nombre" />
+										<xs:element type="xs:string" name="nif" />
+									</xs:sequence>
+									<xs:attribute type="xs:int" name="id" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="listaProductos">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="producto" maxOccurs="unbounded"
+											minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="descripcion" />
+													<xs:element type="xs:double" name="precio" />
+													<xs:element type="xs:int" name="cantidad" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

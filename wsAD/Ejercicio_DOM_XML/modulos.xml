@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<pedidos>
+    <modulo horas="6" permiteFCT="no">
+        <nombre>Acceso a Datos</nombre>
+        <nota>8.45</nota>
+    </modulo>
+    <modulo horas="3" permiteFCT="si">
+        <nombre>Programación de servicios y procesos</nombre>
+        <nota>9.0</nota>
+    </modulo>
+    <modulo horas="6" permiteFCT="no">
+        <nombre>Desarrollo de Interfaces</nombre>
+        <nota>8.0</nota>
+    </modulo>
+    <modulo horas="5" permiteFCT="no">
+        <nombre>Programación Multimedia y Dispositivos Móviles</nombre>
+        <nota>7.34</nota>
+    </modulo>
+    <modulo horas="5" permiteFCT="si">
+        <nombre>Sistemas de Gestión Empresarial</nombre>
+        <nota>8.2</nota>
+    </modulo>
+    <modulo horas="3" permiteFCT="si">
+        <nombre>Empresa e iniciativa emprendedora</nombre>
+        <nota>7.4</nota>
+    </modulo>
+</pedidos>
