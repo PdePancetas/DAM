@@ -1,0 +1,14 @@
+package Clase_Alumno_Profesor;
+
+public class Profesor implements Runnable{
+
+	boolean estaEnClase;
+	
+	@Override
+	public void run() {
+		
+		
+	}
+
+	
+}

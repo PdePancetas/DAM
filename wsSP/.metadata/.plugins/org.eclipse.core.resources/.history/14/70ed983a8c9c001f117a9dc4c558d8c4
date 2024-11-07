@@ -1,0 +1,18 @@
+package Clase_Alumno_Profesor;
+
+public class Alumno implements Runnable{
+
+	private Clase clase;
+	@Override
+	public void run() {
+		
+		
+	}
+	public Clase getClase() {
+		return clase;
+	}
+	public void setClase(Clase clase) {
+		this.clase = clase;
+	}
+
+}

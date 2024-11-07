@@ -1,0 +1,12 @@
+package Clase_Alumno_Profesor;
+
+public class Profesor implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

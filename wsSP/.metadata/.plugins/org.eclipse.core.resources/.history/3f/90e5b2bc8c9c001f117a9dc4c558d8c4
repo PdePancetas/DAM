@@ -1,0 +1,36 @@
+package Clase_Alumno_Profesor;
+
+public class Alumno implements Runnable {
+
+	private Clase clase;
+	private boolean estaEnClase;
+
+	@Override
+	public void run() {
+		
+		while(!estaEnClase) {
+			try {
+				clase.wait();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		System.out.println();
+		
+	}
+
+	public Clase getClase() {
+		return clase;
+	}
+
+	public void setClase(Clase clase) {
+		this.clase = clase;
+	}
+
+	public Alumno(Clase clase) {
+		super();
+		this.clase = clase;
+	}
+
+}
