@@ -1,13 +1,283 @@
 [
-	{ 
-		"titulo" : "Acceso a Datos",
-		"autores" : ["Pepito", "Eva"],
-		"stock" : 181 
-	},
-	
-	{ 
-		"titulo" : "Desarrollo de Interfaces",
-		"autores" : ["Pepito", "Juanito"],
-		"stock" : 123 
-	}
+  { 
+    "titulo" : "Acceso a Datos",
+    "autores" : ["Pepito", "Eva"],
+    "stock" : 181 
+  },
+  
+  { 
+    "titulo" : "Desarrollo de Interfaces",
+    "autores" : ["Pepito", "Juanito"],
+    "stock" : 123 
+  },
+  
+  { 
+    "titulo" : "Redes de Computadoras",
+    "autores" : ["Carlos", "Marta"],
+    "stock" : 200
+  },
+  
+  { 
+    "titulo" : "Bases de Datos Avanzadas",
+    "autores" : ["Ana", "Luis"],
+    "stock" : 150 
+  },
+  
+  { 
+    "titulo" : "Inteligencia Artificial",
+    "autores" : ["Pepito", "Rosa"],
+    "stock" : 210 
+  },
+  
+  { 
+    "titulo" : "Algoritmos y Estructuras de Datos",
+    "autores" : ["Juanito", "Marta"],
+    "stock" : 300 
+  },
+  
+  { 
+    "titulo" : "Sistemas Operativos",
+    "autores" : ["Eva", "Carlos"],
+    "stock" : 175 
+  },
+  
+  { 
+    "titulo" : "Programación Avanzada",
+    "autores" : ["Ana", "Juanito"],
+    "stock" : 145 
+  },
+  
+  { 
+    "titulo" : "Seguridad Informática",
+    "autores" : ["Pepito", "Luis"],
+    "stock" : 190
+  },
+  
+  { 
+    "titulo" : "Computación en la Nube",
+    "autores" : ["Juanito", "Marta", "Carlos"],
+    "stock" : 130
+  },
+  
+  { 
+    "titulo" : "Desarrollo Web Full Stack",
+    "autores" : ["Eva", "Luis", "Ana"],
+    "stock" : 220 
+  },
+  
+  { 
+    "titulo" : "Programación en Python",
+    "autores" : ["Pepito", "Juanito"],
+    "stock" : 150 
+  },
+  
+  { 
+    "titulo" : "Criptografía",
+    "autores" : ["Carlos", "Eva", "Rosa"],
+    "stock" : 210 
+  },
+  
+  { 
+    "titulo" : "Teoría de la Computación",
+    "autores" : ["Ana", "Marta", "Luis"],
+    "stock" : 175
+  },
+  
+  { 
+    "titulo" : "Modelado de Datos",
+    "autores" : ["Juanito", "Pepito"],
+    "stock" : 185 
+  },
+  
+  { 
+    "titulo" : "Desarrollo de Juegos",
+    "autores" : ["Luis", "Carlos", "Ana"],
+    "stock" : 120
+  },
+  
+  { 
+    "titulo" : "Sistemas Distribuidos",
+    "autores" : ["Eva", "Marta", "Pepito"],
+    "stock" : 230 
+  },
+  
+  { 
+    "titulo" : "Técnicas de Programación Funcional",
+    "autores" : ["Carlos", "Juanito"],
+    "stock" : 175
+  },
+  
+  { 
+    "titulo" : "Arquitectura de Computadoras",
+    "autores" : ["Luis", "Rosa"],
+    "stock" : 180 
+  },
+  
+  { 
+    "titulo" : "Lenguajes de Programación",
+    "autores" : ["Ana", "Marta", "Eva"],
+    "stock" : 200
+  },
+  
+  { 
+    "titulo" : "Teoría de Grafos",
+    "autores" : ["Carlos", "Juanito", "Luis"],
+    "stock" : 170
+  },
+  
+  { 
+    "titulo" : "Métodos Numéricos",
+    "autores" : ["Elena", "Mario"],
+    "stock" : 160
+  },
+  
+  { 
+    "titulo" : "Optimización de Algoritmos",
+    "autores" : ["Carlos", "Iván", "Julia"],
+    "stock" : 210
+  },
+  
+  { 
+    "titulo" : "Estructuras de Datos Avanzadas",
+    "autores" : ["Raúl", "Natalia", "Luis"],
+    "stock" : 180
+  },
+  
+  { 
+    "titulo" : "Procesamiento de Señales",
+    "autores" : ["Oscar", "Laura"],
+    "stock" : 140
+  },
+  
+  { 
+    "titulo" : "Redes Neuronales Artificiales",
+    "autores" : ["Daniel", "Isabel", "Felipe"],
+    "stock" : 220
+  },
+  
+  { 
+    "titulo" : "Programación de Sistemas Embebidos",
+    "autores" : ["Fernando", "Clara"],
+    "stock" : 130
+  },
+  
+  { 
+    "titulo" : "Algoritmos de Búsqueda y Ordenamiento",
+    "autores" : ["Alberto", "Luis", "Rosa"],
+    "stock" : 190
+  },
+  
+  { 
+    "titulo" : "Teoría de Autómatas",
+    "autores" : ["Mario", "Juan", "Eva"],
+    "stock" : 200
+  },
+  
+  { 
+    "titulo" : "Bases de Datos No Relacionales",
+    "autores" : ["Felipe", "Marta", "Sofía"],
+    "stock" : 180
+  },
+  
+  { 
+    "titulo" : "Lenguajes Formales",
+    "autores" : ["Roberto", "Carlos", "Estela"],
+    "stock" : 150
+  },
+  
+  { 
+    "titulo" : "Sistemas de Información Geográfica",
+    "autores" : ["José", "Adriana"],
+    "stock" : 170
+  },
+  
+  { 
+    "titulo" : "Programación de Microcontroladores",
+    "autores" : ["Fernando", "Sergio"],
+    "stock" : 140
+  },
+  
+  { 
+    "titulo" : "Programación Orientada a Objetos",
+    "autores" : ["Juliana", "Lucía"],
+    "stock" : 160
+  },
+  
+  { 
+    "titulo" : "Blockchain y Criptomonedas",
+    "autores" : ["Felipe", "Sofía", "Carlos"],
+    "stock" : 220
+  },
+  
+  { 
+    "titulo" : "Interfaces de Usuario",
+    "autores" : ["Rosa", "Laura"],
+    "stock" : 180
+  },
+  
+  { 
+    "titulo" : "Análisis de Datos con Python",
+    "autores" : ["Carlos", "Clara"],
+    "stock" : 200
+  },
+  
+  { 
+    "titulo" : "Gestión de Proyectos de Software",
+    "autores" : ["Mario", "Juanita"],
+    "stock" : 210
+  },
+  
+  { 
+    "titulo" : "Computación Cuántica",
+    "autores" : ["Eduardo", "Carmen"],
+    "stock" : 190
+  },
+  
+  { 
+    "titulo" : "Teoría de la Computación Cuántica",
+    "autores" : ["Patricia", "Santiago"],
+    "stock" : 170
+  },
+  
+  { 
+    "titulo" : "Automatización de Procesos",
+    "autores" : ["Raúl", "Felipe", "Lucía"],
+    "stock" : 180
+  },
+  
+  { 
+    "titulo" : "Arquitectura de Software",
+    "autores" : ["Adriana", "Carlos", "Jorge"],
+    "stock" : 160
+  },
+  
+  { 
+    "titulo" : "Computación Paralela",
+    "autores" : ["Marcela", "Ricardo"],
+    "stock" : 150
+  },
+  
+  { 
+    "titulo" : "Compiladores",
+    "autores" : ["Juanita", "Jorge", "Mario"],
+    "stock" : 190
+  },
+  
+  { 
+    "titulo" : "Estadística para Ciencia de Datos",
+    "autores" : ["Ricardo", "Eva", "Felipe"],
+    "stock" : 200
+  },
+  
+  { 
+    "titulo" : "Computación en Tiempo Real",
+    "autores" : ["Estela", "Carlos"],
+    "stock" : 170
+  },
+  
+  { 
+    "titulo" : "Teoría de Colas",
+    "autores" : ["Juan", "Natalia", "Felipe"],
+    "stock" : 180
+  }
 ]

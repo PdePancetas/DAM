@@ -88,22 +88,24 @@ public class Func {
 			JSONObject libro = libros.getJSONObject(i);
 			String titulo = libro.getString("titulo");
 			JSONArray autoresJson = libro.getJSONArray("autores");
-			ArrayList<String> autores = new ArrayList<>();
+			String autoresCadena = "";
 			for (int j = 0; j < autoresJson.length(); j++) {
 				if (autoresJson.getString(j).equals(nombreAutor))
 					esta = true;
-				autores.add(autoresJson.getString(j));
+				autoresCadena += autoresJson.getString(j) + ", ";
 			}
 			int stock = libro.getInt("stock");
 
-			if (esta)
-				librosAutor.add(new Libro(titulo, autores, stock));
+			if (esta) {
+				autoresCadena = autoresCadena.substring(0, autoresCadena.length() - 2);
+				librosAutor.add(new Libro(titulo, autoresCadena, stock));
+			}
 		}
 
 		return librosAutor;
 	}
 
-	public static Libros getLibrosJson() throws IOException {
+	public static Libros getLibrosJson(boolean conString) throws IOException {
 		JSONArray librosJson = Func.leerFicheroJSON(getFicheroJSON());
 		Libros libros = new Libros();
 
@@ -111,10 +113,18 @@ public class Func {
 
 			JSONObject libro = librosJson.getJSONObject(i);
 			ArrayList<String> autores = new ArrayList<>();
-			for (int j = 0; j < libro.getJSONArray("autores").length(); j++)
-				autores.add(libro.getJSONArray("autores").getString(j));
-			
-			libros.getLibros().add(new Libro(libro.getString("titulo"), autores, libro.getInt("stock")));
+			String autoresCadena = "";
+			for (int j = 0; j < libro.getJSONArray("autores").length(); j++) {
+				if (conString)
+					autoresCadena += libro.getJSONArray("autores").getString(j) + ", ";
+				else
+					autores.add(libro.getJSONArray("autores").getString(j));
+			}
+			if (conString) {
+				autoresCadena = autoresCadena.substring(0, autoresCadena.length() - 2);
+				libros.getLibros().add(new Libro(libro.getString("titulo"), autoresCadena, libro.getInt("stock")));
+			} else
+				libros.getLibros().add(new Libro(libro.getString("titulo"), autores, libro.getInt("stock")));
 		}
 
 		return libros;
@@ -131,8 +141,8 @@ public class Func {
 		marshaller.marshal(libros, new File("datos/libros.xml"));
 	}
 
-	public static void crearXML() throws IOException, JAXBException {
-		Libros libros = getLibrosJson();
+	public static void crearXML(boolean conString) throws IOException, JAXBException {
+		Libros libros = getLibrosJson(conString);
 
 		escribirFicheroXMLJAXB(libros);
 
@@ -171,21 +181,22 @@ public class Func {
 		for (int i = 0; i < nodosLibros.getLength(); i++) {
 			Element libro = (Element) nodosLibros.item(i);
 			NodeList nodoAutores = libro.getElementsByTagName("autor");
-			String autoresCadena="";
-			for(int j=0;j<nodoAutores.getLength();j++) {
-				autoresCadena+= nodoAutores.item(j).getTextContent()+", ";
+			String autoresCadena = "";
+			for (int j = 0; j < nodoAutores.getLength(); j++) {
+				autoresCadena += nodoAutores.item(j).getTextContent() + ", ";
 			}
 			int stock = Integer.parseInt(libro.getElementsByTagName("stock").item(0).getTextContent());
 			if (stock < stockDado) {
-				autoresCadena = autoresCadena.substring(0, autoresCadena.length()-2);
-				libros.add(new Libro(libro.getElementsByTagName("titulo").item(0).getTextContent(), autoresCadena, stock));
+				autoresCadena = autoresCadena.substring(0, autoresCadena.length() - 2);
+				libros.add(
+						new Libro(libro.getElementsByTagName("titulo").item(0).getTextContent(), autoresCadena, stock));
 			}
 		}
 
 		return libros;
 	}
-	
-	public static void genInforme(ArrayList<Libro> libros) throws JRException {
+
+	public static void genInforme(ArrayList<Libro> libros, String tituloInforme) throws JRException {
 
 		Properties config = new Properties();
 		try {
@@ -196,16 +207,16 @@ public class Func {
 			e.printStackTrace();
 		}
 		String ficheroJasper = config.getProperty("fileJasper");
-		
-		String informePdf = config.getProperty("pathPDF");
+
+		String informePdf = "datos/" + tituloInforme + ".pdf";
 
 		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource(libros);
-	
+
 		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(ficheroJasper);
 
 		Map<String, Object> params = new HashMap<String, Object>();
-		JasperPrint informe = JasperFillManager.fillReport(jasperReport, params , camposInforme);
-		
+		JasperPrint informe = JasperFillManager.fillReport(jasperReport, params, camposInforme);
+
 		JasperExportManager.exportReportToPdfFile(informe, informePdf);
 
 	}

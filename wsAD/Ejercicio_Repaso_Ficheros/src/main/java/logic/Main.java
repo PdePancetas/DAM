@@ -22,6 +22,8 @@ public class Main {
 //		-	Utilizando ese archivo, mostrar todos los libros con stock menor de uno dado (DOM). 
 //		Además se le ofrecerá al usuario la posibilidad de generar un informe en PDF con esa información
 
+	private static boolean conString;
+	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
 		int op = -1;
@@ -47,6 +49,20 @@ public class Main {
 							System.out.println("Libros en los que aparece como autor " + nombreAutor + ": ");
 							for (Libro l : Func.mostrarPorAutor(nombreAutor))
 								System.out.println("- " + l.getTitulo());
+							System.out.print("\nQuiere generar un informe de estos libros?\n-> ");
+							switch (Teclado.leerCadena()) {
+							case "si":
+								try {
+									Func.genInforme(Func.mostrarPorAutor(nombreAutor), "InformeAutor");
+									System.out.println("Informe generado en ./datos/");
+								} catch (JRException e) {
+									e.printStackTrace();
+								}
+								break;
+							case "no":
+								System.out.println("Volviendo al menu principal");
+								break;
+							}
 						} else
 							System.out.println(nombreAutor + " no se encuentra en los libros.");
 
@@ -63,7 +79,8 @@ public class Main {
 					System.out.println("Creando Libros.xml a partir de Libros.json");
 
 					try {
-						Func.crearXML();
+						conString = false;
+						Func.crearXML(conString);
 						System.out.println("Fichero creado en la carpeta ./datos/");
 					} catch (IOException e) {
 						e.printStackTrace();
@@ -89,7 +106,7 @@ public class Main {
 								switch (Teclado.leerCadena()) {
 								case "si":
 									try {
-										Func.genInforme(Func.mostrarLibrosConStockMenor(stock));
+										Func.genInforme(Func.mostrarLibrosConStockMenor(stock), "InformeStock");
 										System.out.println("Informe generado en ./datos/");
 									} catch (ParserConfigurationException e) {
 										e.printStackTrace();
