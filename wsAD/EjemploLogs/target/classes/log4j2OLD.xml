@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  ESTE STATUS ES EL NIVEL PARA TODAS LAS CLASES QUE SE USEN, NO SOLO LAS
+NUESTRAS  -->
+<Configuration status="ERROR">
+	<Appenders>
+		<Console name="Consola" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		<File name="FicheroLogs" fileName="logs/app.log">
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+		</File>
+		<!-- el nombre del primero y de los siguientes (fecha y dentro de cada
+		fecha 1, 2, 3...): -->
+		<RollingFile name="FicheroLogsSecuenciado"
+			fileName="logs/appSecuenciado.log"
+			filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+			<PatternLayout>
+				<Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<TimeBasedTriggeringPolicy />
+				<SizeBasedTriggeringPolicy size="10 MB" />
+			</Policies>
+		</RollingFile>
+
+	</Appenders>
+
+	<!-- esto define cómo funciona el logger -->
+	<Loggers>
+
+		<!-- podemos hacer un logger específico para una clase, de forma que
+		trabaje en diferente nivel -->
+		<!-- el atributo additivity es para que no lo escriba dos veces, es
+		decir, de su appender y del
+  	de su padre Root -->
+
+		<Logger name="logica.Main" level="DEBUG" additivity="false">
+			<!--<AppenderRef ref="Consola" />-->
+			<AppenderRef ref="FicheroLogs" />
+		</Logger>
+
+
+		<!-- este es un logger para todas las clases del paquete -->
+		<Logger name="utils" level="ERROR" additivity="false">
+			<!--<AppenderRef ref="Consola" />-->
+			<AppenderRef ref="FicheroLogs" />
+		</Logger>
+
+
+		<!-- este sería el nivel por defecto para las clases que no tienen una
+		configuración específica -->
+		<Root level="DEBUG">
+			<AppenderRef ref="Consola" />
+			<!--<AppenderRef ref="FicheroLogsSecuenciado"/>-->
+		</Root>
+	</Loggers>
+
+
+</Configuration>
