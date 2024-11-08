@@ -11,10 +11,10 @@ public class Profesor implements Runnable {
 
 	@Override
 	public void run() {
-		
+
 		synchronized (clase) {
-			clase.estaEnClase = true;
 			System.out.println(Thread.currentThread().getName() + " ha llegado, hola a todos, inicia la clase");
+			clase.hayProfesor = true;
 			clase.notifyAll();
 		}
 

@@ -3,23 +3,46 @@ package Clase_Alumno_Profesor;
 public class Alumno implements Runnable {
 
 	private Clase clase;
+	private boolean acaboDeEntrar;
 
 	@Override
 	public void run() {
 
-		while (!clase.estaEnClase) {
+		try {
+			Thread.sleep((long) Math.random() * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		acaboDeEntrar = true;
+		synchronized (clase) {
+			
 			try {
-				System.out.println("El profesor no esta aun, " + Thread.currentThread().getName() + " esperando");
-				synchronized (clase) {
-					clase.wait();
-				}
+				while (!clase.hayProfesor) {
 
+					if (!clase.hayAlumno) {
+						System.out.println(Thread.currentThread().getName() + " Soy el primero en llegar");
+						clase.hayAlumno = true;
+						clase.wait();
+					} else
+						if (clase.hayAlumno) {
+							if (acaboDeEntrar) {
+								System.out.println(Thread.currentThread().getName() + " Hola ");
+								clase.notifyAll();
+								acaboDeEntrar = false;
+								clase.wait();
+							} else {
+								System.out.println(Thread.currentThread().getName() + " Hola compañero");
+								clase.wait();
+							}
+						}
+
+				}
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			System.out.println("Hola profesor, " + Thread.currentThread().getName() + " siguiendo la clase");
 		}
-
-		System.out.println("Hola profesor, " + Thread.currentThread().getName() + " siguiendo la clase");
 
 	}
 
@@ -34,6 +57,5 @@ public class Alumno implements Runnable {
 	public Alumno(Clase clase) {
 		super();
 		this.clase = clase;
-
 	}
 }

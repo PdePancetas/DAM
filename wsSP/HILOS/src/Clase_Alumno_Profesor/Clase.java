@@ -2,5 +2,6 @@ package Clase_Alumno_Profesor;
 
 public class Clase {
 	
-	boolean estaEnClase;
+	boolean hayProfesor = false;
+	boolean hayAlumno = false;
 }
