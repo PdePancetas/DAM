@@ -88,11 +88,11 @@ public class Metodos_Comunes {
 //	public static Raiz leerFichero(File f) throws JAXBException {
 //		// Leer el documento xml (leer contenido y pasar a objeto Libros)
 //
-//		// Contexto : Clase Raiz JAXBContext jaxbContext =
-//		JAXBContext.newInstance(Raiz.class);
+//		// Contexto : Clase Raiz 
+//		JAXBContext jaxbContext = JAXBContext.newInstance(Raiz.class);
 //
-//		// Como el parser Unmarshaller unmarshaller =
-//		jaxbContext.createUnmarshaller();
+//		// Como el parser 
+//		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 //
 //		// Traspaso de fichero a objeto 
 //		Raiz raiz = (Raiz) unmarshaller.unmarshal(f);
@@ -106,7 +106,7 @@ public class Metodos_Comunes {
 //	  
 //	  Marshaller marshaller = jaxbContext.createMarshaller();
 //	  
-//	  //Indentacion 
+//	  Indentacion 
 //	  marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
 //	  
 //	  marshaller.marshal(objeto, new File(""));
@@ -151,14 +151,14 @@ public class Metodos_Comunes {
 	
 	////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////// JASPERREPORTS ///////////////////////////////
-	public static void genInforme(Object o) throws JRException {
+	public static void genInforme(/*Datos*/) throws JRException {
 
 //		String plantilla = "ruta de la plantilla para el pdf";
 		String ficheroJasper = "ruta del fichero .jasper creado por JasperSoft Studio";
 		String informePdf = "ruta donde se guardará el pdf";
 
 		// Transformamos los datos a una fuente de datos que JasperReports entiende
-		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource((Collection<?>) o);
+		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource((/*Una Coleccion*/);
 
 		// Compilamos la plantilla
 //		JasperReport jasperReport = JasperCompileManager.compileReport(plantilla);
