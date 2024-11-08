@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename compilation unit &apos;EJERCICIOS.Ejercicio_Bucles_15.java&apos; to &apos;Ejercicio_Bucles_16.java&apos;&#x0D;&#x0A;- Original project: &apos;EjerciciosClases&apos;&#x0D;&#x0A;- Original element: &apos;EJERCICIOS.Ejercicio_Bucles_15.java&apos;&#x0D;&#x0A;- Renamed element: &apos;EJERCICIOS.Ejercicio_Bucles_16.java&apos;" description="Rename compilation unit &apos;Ejercicio_Bucles_15.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/source&lt;EJERCICIOS{Ejercicio_Bucles_15.java" name="Ejercicio_Bucles_16.java" references="false" stamp="1699113102047" version="1.0"/>
-</session>

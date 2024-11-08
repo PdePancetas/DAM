@@ -1,0 +1,31 @@
+package Cuenta_Bancaria;
+
+import utilidadesTeclado.Teclado;
+
+public class Launcher {
+
+	public static void main(String[] args) {
+
+		Object monProductor = new Object();
+		Object monConsumidor = new Object();
+		CuentaBancaria cuenta = new CuentaBancaria(5000, monProductor, monConsumidor);
+		System.out.println("Cuantas personas van a operar? ");
+		int numPers = Teclado.leerEntero();
+		for (int i = 0; i < numPers; i++) {
+			Thread persona;
+			if (Math.random() < 0.5) {
+				persona = new Thread(new Productor(cuenta));
+				persona.start();
+			} else {
+				persona = new Thread(new Consumidor(cuenta));
+				persona.start();
+			}
+
+		}
+
+	}
+
+	public static void main2(String[] args) {
+
+	}
+}

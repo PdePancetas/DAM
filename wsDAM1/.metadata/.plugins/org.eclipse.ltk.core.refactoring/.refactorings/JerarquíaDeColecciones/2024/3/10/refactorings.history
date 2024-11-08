@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;CriterioNombre.java&apos; to &apos;Ejercicio3Colecciones/src/logics&apos;&#x0D;&#x0A;- Original project: &apos;JerarquíaDeColecciones&apos;&#x0D;&#x0A;- Destination element: &apos;Ejercicio3Colecciones/src/logics&apos;&#x0D;&#x0A;- Original element: &apos;logics.CriterioNombre.java&apos;" description="Copy compilation unit" destination="=Ejercicio3Colecciones/src&lt;logics" element1="/src&lt;logics{CriterioNombre.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1709590432162" units="1" version="1.0"/>
-</session>

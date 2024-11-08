@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-1730705759125	Delete elements
-=======
-1730931137247	Encapsulate field 'clase, ...'
-1730931151181	Encapsulate field 'clase, ...'
-1730931215643	Encapsulate field 'estaEnClase, ...'
->>>>>>> 94f489d6c33cafa3c3c8a3ef26dbb6b0946fc7e6
+1731089027451	Rename type 'Consumidor'
+1731089038438	Delete element
+1731089068189	Rename type 'Cuenta'
