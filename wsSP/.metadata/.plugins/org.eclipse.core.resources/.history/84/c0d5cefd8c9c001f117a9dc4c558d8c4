@@ -1,0 +1,39 @@
+package Clase_Alumno_Profesor;
+
+public class Profesor implements Runnable {
+
+	private boolean estaEnClase;
+	private Clase clase;
+
+	public Profesor(boolean estaEnClase, Clase clase) {
+		super();
+		this.setEstaEnClase(estaEnClase);
+		this.clase = clase;
+	}
+
+	@Override
+	public void run() {
+		estaEnClase = true;
+		clase.notifyAll();
+		
+		
+		
+	}
+
+	public Clase getClase() {
+		return clase;
+	}
+
+	public void setClase(Clase clase) {
+		this.clase = clase;
+	}
+
+	public boolean isEstaEnClase() {
+		return estaEnClase;
+	}
+
+	public void setEstaEnClase(boolean estaEnClase) {
+		this.estaEnClase = estaEnClase;
+	}
+
+}
