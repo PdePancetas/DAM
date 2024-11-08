@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring accessors="true" comment="Delete element from project &apos;EjemploLogsClase&apos;&#x0D;&#x0A;- Original project: &apos;EjemploLogsClase&apos;&#x0D;&#x0A;- Original element: &apos;log4j2OLD.xml&apos;" description="Delete element" element1="src/main/resources/log4j2OLD.xml" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1729613753894" subPackages="false" version="1.0"/>
-</session>
