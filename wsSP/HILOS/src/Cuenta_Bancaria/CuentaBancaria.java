@@ -1,3 +1,4 @@
+
 package Cuenta_Bancaria;
 
 public class CuentaBancaria {
@@ -33,25 +34,29 @@ public class CuentaBancaria {
 	}
 
 	public void ingresa(int dinero) throws InterruptedException {
+		if ((saldo + dinero) <= 1000) {
+			saldo += dinero;
 
-		saldo += dinero;
+			System.out.println(Thread.currentThread().getName() + " ingresa " + dinero);
 
-		System.out.println(Thread.currentThread().getName() + " ingresa " + dinero);
-
-		synchronized (retirar) {
-			retirar.notifyAll();
+			synchronized (retirar) {
+				retirar.notifyAll();
+			}
+			synchronized (ingresar) {
+				ingresar.notifyAll();
+				System.out.println(Thread.currentThread().getName() + " he terminado de operar");
+				ingresar.wait();
+			}
+		} else {
+			System.out.println(Thread.currentThread().getName()+" la cuenta ha llegado al limite");
 		}
-		synchronized (ingresar) {
-			ingresar.notifyAll();
-			System.out.println(Thread.currentThread().getName() + " he terminado de operar, hay "+saldo);
-			ingresar.wait();
-		}
+			
 
 	}
 
 	public void retira(int dinero) throws InterruptedException {
 
-		while ((saldo - dinero) >= 0) {
+		if ((saldo - dinero) >= 0) {
 			saldo -= dinero;
 			if (saldo == 0) {
 				System.out.println(Thread.currentThread().getName() + " la cuenta esta a 0");
@@ -70,20 +75,20 @@ public class CuentaBancaria {
 				}
 				synchronized (retirar) {
 					retirar.notifyAll();
-					System.out.println(Thread.currentThread().getName() + " he terminado de operar, hay "+saldo);
+					System.out.println(Thread.currentThread().getName() + " he terminado de operar");
 					retirar.wait();
 				}
 
 			}
-		}
+		} else {
 
-		System.out.println(" No queda tanto dinero que retirar");
-		synchronized (ingresar) {
-			ingresar.notifyAll();
-		}
-		synchronized (retirar) {
-			retirar.wait();
+			System.out.println(Thread.currentThread().getName() + " No queda tanto dinero que retirar");
+			synchronized (ingresar) {
+				ingresar.notifyAll();
+			}
+			synchronized (retirar) {
+				retirar.wait();
+			}
 		}
 	}
-
 }
