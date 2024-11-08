@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;NegativeNumberException.java&apos; to &apos;EjerciciosExcepciones/src/Exception&apos;&#x0D;&#x0A;- Original project: &apos;EjemploExcepciones&apos;&#x0D;&#x0A;- Destination element: &apos;EjerciciosExcepciones/src/Exception&apos;&#x0D;&#x0A;- Original element: &apos;NegativeNumberException.java&apos;" description="Copy compilation unit" destination="=EjerciciosExcepciones/src&lt;Exception" element1="/src&lt;{NegativeNumberException.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1712599639631" units="1" version="1.0"/>
-</session>
