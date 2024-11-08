@@ -7,7 +7,7 @@
 	<item key="org.eclipse.jdt.ui.last.selected.project.jre" value="jdk-21"/>
 	<item key="org.eclipse.jdt.ui.lastuserlibrary" value="C:\Users\blanc\Escritorio\JAR\Teclado.jar"/>
 	<item key="UserLibraryLoadSaveDialog.size" value="640,680"/>
-	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\blanc\Escritorio\JAR"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\Alumno\Desktop"/>
 	<item key="TypeHierarchyViewPart.hierarchyview" value="2"/>
 	<item key="TypeHierarchyViewPart.qualifiednames" value="false"/>
 	<item key="TypeHierarchyViewPart.linkeditors" value="false"/>
@@ -200,5 +200,12 @@
 			<item value="C:\Users\blanc\eclipse-workspace.xml"/>
 			<item value=".xml"/>
 		</list>
+	</section>
+	<section name="JavaProjectWizard.dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="596"/>
+		<item key="DIALOG_Y_ORIGIN" value="8"/>
+		<item key="DIALOG_WIDTH" value="744"/>
+		<item key="DIALOG_HEIGHT" value="862"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>

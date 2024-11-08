@@ -41,7 +41,7 @@
     <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
     <fullyQualifiedTypeName name="java.io.BufferedReader"/>
     <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlAttribute"/>
-    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlTransient"/>
     <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlType"/>
     <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlElementWrapper"/>
+    <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlTransient"/>
 </qualifiedTypeNameHistroy>
