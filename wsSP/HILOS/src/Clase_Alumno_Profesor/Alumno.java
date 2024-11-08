@@ -12,7 +12,6 @@ public class Alumno implements Runnable {
 				System.out.println("El profesor no esta aun, " + Thread.currentThread().getName() + " esperando");
 				synchronized (clase) {
 					clase.wait();
-
 				}
 
 			} catch (InterruptedException e) {

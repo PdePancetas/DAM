@@ -11,8 +11,9 @@ public class Profesor implements Runnable {
 
 	@Override
 	public void run() {
-		clase.estaEnClase = true;
+		
 		synchronized (clase) {
+			clase.estaEnClase = true;
 			System.out.println(Thread.currentThread().getName() + " ha llegado, hola a todos, inicia la clase");
 			clase.notifyAll();
 		}

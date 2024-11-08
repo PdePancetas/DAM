@@ -20,13 +20,10 @@ public class Launcher {
 		Clase clase = new Clase();
 		Profesor p = new Profesor(clase);
 		Thread t = new Thread(p,"Prof");
-		ArrayList<Thread> threads = new ArrayList<>();
 		for(int i=0;i<5;i++) {
 			Thread a = new Thread(new Alumno(clase),"Alumno "+i);
-			threads.add(a);
+			a.start();
 		}
-		for(Thread ts: threads)
-			ts.start();
 		
 		try {
 			Thread.sleep(3000);
