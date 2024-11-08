@@ -45,9 +45,9 @@ public class Main {
 					String nombreAutor = Teclado.leerCadena();
 					try {
 						System.out.println();
-						if (Func.mostrarPorAutor(nombreAutor).size() != 0) {
+						if (Func.mostrarPorAutor(nombreAutor).getLibros().size() != 0) {
 							System.out.println("Libros en los que aparece como autor " + nombreAutor + ": ");
-							for (Libro l : Func.mostrarPorAutor(nombreAutor))
+							for (Libro l : Func.mostrarPorAutor(nombreAutor).getLibros())
 								System.out.println("- " + l.getTitulo());
 							System.out.print("\nQuiere generar un informe de estos libros?\n-> ");
 							switch (Teclado.leerCadena()) {
@@ -97,10 +97,10 @@ public class Main {
 						int stock = Teclado.leerEntero();
 
 						try {
-							if (Func.mostrarLibrosConStockMenor(stock).size() != 0) {
+							if (Func.mostrarLibrosConStockMenor(stock).getLibros().size() != 0) {
 								System.out.println();
 								System.out.println("Libros con stock menor a " + stock + ": ");
-								for (Libro l : Func.mostrarLibrosConStockMenor(stock))
+								for (Libro l : Func.mostrarLibrosConStockMenor(stock).getLibros())
 									System.out.println("- " + l.getTitulo() + ", stock: " + l.getStock() + " u");
 								System.out.print("\nQuiere generar un informe de estos libros?\n-> ");
 								switch (Teclado.leerCadena()) {
