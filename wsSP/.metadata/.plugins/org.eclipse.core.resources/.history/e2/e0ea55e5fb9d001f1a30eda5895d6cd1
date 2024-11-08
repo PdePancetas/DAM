@@ -1,0 +1,29 @@
+package Cuenta_Bancaria;
+
+public class Cuenta implements Runnable {
+
+	private CuentaBancaria cuenta;
+
+	@Override
+	public void run() {
+
+	}
+
+	public Cuenta() {
+		super();
+	}
+
+	public Cuenta(CuentaBancaria cuenta) {
+		super();
+		this.cuenta = cuenta;
+	}
+
+	public CuentaBancaria getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(CuentaBancaria cuenta) {
+		this.cuenta = cuenta;
+	}
+
+}
