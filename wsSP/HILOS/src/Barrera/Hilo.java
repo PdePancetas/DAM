@@ -20,22 +20,26 @@ public class Hilo implements Runnable {
 
 	@Override
 	public void run() {
-		while (metodosLanzados < 5)
+		while (metodosLanzados < 20)
 			try {
 				ejecutaMetodo();
-				System.out.println("--------------------" + metodosLanzados);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println(Thread.currentThread().getName() + " continua");
 	}
 
-	private synchronized void ejecutaMetodo() throws InterruptedException {
+	private void ejecutaMetodo() throws InterruptedException {
 		metodosLanzados++;
 		System.out.println(Thread.currentThread().getName() + " esperando");
 		synchronized (monitor) {
-			if(metodosLanzados == 5)
+			if(metodosLanzados == 20)
 				monitor.notify();
 			else
 				monitor.notifyAll();
@@ -52,7 +56,7 @@ public class Hilo implements Runnable {
 
 		Object o = new Object();
 		int metodosLanzados = 0;
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i < 10; i++) {
 			new Thread(new Hilo(o, metodosLanzados), "T " + i + "-").start();
 		}
 
