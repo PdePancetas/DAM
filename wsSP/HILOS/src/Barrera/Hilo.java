@@ -27,19 +27,19 @@ public class Hilo implements Runnable {
 				e.printStackTrace();
 			}
 		try {
-			Thread.sleep(100);
+			Thread.sleep(200);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(Thread.currentThread().getName() + " continua");
+		System.out.println("\n "+Thread.currentThread().getName() + " continua");
 	}
 
 	private void ejecutaMetodo() throws InterruptedException {
 		metodosLanzados++;
 		System.out.println(Thread.currentThread().getName() + " esperando");
 		synchronized (monitor) {
-			if(metodosLanzados == 20)
+			if(metodosLanzados < 20)
 				monitor.notify();
 			else
 				monitor.notifyAll();
