@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -30,6 +31,9 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.CollectionType;
 
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -148,6 +152,8 @@ public class Metodos_Comunes {
 	// Los mas importantes
 	// JSONObject;
 	// JSONArray; //Recorrerlo con for de indice
+	// ObjectMapper mapper = new ObjectMapper();
+	// ArrayList<algo> nombrelista =mapper.readValue( getFicheroJson(), mapper.getTypeFactory().constructCollectionType(List.class, algo.class));
 	
 	////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////// JASPERREPORTS ///////////////////////////////
@@ -158,7 +164,7 @@ public class Metodos_Comunes {
 		String informePdf = "ruta donde se guardará el pdf";
 
 		// Transformamos los datos a una fuente de datos que JasperReports entiende
-		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource((/*Una Coleccion*/);
+		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource(null /*Una Coleccion*/);
 
 		// Compilamos la plantilla
 //		JasperReport jasperReport = JasperCompileManager.compileReport(plantilla);
