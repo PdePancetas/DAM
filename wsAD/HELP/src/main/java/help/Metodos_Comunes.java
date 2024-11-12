@@ -152,9 +152,13 @@ public class Metodos_Comunes {
 	// Los mas importantes
 	// JSONObject;
 	// JSONArray; //Recorrerlo con for de indice
-	// ObjectMapper mapper = new ObjectMapper();
-	// ArrayList<algo> nombrelista =mapper.readValue( getFicheroJson(), mapper.getTypeFactory().constructCollectionType(List.class, algo.class));
 	
+	// OBTENER LISTA DE UN JSON
+	// ObjectMapper mapper = new ObjectMapper();
+	// ArrayList<tipo de dato> nombrelista =mapper.readValue( getFicheroJson(), mapper.getTypeFactory().constructCollectionType(List.class, clase.class));
+	
+	// ObjectMapper mapper = new ObjectMapper();
+	// ArrayList<Objeto> nombrelista =mapper.readValue(new File(archivo.json), mapper.getTypeFactory().constructCollectionType(Tipo de coleccion, Clase a mapear));
 	////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////// JASPERREPORTS ///////////////////////////////
 	public static void genInforme(/*Datos*/) throws JRException {
