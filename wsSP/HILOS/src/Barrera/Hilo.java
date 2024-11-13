@@ -9,26 +9,16 @@ public class Hilo implements Runnable {
 	 * 
 	 */
 
-	private Object monitor;
-	private int metodosLanzados;
+	private Monitor monitor;
 
-	public int getMetodosLanzados() {
-		return metodosLanzados;
-	}
-
-	public void setMetodosLanzados(int metodosLanzados) {
-		this.metodosLanzados = metodosLanzados;
-	}
-
-	public Hilo(Object monitor, int metodosLanzados) {
+	public Hilo(Monitor monitor) {
 		super();
 		this.monitor = monitor;
-		this.metodosLanzados = metodosLanzados;
 	}
 
 	@Override
 	public void run() {
-		while (metodosLanzados < 20)
+		while (monitor.getMetodosLanzados() < 20)
 			try {
 				ejecutaMetodo();
 			} catch (InterruptedException e) {
@@ -44,27 +34,26 @@ public class Hilo implements Runnable {
 	}
 
 	private void ejecutaMetodo() throws InterruptedException {
-		metodosLanzados++;
+		monitor.setMetodosLanzados(monitor.getMetodosLanzados() + 1);
 		System.out.println(Thread.currentThread().getName() + " esperando");
 		synchronized (monitor) {
-			if (metodosLanzados < 20) {
-				monitor.notifyAll();
+			if (monitor.getMetodosLanzados() < 20) {
 				monitor.wait();
 				System.out.println(Thread.currentThread().getName() + " despertado");
-			}
+			} else
+				monitor.notifyAll();
 
 		}
-
-		
 
 	}
 
 	public static void main(String[] args) {
 
-		Object o = new Object();
 		int metodosLanzados = 0;
-		for (int i = 0; i < 10; i++) {
-			new Thread(new Hilo(o, metodosLanzados), "T " + i + "-").start();
+		Monitor o = new Monitor(metodosLanzados);
+
+		for (int i = 0; i < 20; i++) {
+			new Thread(new Hilo(o), "T " + i + "-").start();
 		}
 
 	}
