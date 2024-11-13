@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Alumno/DAM/Dependencies/Teclado.jar"/>
+	<classpathentry kind="lib" path="C:/Users/blanc/DAM/Dependencies/Teclado.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

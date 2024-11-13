@@ -11,7 +11,7 @@ public class Timer implements Runnable {
 		while (true) {
 			while (System.nanoTime() - actual < 1000000000l) {}
 			synchronized (this) {
-				System.out.println("tick: "+System.nanoTime());
+				System.out.println(Thread.currentThread().getName()+" tick: "+System.nanoTime());
 				contador++;
 				notifyAll();
 				
