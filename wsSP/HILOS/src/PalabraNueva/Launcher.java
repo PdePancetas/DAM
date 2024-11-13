@@ -9,8 +9,6 @@ public class Launcher {
 		String palabra = "hola";
 		PidePalabra p = new PidePalabra(palabra);
 		new Thread(p).start();
-		
-		for(int i=0;i<5;i++)
-			new Thread(new Escritor(p),"escritor").start();
+		new Thread(new Escritor(p),"escritor").start();
 	}
 }
