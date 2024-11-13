@@ -12,6 +12,14 @@ public class Hilo implements Runnable {
 	private Object monitor;
 	private int metodosLanzados;
 
+	public int getMetodosLanzados() {
+		return metodosLanzados;
+	}
+
+	public void setMetodosLanzados(int metodosLanzados) {
+		this.metodosLanzados = metodosLanzados;
+	}
+
 	public Hilo(Object monitor, int metodosLanzados) {
 		super();
 		this.monitor = monitor;
@@ -27,28 +35,27 @@ public class Hilo implements Runnable {
 				e.printStackTrace();
 			}
 		try {
-			Thread.sleep(200);
+			Thread.sleep(500);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("\n "+Thread.currentThread().getName() + " continua");
+		System.out.println(Thread.currentThread().getName() + " continua");
 	}
 
 	private void ejecutaMetodo() throws InterruptedException {
 		metodosLanzados++;
 		System.out.println(Thread.currentThread().getName() + " esperando");
 		synchronized (monitor) {
-			if(metodosLanzados < 20)
-				monitor.notify();
-			else
+			if (metodosLanzados < 20) {
 				monitor.notifyAll();
-			
-			monitor.wait();
-		}
-		
+				monitor.wait();
+				System.out.println(Thread.currentThread().getName() + " despertado");
+			}
 
-		System.out.println(Thread.currentThread().getName() + " despertado");
+		}
+
+		
 
 	}
 
