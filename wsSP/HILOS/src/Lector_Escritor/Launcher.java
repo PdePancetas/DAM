@@ -13,7 +13,7 @@ public class Launcher {
 //		int cantEscritores = 0;
 		for (int i = 0; i < 2; i++) {
 			hilos.add(new Thread(new Escritor(r), "Escritor " + i + " - "));
-			hilos.add(new Thread(new Lector(r), "Lector" + i + " - "));
+			hilos.add(new Thread(new Lector(r), "Lector " + i + " - "));
 		}
 
 		for (Thread t : hilos)
