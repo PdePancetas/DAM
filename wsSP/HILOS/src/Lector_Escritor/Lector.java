@@ -13,9 +13,9 @@ public class Lector implements Runnable {
 				e.printStackTrace();
 			}
 
-			synchronized (recCompartido) {
-				System.out.println(Thread.currentThread().getName() + "leyendo dato: " + recCompartido.getDatos());
-			}
+			
+				System.out.println(Thread.currentThread().getName() + "leyendo dato: " + recCompartido.getDatos()+" ---- "+System.currentTimeMillis());
+				
 		}
 
 	}

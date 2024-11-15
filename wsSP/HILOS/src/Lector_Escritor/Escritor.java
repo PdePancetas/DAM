@@ -14,9 +14,8 @@ public class Escritor implements Runnable {
 			}
 			int cant = (int) (Math.random() * 10) + 1;
 			synchronized (recCompartido) {
-				System.out.print(Thread.currentThread().getName() + "Modificando datos... Añadiendo " + cant);
 				recCompartido.setDatos(recCompartido.getDatos() + cant);
-				System.out.println(" Datos : " + recCompartido.getDatos());
+				System.out.println(Thread.currentThread().getName() + "Modificando datos... Añadiendo " + cant + " --- "+System.nanoTime()+" Datos : " + recCompartido.getDatos());
 
 				recCompartido.notifyAll();
 				try {
