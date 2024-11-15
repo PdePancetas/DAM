@@ -4,14 +4,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
@@ -32,11 +28,8 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.type.CollectionType;
 
 import net.sf.jasperreports.engine.JRException;
-import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -159,6 +152,36 @@ public class Metodos_Comunes {
 	
 	// ObjectMapper mapper = new ObjectMapper();
 	// ArrayList<Objeto> nombrelista =mapper.readValue(new File(archivo.json), mapper.getTypeFactory().constructCollectionType(Tipo de coleccion, Clase a mapear));
+	
+	// import com.fasterxml.jackson.
+	// 
+	// 
+	//	private static void escribirYLeerJsonAlt(Map<String, Object> dataMap) {
+	//
+	//		try {
+	//			File jsonFile = new File("datosMiguel.json");
+	//			ObjectMapper mapper = new ObjectMapper();
+	//
+	//			// Escribir en el fichero un mapa en formato JSON
+	//			// objectMapper.writeValue(jsonFile, dataMap);
+	//			mapper.writerWithDefaultPrettyPrinter().writeValue(jsonFile, dataMap);
+	//
+	//			// Recuperar los datos de un JSON y meterlos en un mapa
+	//			Map<String, Object> datos = new HashMap<>();
+	//			datos = mapper.readValue(jsonFile, datos.getClass());
+	//			System.out.println(datos);
+	//		} catch (StreamWriteException e) {
+	//			e.printStackTrace();
+	//		} catch (DatabindException e) {
+	//			e.printStackTrace();
+	//		} catch (StreamReadException e) {
+	//			e.printStackTrace();
+	//		} catch (IOException e) {
+	//			e.printStackTrace();
+	//		}
+	//
+	//	}
+	
 	////////////////////////////////////////////////////////////////////////////////////
 	////////////////////////////////////// JASPERREPORTS ///////////////////////////////
 	public static void genInforme(/*Datos*/) throws JRException {
@@ -176,7 +199,7 @@ public class Metodos_Comunes {
 		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(ficheroJasper);
 
 		Map<String, Object> params = new HashMap<String, Object>();
-		
+
 		// Rellenamos el informe con la fuente de datos
 		JasperPrint informe = JasperFillManager.fillReport(jasperReport, params, camposInforme);
 
