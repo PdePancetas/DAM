@@ -8,8 +8,8 @@ public class Launcher {
 
 		Recurso r = new Recurso(0);
 		ArrayList<Thread> hilos = new ArrayList<Thread>();
-		for (int i = 0; i < 3; i++) {
-			hilos.add(new Thread(new Escritor(r), "Escritor " + i + " - "));
+		hilos.add(new Thread(new Escritor(r), "Escritor - "));
+		for (int i = 0; i < 2; i++) {
 			hilos.add(new Thread(new Lector(r), "Lector " + i + " - "));
 		}
 
