@@ -2,22 +2,13 @@ package Lector_Escritor;
 
 public class Recurso {
 
-	private int numLectores = 0;
+	private boolean hayLector;
 	private boolean hayEscritor;
 	private Object escritor = new Object();
 	private Object lector = new Object();
 
-	public int getNumLectores() {
-		return numLectores;
-	}
-
-	public void setNumLectores(int datos) {
-		this.numLectores = datos;
-	}
-
-	public Recurso(int datos) {
+	public Recurso() {
 		super();
-		this.numLectores = datos;
 	}
 
 	public Object getEscritor() {
@@ -39,32 +30,33 @@ public class Recurso {
 	public void leer() {
 		synchronized (this) {
 			if (!hayEscritor) {
-				numLectores += 1;
+				hayLector = true;
 			} else {
 				try {
-					escritor.wait();
+					wait();
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 			}
 		}
 
-		System.out.println(Thread.currentThread().getName() + " leyendo...,hay " + numLectores);
+		System.out.println(Thread.currentThread().getName() + " leyendo...");
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		System.out.println(Thread.currentThread().getName() + " termino de leer,hay " + numLectores);
+		System.out.println(Thread.currentThread().getName() + " termino de leer");
 
 		synchronized (lector) {
-			numLectores -= 1;
+			hayLector = false;
 		}
 		synchronized (this) {
-			if (numLectores == 0) {
-				escritor.notifyAll();
+			if (!hayLector) {
+				notifyAll();
 			}
 		}
+
 	}
 
 	public void escribir() {
@@ -79,23 +71,24 @@ public class Recurso {
 //			}
 //		}
 
-		synchronized (lector) {
-			if (numLectores == 0) {
+		synchronized (this) {
+			if (!hayLector) {
 				hayEscritor = true;
 			}
 		}
+		synchronized (this) {
 
-		System.out.println(Thread.currentThread().getName() + " escribiendo...");
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+			System.out.println(Thread.currentThread().getName() + " escribiendo...");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.println(Thread.currentThread().getName() + " termino de escribir");
+			hayEscritor = false;
 		}
-		System.out.println(Thread.currentThread().getName() + " termino de escribir");
-		hayEscritor = false;
-		
-		synchronized (lector) {
-			lector.notifyAll();
+		synchronized (this) {
+			notifyAll();
 		}
 
 //		synchronized (escritor) {

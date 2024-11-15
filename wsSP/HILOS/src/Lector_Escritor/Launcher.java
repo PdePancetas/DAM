@@ -6,10 +6,10 @@ public class Launcher {
 
 	public static void main(String[] args) {
 
-		Recurso r = new Recurso(0);
+		Recurso r = new Recurso();
 		ArrayList<Thread> hilos = new ArrayList<Thread>();
 		hilos.add(new Thread(new Escritor(r), "Escritor - "));
-		for (int i = 0; i < 2; i++) {
+		for (int i = 0; i < 3; i++) {
 			hilos.add(new Thread(new Lector(r), "Lector " + i + " - "));
 		}
 
