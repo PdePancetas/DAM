@@ -8,6 +8,13 @@
 	<name>Tema_1_Ficheros_SAXB</name>
 
 	<dependencies>
+		<!-- Teclado -->
+		<dependency>
+			<groupId>com.pancetas</groupId>
+			<artifactId>teclado</artifactId>
+			<version>1.0</version>
+		</dependency>
+
 		<!--
 		https://mvnrepository.com/artifact/net.sf.jasperreports/jasperreports -->
 		<dependency>

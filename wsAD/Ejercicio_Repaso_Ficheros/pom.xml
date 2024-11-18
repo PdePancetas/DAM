@@ -8,6 +8,14 @@
 	<name>Ejercicio_Repaso_Ficheros</name>
 
 	<dependencies>
+		
+		<!-- Teclado -->
+		<dependency>
+			<groupId>com.pancetas</groupId>
+			<artifactId>teclado</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
 		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
 			<groupId>org.json</groupId>
