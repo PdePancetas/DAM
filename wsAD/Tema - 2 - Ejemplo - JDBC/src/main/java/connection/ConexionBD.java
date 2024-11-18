@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 import properties.Properties;
 
+//CLASE CON PATRÓN SINGLETON
 public class ConexionBD {
 
 	private Connection conex = null;
@@ -13,6 +14,7 @@ public class ConexionBD {
 	public Connection getConex() {
 		if (conex != null)
 			return conex;
+		
 		String url = Properties.getConfig().getProperty("url");
 		String user = Properties.getConfig().getProperty("user");
 		String pw = Properties.getConfig().getProperty("password");

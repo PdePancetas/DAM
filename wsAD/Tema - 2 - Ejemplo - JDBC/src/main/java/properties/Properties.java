@@ -1,8 +1,8 @@
 package properties;
 
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 
 public class Properties {
 	
@@ -16,7 +16,9 @@ public class Properties {
 		config = new java.util.Properties();
 		
 		try {
-			config.load(new FileInputStream("src/main/resources/bbdd.properties"));
+			InputStream inputStream = Properties.class.getClassLoader().getResourceAsStream("bbdd.properties");
+			config.load(inputStream);
+//			config.load(new FileInputStream("src/main/resources/bbdd.properties"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
