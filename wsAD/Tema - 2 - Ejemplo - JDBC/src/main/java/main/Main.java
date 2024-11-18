@@ -11,8 +11,8 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException {
 
-		AlumnoDAO alDao = new AlumnoDAO();
-		ProfesorDAO pDao = new ProfesorDAO();
+//		AlumnoDAO alDao = new AlumnoDAO();
+//		ProfesorDAO pDao = new ProfesorDAO();
 
 //		Alumno a = new Alumno(7, 1, "Francisco", 7);
 //		if (alDao.addAlumno(a))
@@ -28,7 +28,7 @@ public class Main {
 
 //		System.out.println(alDao.addAlumnoV2(a));
 
-		Profesor p = new Profesor(3, "Jorge", "EEDD");
+//		Profesor p = new Profesor(3, "Jorge", "EEDD");
 //		System.out.println(pDao.addProferor(p));
 //		System.out.println(pDao.deleteProfesor(3));
 //		System.out.println(pDao.updateProfesor(p));
