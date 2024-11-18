@@ -9,9 +9,9 @@ import properties.Properties;
 //CLASE CON PATRÓN SINGLETON
 public class ConexionBD {
 
-	private Connection conex = null;
+	private static Connection conex = null;
 
-	public Connection getConex() {
+	public static Connection getConex() {
 		if (conex != null)
 			return conex;
 		
@@ -27,8 +27,8 @@ public class ConexionBD {
 		return conex;
 	}
 
-	public void setConex(Connection conexion) {
-		this.conex = conexion;
+	public static void setConex(Connection conexion) {
+		conex = conexion;
 	}
 
 }
