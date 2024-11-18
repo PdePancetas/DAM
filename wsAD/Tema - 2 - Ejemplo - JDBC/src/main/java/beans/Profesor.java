@@ -40,4 +40,11 @@ public class Profesor {
 		super();
 	}
 
+	@Override
+	public String toString() {
+		return "Profesor idProfesor=" + idProfesor + ", nombre=" + nombre + ", modulo=" + modulo;
+	}
+
+	
+	
 }

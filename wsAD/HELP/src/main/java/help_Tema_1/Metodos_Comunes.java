@@ -158,7 +158,7 @@ public class Metodos_Comunes {
 	// 
 	//	private static void escribirYLeerJsonAlt(Map<String, Object> dataMap) {
 	//
-	//		try {
+	//		
 	//			File jsonFile = new File("datosMiguel.json");
 	//			ObjectMapper mapper = new ObjectMapper();
 	//
@@ -170,16 +170,6 @@ public class Metodos_Comunes {
 	//			Map<String, Object> datos = new HashMap<>();
 	//			datos = mapper.readValue(jsonFile, datos.getClass());
 	//			System.out.println(datos);
-	//		} catch (StreamWriteException e) {
-	//			e.printStackTrace();
-	//		} catch (DatabindException e) {
-	//			e.printStackTrace();
-	//		} catch (StreamReadException e) {
-	//			e.printStackTrace();
-	//		} catch (IOException e) {
-	//			e.printStackTrace();
-	//		}
-	//
 	//	}
 	
 	////////////////////////////////////////////////////////////////////////////////////
