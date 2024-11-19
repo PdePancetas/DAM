@@ -1,11 +1,16 @@
 package logic;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +22,7 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.XML;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -94,10 +100,9 @@ public class Func {
 	 * @throws JAXBException
 	 * @throws IOException
 	 */
-	public static Libros mostrarPorAutor(String nombreAutor)
-			throws FileNotFoundException, JAXBException, IOException {
-		
-		Libros libros  = new Libros();
+	public static Libros mostrarPorAutor(String nombreAutor) throws FileNotFoundException, JAXBException, IOException {
+
+		Libros libros = new Libros();
 		JSONArray librosJson = Func.leerFicheroJSON(getFicheroJSON());
 
 		for (int i = 0; i < librosJson.length(); i++) {
@@ -121,10 +126,12 @@ public class Func {
 
 		return libros;
 	}
+
 	/**
 	 * 
-	 * @param autorConString boolean con el que se decide si se devuelve un objeto Libros
-	 *  cuya propiedad autores sea un ArrayList o un String
+	 * @param autorConString boolean con el que se decide si se devuelve un objeto
+	 *                       Libros cuya propiedad autores sea un ArrayList o un
+	 *                       String
 	 * @return Objeto Libros leido desde el archivo json
 	 * @throws IOException
 	 */
@@ -172,9 +179,9 @@ public class Func {
 
 	/**
 	 * 
-	 * @param autorConString boolean con el que se decide si se escribe en el xml un objeto Libros
-	 *  cuya propiedad autores es un ArrayList o un String 
-	 *  (en este caso sera un ArrayList)
+	 * @param autorConString boolean con el que se decide si se escribe en el xml un
+	 *                       objeto Libros cuya propiedad autores es un ArrayList o
+	 *                       un String (en este caso sera un ArrayList)
 	 * @throws IOException
 	 * @throws JAXBException
 	 */
@@ -205,8 +212,8 @@ public class Func {
 	/**
 	 * 
 	 * @param stockDado cantidad utilizada como filtro
-	 * @return Objeto Libros cuya lista de libros 
-	 *  solo tiene libros con un stock menor a stockDado
+	 * @return Objeto Libros cuya lista de libros solo tiene libros con un stock
+	 *         menor a stockDado
 	 * @throws FileNotFoundException
 	 * @throws ParserConfigurationException
 	 * @throws SAXException
@@ -238,7 +245,8 @@ public class Func {
 
 	/**
 	 * 
-	 * @param libros objeto Libros del que se obtendran los datos para el informe
+	 * @param libros        objeto Libros del que se obtendran los datos para el
+	 *                      informe
 	 * @param tituloInforme nombre que tendra el archivo pdf que se creara
 	 * @throws JRException
 	 */

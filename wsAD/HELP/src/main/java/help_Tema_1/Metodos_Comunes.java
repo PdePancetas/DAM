@@ -25,6 +25,8 @@ import javax.xml.transform.TransformerFactoryConfigurationError;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.json.JSONObject;
+import org.json.XML;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
@@ -45,6 +47,13 @@ public class Metodos_Comunes {
 	// Para obtener recursos de la carpeta resources en Maven
 	// InputStream is =
 	// Main.class.getClassLoader().getResourceAsStream("nombreFichero");
+	
+	// Para obtener json de xml: 
+	// String datosXML = new String(Files.readAllBytes(Path.of(new File("archivo.xml").getPath())));
+	// JSONObject o = XML.toJSONObject(datosXML);
+	// Para obtener xml de json:
+	// String datosJson = XML.toString(JSONObject, 1);
+	// 
 
 	//////////////////////////////// XML/////////////////////////////
 	public static File getFichero() throws FileNotFoundException, IOException {

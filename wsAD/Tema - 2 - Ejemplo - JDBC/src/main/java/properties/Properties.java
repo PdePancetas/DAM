@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
+//CLASE CON PATRÓN SINGLETON
 public class Properties {
 	
 	private static java.util.Properties config = null;
