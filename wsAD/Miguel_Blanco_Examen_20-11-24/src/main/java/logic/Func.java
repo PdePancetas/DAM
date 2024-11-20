@@ -4,8 +4,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+
 import properties.Properties;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -102,16 +106,16 @@ public class Func {
 							.parseInt(intercambio.getElementsByTagName("ID_Juego").item(0).getTextContent());
 					if (ID_Juego == idJuego) {
 						System.out.println(
-								"El juego está intercambiado, los id de usuarios implicados en el intercambio son: ");
+								"\nIntercambio encontrado: ");
 
 						int ID_Emisor = Integer.parseInt(
 								intercambio.getElementsByTagName("ID_Usuario_Emisor").item(0).getTextContent());
 						int ID_Receptor = Integer.parseInt(
 								intercambio.getElementsByTagName("ID_Usuario_Receptor").item(0).getTextContent());
 
-						System.out.println("ID usuario emisor: " + ID_Emisor);
-						System.out.println("ID usuario receptor: " + ID_Receptor);
-						System.out.println("ID juego intercambiado: " + ID_Juego);
+						System.out.println("ID emisor: " + ID_Emisor);
+						System.out.println("ID receptor: " + ID_Receptor);
+						System.out.println("ID juego : " + ID_Juego);
 					}
 				}
 			}
@@ -142,21 +146,27 @@ public class Func {
 			System.out.println("Usuarios: ");
 			users.stream().forEach(System.out::println);
 
-			users.remove(new Usuario(idUsuario, ""));
+//			users.remove(new Usuario(idUsuario, ""));
+			bibliotecaVideojuegos.setUsuarios(new ArrayList<Usuario>(users.stream().filter(user -> user.getIdUsuario() != idUsuario).toList()));
+			
 			System.out.println("\nUsuarios habiendo eliminado Id de usuario " + idUsuario + ": ");
 			users.stream().forEach(System.out::println);
 
 			// Eliminar intercambios que contengan en emisor o receptor id idUsuario
 			System.out.println("\nIntercambios: ");
 			exchanges.stream().forEach(System.out::println);
+			///////////////////////////
 
-			for (int i = 0; i < exchanges.size(); i++) {
-				if (exchanges.get(i).getIdEmisor() == idUsuario || exchanges.get(i).getIdReceptor() == idUsuario)
-					exchanges.remove(i);
-			}
-			
-			
-			System.out.println("Intercambios habiendo eliminado Id de usuario " + idUsuario + ": ");
+			bibliotecaVideojuegos.setIntercambios(new ArrayList<Intercambio>(exchanges.stream()
+					.filter(exchange -> exchange.getIdEmisor() != idUsuario && exchange.getIdReceptor() != idUsuario)
+					.toList()));
+			////////////////////////////
+//			for (int i = 0; i < exchanges.size(); i++) {
+//				if (exchanges.get(i).getIdEmisor() == idUsuario || exchanges.get(i).getIdReceptor() == idUsuario)
+//					exchanges.remove(i);
+//			}
+
+			System.out.println("\nIntercambios habiendo eliminado Id de usuario " + idUsuario + ": ");
 			exchanges.stream().forEach(System.out::println);
 
 			System.out.println("\n Se ha eliminado con exito al usuario " + idUsuario);
@@ -181,103 +191,77 @@ public class Func {
 	static void generaInforme(int idUsuario) throws JRException {
 
 		ArrayList<Dato> datos = new ArrayList<>();
-
-		Usuario user = getUser(idUsuario);
-
-		Juego game = getGame(idUsuario);
-
-		ArrayList<Usuario> users = getUsersExchange(idUsuario);
-
-		datos.add(new Dato(user.getIdUsuario(), user.getNombre(), users, game.getTitulo()));
-
-		String ficheroJasper = Properties.getConfig().getProperty("ficheroJasper");
-		String informePdf = "datos/informe.pdf";
-
-		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource(datos);
-
-		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(ficheroJasper);
-
-		Map<String, Object> params = new HashMap<String, Object>();
-
-		params.put("idUsuario", user.getIdUsuario());
-		params.put("nombreUsuario", user.getNombre());
-
-		JasperPrint informe = JasperFillManager.fillReport(jasperReport, params, camposInforme);
-
-		JasperExportManager.exportReportToPdfFile(informe, informePdf);
-	}
-
-	private static Usuario getUser(int idUsuario) {
-
-		BibliotecaVideojuegos bibliotecaVideojuegos;
 		try {
-			bibliotecaVideojuegos = leerFicheroJAXB(getFichero());
-			for (Usuario user : bibliotecaVideojuegos.getUsuarios()) {
-				if (user.getIdUsuario() == idUsuario)
-					return user;
-			}
-		} catch (JAXBException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			BibliotecaVideojuegos bibliotecaVideojuegos = leerFicheroJAXB(getFichero());
+			for (Intercambio i : bibliotecaVideojuegos.getIntercambios())
+				if (i.getIdEmisor() == idUsuario || i.getIdReceptor() == idUsuario)
+					datos.add(crearDato(bibliotecaVideojuegos, i, idUsuario));
 
-		return null;
-	}
+			String ficheroJasper = Properties.getConfig().getProperty("ficheroJasper");
+			String informePdf = "datos/informe_User-"+idUsuario+".pdf";
 
-	private static Juego getGame(int idUsuario) {
+			JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource(datos);
 
-		BibliotecaVideojuegos bibliotecaVideojuegos;
-		try {
-			bibliotecaVideojuegos = leerFicheroJAXB(getFichero());
-			int idJuego = 0;
-			boolean esta = false;
-			for (Intercambio exchange : bibliotecaVideojuegos.getIntercambios())
-				if (exchange.getIdEmisor() == idUsuario || exchange.getIdReceptor() == idUsuario) {
-					idJuego = exchange.getIdJuego();
-					esta = true;
-				}
+			JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(ficheroJasper);
 
-			if (esta)
-				for (Juego game : bibliotecaVideojuegos.getJuegos())
-					if (game.getIdJuego() == idJuego)
-						return game;
+			Map<String, Object> params = new HashMap<String, Object>();
 
-		} catch (JAXBException | IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			params.put("idUsuario", idUsuario);
+			params.put("nombreUsuario", getUserName(idUsuario, bibliotecaVideojuegos).get());
 
-		return null;
-	}
+			JasperPrint informe = JasperFillManager.fillReport(jasperReport, params, camposInforme);
 
-	private static ArrayList<Usuario> getUsersExchange(int idUsuario) {
-
-		BibliotecaVideojuegos bibliotecaVideojuegos;
-		ArrayList<Usuario> users = new ArrayList<>();
-		try {
-			bibliotecaVideojuegos = leerFicheroJAXB(getFichero());
-		int idEmisor = 0;
-		int idReceptor = 0;
-			for (Intercambio exchange : bibliotecaVideojuegos.getIntercambios())
-				if (exchange.getIdEmisor() == idUsuario || exchange.getIdReceptor() == idUsuario) {
-					idEmisor = exchange.getIdEmisor();
-					idReceptor = exchange.getIdReceptor();
-				}
-			
-			for(Usuario user: bibliotecaVideojuegos.getUsuarios()) {
-				if(user.getIdUsuario() == idEmisor)
-					users.add(user);
-				else if(user.getIdUsuario() == idReceptor) {
-					users.add(user);
-				}
-			}
-			return users;
-
+			JasperExportManager.exportReportToPdfFile(informe, informePdf);
 		} catch (JAXBException | IOException e) {
 			e.printStackTrace();
 		}
+	}
 
-		return null;
+	private static Dato crearDato(BibliotecaVideojuegos biblio, Intercambio i, int idUsuario) {
+		Dato dato = new Dato();
+
+		dato.setIdUsuario(idUsuario);
+		dato.setNombreUsuario(getUserName(idUsuario, biblio).get());
+
+		ArrayList<Usuario> usuarios = new ArrayList<>();
+		usuarios.add(getUser(i.getIdEmisor(), biblio).get());
+		usuarios.add(getUser(i.getIdReceptor(), biblio).get());
+		dato.setUsuarios(usuarios);
+
+		dato.setNombreJuego(getGameTitle(i.getIdJuego(), biblio).get());
+
+		return dato;
+	}
+
+	public static Optional<String> getUserName(int idUsuario, BibliotecaVideojuegos biblio) {
+
+		return biblio.getUsuarios().stream().filter(user -> user.getIdUsuario() == idUsuario).map(Usuario::getNombre)
+				.findFirst();
+	}
+
+	public static Optional<String> getGameTitle(int idJuego, BibliotecaVideojuegos biblio) {
+
+		return biblio.getJuegos().stream().filter(juego -> juego.getIdJuego() == idJuego).map(Juego::getTitulo)
+				.findFirst();
+	}
+
+	public static Optional<Usuario> getUser(int idUsuario, BibliotecaVideojuegos biblio) {
+		return biblio.getUsuarios().stream().filter(usr -> usr.getIdUsuario() == idUsuario).findFirst();
+	}
+
+	public static List<Integer> getUserIds() throws FileNotFoundException, JAXBException, IOException {
+
+		BibliotecaVideojuegos biblio = leerFicheroJAXB(getFichero());
+		
+		return biblio.getUsuarios().stream()
+				.map(Usuario::getIdUsuario).toList();
+	}
+
+	public static Object getGameIds() throws FileNotFoundException, JAXBException, IOException {
+		BibliotecaVideojuegos biblio = leerFicheroJAXB(getFichero());
+		
+		return biblio.getJuegos().stream()
+				.map(Juego::getIdJuego).toList();
 	}
 
 }
