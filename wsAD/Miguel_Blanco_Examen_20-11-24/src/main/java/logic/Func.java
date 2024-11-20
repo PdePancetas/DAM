@@ -257,7 +257,7 @@ public class Func {
 				.map(Usuario::getIdUsuario).toList();
 	}
 
-	public static Object getGameIds() throws FileNotFoundException, JAXBException, IOException {
+	public static List<Integer> getGameIds() throws FileNotFoundException, JAXBException, IOException {
 		BibliotecaVideojuegos biblio = leerFicheroJAXB(getFichero());
 		
 		return biblio.getJuegos().stream()
