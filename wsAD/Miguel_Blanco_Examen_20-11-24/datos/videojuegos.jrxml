@@ -1,0 +1,91 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Coffee" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced95029-b569-4027-895c-af2843a4e088">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50.0" bold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18.0"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12.0" bold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12.0"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle backcolor="#E6DAC3">
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+		</conditionalStyle>
+	</style>
+	<parameter name="idUsuario" class="java.lang.Integer"/>
+	<parameter name="nombreUsuario" class="java.lang.String"/>
+	<query language="sql"><![CDATA[]]></query>
+	<field name="idUsuario" class="java.lang.Integer"/>
+	<field name="nombreUsuario" class="java.lang.String"/>
+	<field name="usuarios" class="java.util.ArrayList"/>
+	<field name="nombreJuego" class="java.lang.String"/>
+	<background splitType="Stretch"/>
+	<title height="136" splitType="Stretch">
+		<element kind="staticText" uuid="1a652692-054a-40f3-ade5-68d8da36626d" x="132" y="0" width="293" height="62" vTextAlign="Middle" style="Title">
+			<text><![CDATA[Videojuegos]]></text>
+		</element>
+		<element kind="textField" uuid="df314764-ac2c-41b5-8fb0-ae9644faa059" x="147" y="62" width="262" height="18" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA["Intercambios de "+$P{nombreUsuario}]]></expression>
+		</element>
+		<element kind="textField" uuid="5f7609f6-644d-4c98-bf94-e34b89a8e802" x="445" y="10" width="100" height="30">
+			<expression><![CDATA["ID: "+$P{idUsuario}]]></expression>
+		</element>
+	</title>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader height="71" splitType="Stretch">
+		<element kind="line" uuid="1a61a836-d137-48b1-ad67-6ff64600bf93" positionType="FixRelativeToBottom" x="0" y="70" width="555" height="1">
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</element>
+		<element kind="staticText" uuid="64c453ee-a97a-4444-aa45-64dcc3a2bc38" x="1" y="24" width="78" height="30" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[ID]]></text>
+		</element>
+		<element kind="staticText" uuid="6e2b0a8f-4a54-4c63-95a1-97e16bb1411f" x="80" y="24" width="70" height="30" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Nombre]]></text>
+		</element>
+		<element kind="staticText" uuid="cb975436-c997-44d9-85e0-33dbc2b83b5b" x="150" y="24" width="300" height="30" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Usuarios del intercambio]]></text>
+		</element>
+		<element kind="staticText" uuid="542aa41d-a3f3-45fd-9c3c-12f5ec6d25e5" x="450" y="24" width="104" height="30" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Juego]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<element kind="frame" uuid="a98495d8-3c8d-4fa0-81f5-30c3efc2f766" mode="Opaque" x="0" y="0" width="555" height="50" style="Row">
+				<element kind="textField" uuid="c1e2c289-a0bc-44e1-9bba-2720ce14f0e7" x="1" y="0" width="78" height="30" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA[$F{idUsuario}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="70e5fa97-dc9b-4705-a654-e73824d76035"/>
+				</element>
+				<element kind="textField" uuid="125392a0-1556-4ba8-978e-913025c8ca29" x="80" y="0" width="70" height="30" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA[$F{nombreUsuario}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c30605b4-92c1-4943-b606-848b5bea7040"/>
+				</element>
+				<element kind="textField" uuid="14cc9280-09fd-442d-b847-8f646fdeb9c7" x="150" y="0" width="300" height="30" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA[$F{usuarios}.toString()]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="283366ef-1e8e-4b7f-abe4-a35c8463506e"/>
+				</element>
+				<element kind="textField" uuid="4fc2ae1f-b9d0-487a-87b4-f837a6eea2b0" x="452" y="-1" width="102" height="30" hTextAlign="Center" vTextAlign="Middle">
+					<expression><![CDATA[$F{nombreJuego}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5bede6bc-4075-41a8-8578-1ba3ae825f1a"/>
+				</element>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="21" splitType="Stretch">
+		<element kind="line" uuid="fa45a887-615a-4d84-a2d7-8a2219671b3c" positionType="FixRelativeToBottom" x="1" y="20" width="555" height="1">
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</element>
+	</columnFooter>
+	<pageFooter height="25" splitType="Stretch">
+		<element kind="frame" uuid="183682bc-d976-4756-83e0-6625a3f98ed1" mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF">
+			<element kind="textField" uuid="0193f9b3-1559-491a-8580-b6988863b6a1" x="533" y="0" width="40" height="20" forecolor="#736343" fontSize="10.0" evaluationTime="Report" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+			</element>
+			<element kind="textField" uuid="d00b105e-494b-418b-8ac9-8b1b4824f4f0" x="453" y="0" width="80" height="20" forecolor="#736343" fontSize="10.0" bold="false" hTextAlign="Right" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+			</element>
+			<element kind="textField" uuid="0616f3fe-0354-456f-8911-ec30ec51a5ae" x="22" y="1" width="197" height="20" forecolor="#736343" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[new java.util.Date()]]></expression>
+			</element>
+		</element>
+	</pageFooter>
+	<summary splitType="Stretch"/>
+</jasperReport>

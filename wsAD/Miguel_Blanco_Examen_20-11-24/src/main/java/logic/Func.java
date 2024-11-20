@@ -19,6 +19,7 @@ import org.w3c.dom.Node;
 import org.xml.sax.SAXException;
 
 import beans.BibliotecaVideojuegos;
+import beans.Dato;
 import beans.Intercambio;
 import beans.Juego;
 import beans.Usuario;
@@ -153,6 +154,8 @@ public class Func {
 				if (exchanges.get(i).getIdEmisor() == idUsuario || exchanges.get(i).getIdReceptor() == idUsuario)
 					exchanges.remove(i);
 			}
+			
+			
 			System.out.println("Intercambios habiendo eliminado Id de usuario " + idUsuario + ": ");
 			exchanges.stream().forEach(System.out::println);
 
@@ -188,7 +191,7 @@ public class Func {
 		datos.add(new Dato(user.getIdUsuario(), user.getNombre(), users, game.getTitulo()));
 
 		String ficheroJasper = Properties.getConfig().getProperty("ficheroJasper");
-		String informePdf = Properties.getConfig().getProperty("ficheroPdf");
+		String informePdf = "datos/informe.pdf";
 
 		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource(datos);
 
@@ -253,13 +256,22 @@ public class Func {
 		ArrayList<Usuario> users = new ArrayList<>();
 		try {
 			bibliotecaVideojuegos = leerFicheroJAXB(getFichero());
-
+		int idEmisor = 0;
+		int idReceptor = 0;
 			for (Intercambio exchange : bibliotecaVideojuegos.getIntercambios())
 				if (exchange.getIdEmisor() == idUsuario || exchange.getIdReceptor() == idUsuario) {
-					users.add(new Usuario(exchange.getIdEmisor(), "emisor"));
-					users.add(new Usuario(exchange.getIdReceptor(), "receptor"));
-					return users;
+					idEmisor = exchange.getIdEmisor();
+					idReceptor = exchange.getIdReceptor();
 				}
+			
+			for(Usuario user: bibliotecaVideojuegos.getUsuarios()) {
+				if(user.getIdUsuario() == idEmisor)
+					users.add(user);
+				else if(user.getIdUsuario() == idReceptor) {
+					users.add(user);
+				}
+			}
+			return users;
 
 		} catch (JAXBException | IOException e) {
 			e.printStackTrace();

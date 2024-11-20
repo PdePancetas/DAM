@@ -1,8 +1,6 @@
-package logic;
+package beans;
 
 import java.util.ArrayList;
-
-import beans.Usuario;
 
 public class Dato {
 
