@@ -142,34 +142,14 @@ public class Func {
 			ArrayList<Usuario> users = bibliotecaVideojuegos.getUsuarios();
 			ArrayList<Intercambio> exchanges = bibliotecaVideojuegos.getIntercambios();
 
-			// Eliminar usuario de usuarios
-			System.out.println("Usuarios: ");
-			users.stream().forEach(System.out::println);
-
-//			users.remove(new Usuario(idUsuario, ""));
-			bibliotecaVideojuegos.setUsuarios(new ArrayList<Usuario>(users.stream().filter(user -> user.getIdUsuario() != idUsuario).toList()));
+			bibliotecaVideojuegos.setUsuarios(new ArrayList<Usuario>(
+					users.stream().filter(user -> user.getIdUsuario() != idUsuario).toList()));
 			
-			System.out.println("\nUsuarios habiendo eliminado Id de usuario " + idUsuario + ": ");
-			users.stream().forEach(System.out::println);
-
-			// Eliminar intercambios que contengan en emisor o receptor id idUsuario
-			System.out.println("\nIntercambios: ");
-			exchanges.stream().forEach(System.out::println);
-			///////////////////////////
-
 			bibliotecaVideojuegos.setIntercambios(new ArrayList<Intercambio>(exchanges.stream()
 					.filter(exchange -> exchange.getIdEmisor() != idUsuario && exchange.getIdReceptor() != idUsuario)
 					.toList()));
-			////////////////////////////
-//			for (int i = 0; i < exchanges.size(); i++) {
-//				if (exchanges.get(i).getIdEmisor() == idUsuario || exchanges.get(i).getIdReceptor() == idUsuario)
-//					exchanges.remove(i);
-//			}
 
-			System.out.println("\nIntercambios habiendo eliminado Id de usuario " + idUsuario + ": ");
-			exchanges.stream().forEach(System.out::println);
-
-			System.out.println("\n Se ha eliminado con exito al usuario " + idUsuario);
+			
 
 			escribirFicheroJAXB(bibliotecaVideojuegos);
 		} catch (JAXBException | IOException e) {

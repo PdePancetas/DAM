@@ -36,7 +36,7 @@ public class Main {
 					id = Teclado.leerEntero();
 					String nombre = Func.getUserName(id, Func.leerFicheroJAXB(Func.getFichero())).get();
 					Func.eliminaUsuario(id);
-					System.out.println("Usuario " + nombre + "eliminado");
+					System.out.println("\n Se ha eliminado con exito al usuario " + nombre);
 					break;
 				case 3:
 					System.out.print("Id de usuario " + Func.getUserIds().toString() + ": ");
