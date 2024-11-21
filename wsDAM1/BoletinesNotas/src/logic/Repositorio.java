@@ -19,53 +19,61 @@ public class Repositorio {
 //	 3. Mostrar todos los alumnos que tienen nota en una asignatura concreta dado el nombre de la asignatura
 
 	public static void mostrarNotasAlumno(String nif) throws IOException {
-		Set<Entry<Alumno, File>> boletines = Datos.getBoletines().entrySet();
-		for (Entry<Alumno, File> e : boletines) {
-			if (e.getKey().getNif().equals(nif)) {
-				FileReader fr = new FileReader(e.getValue());
-				BufferedReader br = new BufferedReader(fr);
-				String linea;
-				System.out.println("Asignaturas de "+e.getKey().getNombre()+":");
-				while ((linea = br.readLine()) != null)
-					System.out.println("  "+linea);
-				br.close();
-			}
-		}
+//		Set<Entry<Alumno, File>> boletines = Datos.getBoletines().entrySet();
+//		for (Entry<Alumno, File> e : boletines) {
+//			if (e.getKey().getNif().equals(nif)) {
+//				FileReader fr = new FileReader(e.getValue());
+//				BufferedReader br = new BufferedReader(fr);
+//				String linea;
+//				System.out.println("Asignaturas de "+e.getKey().getNombre()+":");
+//				while ((linea = br.readLine()) != null)
+//					System.out.println("  "+linea);
+//				br.close();
+//			}
+//		}
+
+		String linea = "";
+		BufferedReader br = new BufferedReader(new FileReader(Datos.getBoletines().entrySet().stream()
+				.filter(entry -> entry.getKey().getNif().equals(nif)).findAny().get().getValue()));
+		while ((linea = br.readLine()) != null)
+			System.out.println(linea);
+		br.close();
+
 	}
 
 	public static void asociarBoletinNuevoAlumnoNuevo(String nif, String nombre) throws IOException {
 		System.out.println("Introduce el contenido del boletin (Ej linea: Lengua: 6): ");
-		File f = new File(Datos.getDir(),"Boletin de "+nombre+", "+nif+".txt");
+		File f = new File(Datos.getDir(), "Boletin de " + nombre + ", " + nif + ".txt");
 		f.createNewFile();
-		FileWriter fr = new FileWriter(f,true);
+		FileWriter fr = new FileWriter(f, true);
 		String s = "";
-		while(!s.equals("fin")) {
+		while (!s.equals("fin")) {
 			s = Teclado.leerCadena();
-			fr.write((s.equals("fin"))?"":s+"\n");
+			fr.write((s.equals("fin")) ? "" : s + "\n");
 		}
-		
+
 		fr.close();
 		Datos.getBoletines().put(new Alumno(nif, nombre), f);
 
 	}
-	
+
 	public static void mostrarAlumnosConNotaEnAsignatura(String nomAsig) throws IOException {
-		System.out.println("Alumnos con nota en "+nomAsig+":");
+		System.out.println("Alumnos con nota en " + nomAsig + ":");
 		Set<Entry<Alumno, File>> boletines = Datos.getBoletines().entrySet();
 		for (Entry<Alumno, File> e : boletines) {
 			FileReader fr = new FileReader(e.getValue());
 			BufferedReader br = new BufferedReader(fr);
 			String s;
-			while((s=br.readLine())!=null){
-				if(s.contains(nomAsig)) {
-					System.out.println("- "+e.getKey().getNombre());
+			while ((s = br.readLine()) != null) {
+				if (s.contains(nomAsig)) {
+					System.out.println("- " + e.getKey().getNombre());
 				}
 			}
 		}
 	}
 
 	public static void crearCarpetaBoletines(File dir) throws IOException {
-		
+
 		dir.mkdir();
 	}
 

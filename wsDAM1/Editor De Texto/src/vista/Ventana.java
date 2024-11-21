@@ -164,14 +164,13 @@ public class Ventana extends JFrame {
 			} else if (e.getSource() == menuTamaño) {
 				String fichero = JOptionPane.showInputDialog(
 						"Introduce un nombre de entre estos archivos:\n" + Ficheros.ficheros.keySet().toString());
-				
+
 				try {
 					int numChars = Ficheros.calcularTamaño(fichero);
 					JOptionPane.showMessageDialog(rootPane, "Numero de caracteres: " + numChars);
 				} catch (NullPointerException e1) {
 					JOptionPane.showMessageDialog(rootPane, "No hay caracteres introducidos");
 				}
-				
 
 			} else if (e.getSource() == menuContarLineas) {
 				String fichero = JOptionPane.showInputDialog(
@@ -182,7 +181,6 @@ public class Ventana extends JFrame {
 				} catch (NullPointerException e1) {
 					JOptionPane.showMessageDialog(rootPane, "No hay caracteres introducidos");
 				}
-				
 
 			} else if (e.getSource() == menuSelecMay) {
 				try {
@@ -220,16 +218,11 @@ public class Ventana extends JFrame {
 	public static void main(String[] args) {
 
 		final Ventana v = new Ventana();
-		SwingUtilities.invokeLater(new Runnable() {
-
-			@Override
-			public void run() {
-				v.setVisible(true);
-				v.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				v.setLocation(300, 300);
-				v.setSize(750, 432);
-			}
-
+		SwingUtilities.invokeLater(() -> {
+			v.setVisible(true);
+			v.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			v.setLocation(300, 300);
+			v.setSize(750, 432);
 		});
 
 	}

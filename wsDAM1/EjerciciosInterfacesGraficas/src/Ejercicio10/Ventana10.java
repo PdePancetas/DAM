@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import javax.swing.*;
 import java.awt.Font;
@@ -346,7 +347,10 @@ public class Ventana10 extends JFrame {
 			codigos += s + ", ";
 		}
 		codigos += "]";
-		pedidosMostrados.setText(codigos);
+		pedidosMostrados.setText(Pedido2.getPedidos2()
+				.keySet()
+				.stream()
+				.collect(Collectors.joining(", ","Codigos: " , "")));
 
 	}
 }

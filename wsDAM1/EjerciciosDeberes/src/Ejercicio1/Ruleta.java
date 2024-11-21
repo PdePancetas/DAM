@@ -56,8 +56,8 @@ public class Ruleta {
 			System.out.println("el número de la ruleta fue " + numRuleta);
 			System.out.println("Jugador1 apostó " + apuestaJ1);
 			System.out.println("Ganancia del jugador " + gananciaJ1);
-			dineroRuleta = dineroRuleta - gananciaJ1;
-			dineroJ1 = dineroJ1 + gananciaJ1;
+			dineroRuleta -= gananciaJ1;
+			dineroJ1 += gananciaJ1;
 			System.out.println("Dinero de la ruleta " + dineroRuleta);
 			System.out.println("Dinero del jugador1: " + dineroJ1);
 			System.out.println("Límite de dinero para ganar hoy en el casino" + limite);
