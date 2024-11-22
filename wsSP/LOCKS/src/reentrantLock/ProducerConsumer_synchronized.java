@@ -2,6 +2,8 @@ package reentrantLock;
 
 
 import java.util.LinkedList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ProducerConsumer_synchronized {
 
@@ -24,7 +26,7 @@ public class ProducerConsumer_synchronized {
 				while (buffer.size() != capacity) {
 					// Añadir elemento al buffer
 					buffer.add(value);
-					System.out.println("Productor produjo: " + value + "(" + buffer.size() + ")");
+					System.out.println("Productor produjo: " + value + " (" + buffer.size() + ")");
 				}
 			}
 			// Señalar a los consumidores que hay elementos disponibles
@@ -52,7 +54,7 @@ public class ProducerConsumer_synchronized {
 				// Extraer elemento del buffer
 				int value = buffer.removeFirst();
 				System.out
-						.println(Thread.currentThread().getName() + " consumió: " + value + "(" + buffer.size() + ")");
+						.println(Thread.currentThread().getName() + " consumió: " + value + " (" + buffer.size() + ")");
 			}
 			synchronized (notFull) {
 				notFull.notifyAll();
@@ -75,17 +77,20 @@ public class ProducerConsumer_synchronized {
 			}
 		});
 
+		producerThread.start();
 		
-		for (int i = 0; i < 5; i++) {
-			new Thread(() -> {
+		ExecutorService e = Executors.newFixedThreadPool(5); 
+		for (int i = 0; i < 15; i++) {
+			e.execute(() -> {
 				try {
 					pc.consume();
-				} catch (InterruptedException e) {
+				} catch (InterruptedException e1) {
 					Thread.currentThread().interrupt();
 				}
-			}).start();;
+			});
 		}
-		// Iniciar los hilos
-		producerThread.start();
+		e.shutdown();
+		
+		
 	}
 }
