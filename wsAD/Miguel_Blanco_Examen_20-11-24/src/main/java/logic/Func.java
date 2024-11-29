@@ -123,7 +123,6 @@ public class Func {
 		} catch (ParserConfigurationException | SAXException | IOException e) {
 			e.printStackTrace();
 		}
-
 	}
 
 	/**
@@ -146,7 +145,7 @@ public class Func {
 					users.stream().filter(user -> user.getIdUsuario() != idUsuario).toList()));
 			
 			bibliotecaVideojuegos.setIntercambios(new ArrayList<Intercambio>(exchanges.stream()
-					.filter(exchange -> exchange.getIdEmisor() != idUsuario && exchange.getIdReceptor() != idUsuario)
+					.filter(exchange -> exchange.getIdEmisor() != idUsuario || exchange.getIdReceptor() != idUsuario)
 					.toList()));
 
 			
