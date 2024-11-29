@@ -1,0 +1,4 @@
+EEDD: 7
+
+BBDD: 10
+Programacion: 3
