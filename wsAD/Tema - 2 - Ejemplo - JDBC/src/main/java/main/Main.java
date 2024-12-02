@@ -11,10 +11,11 @@ public class Main {
 
 	public static void main(String[] args) throws SQLException {
 
-//		AlumnoDAO alDao = new AlumnoDAO();
-//		ProfesorDAO pDao = new ProfesorDAO();
+		AlumnoDAO alDao = new AlumnoDAO();
+		ProfesorDAO pDao = new ProfesorDAO();
 
-//		Alumno a = new Alumno(7, 1, "Francisco", 7);
+		Alumno a1 = alDao.retrieveAlumno(1);
+		Alumno a2 = alDao.retrieveAlumno(2);
 //		if (alDao.addAlumno(a))
 //			System.out.println("Se inserto el alumno " + a.getNombre());
 //		else
@@ -37,6 +38,9 @@ public class Main {
 //		for (Profesor pr : pDao.retrieveProfesor("Jorge"))
 //			System.out.println(pr);
 
+//		alDao.intercambiaNota(a1, a2);
+//		alDao.datosAlumnos();
+		alDao.eliminaSuspensosSubeNota_v1(50);
 	}
 
 }
