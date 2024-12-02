@@ -1,30 +1,38 @@
 package beans;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlTransient;
+
+@XmlRootElement(name = "pisos")
 public class Datos {
-	
-	private static Pisos pisos;
+
+	private static List<Piso> pisos;
 	private static List<Empleado> empleados;
 
-	public static Pisos getPisos() {
-		return pisos;
-	}
-
-	public static void setPisos(Pisos pisos) {
-		Datos.pisos = pisos;
-	}
-
-	public static List<Empleado> getEmpleados() {
+	@XmlTransient
+	public List<Empleado> getEmpleados() {
 		return empleados;
 	}
 
-	public static void setEmpleados(List<Empleado> empleados) {
+	public void setEmpleados(List<Empleado> empleados) {
 		Datos.empleados = empleados;
 	}
 
-	public Datos(Pisos pisos, List<Empleado> empleados) {
+	@XmlElement(name = "piso")
+	public List<Piso> getPisos() {
+		return pisos;
+	}
+
+	public void setPisos(List<Piso> pisos) {
+		Datos.pisos = pisos;
+	}
+
+	public Datos(List<Piso> pisos, List<Empleado> empleados) {
 		super();
 		Datos.pisos = pisos;
 		Datos.empleados = empleados;
@@ -33,7 +41,7 @@ public class Datos {
 	public Datos() {
 		super();
 		Datos.empleados = new ArrayList<Empleado>();
-		Datos.pisos = new Pisos();
+		Datos.pisos = new LinkedList<Piso>();
 	}
 
 }
