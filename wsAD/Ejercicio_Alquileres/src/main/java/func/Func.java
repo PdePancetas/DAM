@@ -100,13 +100,6 @@ public class Func {
 		return numAlquilados.lastEntry().getValue();
 	}
 
-	/*
-	 * Dado un xml que contenga información con la siguiente estructura: <pisos>
-	 * <piso> <direccion>xxxx<direccion> <mensualidad>xxxxx<mensualidad>
-	 * <nif_empleado>xxxxxx<nif_empleado> </piso> …… </pisos> Incorporar dichos
-	 * pisos en la base de datos. Hacerlo usando tanto DOM como JAXB
-	 */
-
 	public static void mostrarPisos() {
 		datos.getPisos().stream().forEach(System.out::println);
 	}
@@ -137,6 +130,12 @@ public class Func {
 				.count();
 	}
 
+	/*
+	 * Dado un xml que contenga información con la siguiente estructura: <pisos>
+	 * <piso> <direccion>xxxx<direccion> <mensualidad>xxxxx<mensualidad>
+	 * <nif_empleado>xxxxxx<nif_empleado> </piso> …… </pisos> Incorporar dichos
+	 * pisos en la base de datos. Hacerlo usando tanto DOM como JAXB
+	 */
 	public static void volcarDatosXML_JAXB_a_BBDD() throws FileNotFoundException, JAXBException, IOException {
 		Connection con = ConexionBD.getConex();
 
