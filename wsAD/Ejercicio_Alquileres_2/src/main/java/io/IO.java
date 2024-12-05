@@ -20,7 +20,6 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import beans.Datos;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
@@ -64,44 +63,44 @@ public class IO {
 		transformer.transform(source, result);
 	}
 
-	public static Datos leerFichero(File f) throws JAXBException {
-
-		JAXBContext jaxbContext = JAXBContext.newInstance(Datos.class);
-
-		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-
-		Datos pisos = (Datos) unmarshaller.unmarshal(f);
-
-		return pisos;
-	}
-
-	public static void escribirFichero(Datos pisos) throws JAXBException, FileNotFoundException, IOException {
-
-		JAXBContext jaxbContext = JAXBContext.newInstance(Datos.class);
-
-		Marshaller marshaller = jaxbContext.createMarshaller();
-
-		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-
-		marshaller.marshal(pisos, getFichero());
-	}
-	
-	public static void genInforme(Datos pisos) throws JRException {
-
-		String ficheroJasper = Properties.getConfig().getProperty("ficheroJasper");
-		String informePdf = Properties.getConfig().getProperty("ficheroPdf");
-
-		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource(pisos.getPisos());
-
-
-		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(ficheroJasper);
-
-		Map<String, Object> params = new HashMap<String, Object>();
-
-		JasperPrint informe = JasperFillManager.fillReport(jasperReport, params, camposInforme);
-
-		JasperExportManager.exportReportToPdfFile(informe, informePdf);
-
-	}
+//	public static  leerFichero(File f) throws JAXBException {
+//
+//		JAXBContext jaxbContext = JAXBContext.newInstance(Datos.class);
+//
+//		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+//
+//		Datos pisos = (Datos) unmarshaller.unmarshal(f);
+//
+//		return pisos;
+//	}
+//
+//	public static void escribirFichero(Datos pisos) throws JAXBException, FileNotFoundException, IOException {
+//
+//		JAXBContext jaxbContext = JAXBContext.newInstance(Datos.class);
+//
+//		Marshaller marshaller = jaxbContext.createMarshaller();
+//
+//		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+//
+//		marshaller.marshal(pisos, getFichero());
+//	}
+//	
+//	public static void genInforme(Datos pisos) throws JRException {
+//
+//		String ficheroJasper = Properties.getConfig().getProperty("ficheroJasper");
+//		String informePdf = Properties.getConfig().getProperty("ficheroPdf");
+//
+//		JRBeanCollectionDataSource camposInforme = new JRBeanCollectionDataSource(pisos.getPisos());
+//
+//
+//		JasperReport jasperReport = (JasperReport) JRLoader.loadObjectFromFile(ficheroJasper);
+//
+//		Map<String, Object> params = new HashMap<String, Object>();
+//
+//		JasperPrint informe = JasperFillManager.fillReport(jasperReport, params, camposInforme);
+//
+//		JasperExportManager.exportReportToPdfFile(informe, informePdf);
+//
+//	}
 
 }

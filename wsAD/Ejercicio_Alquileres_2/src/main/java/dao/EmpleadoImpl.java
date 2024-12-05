@@ -35,11 +35,11 @@ public class EmpleadoImpl implements EmpleadoDao {
 	public double sueldoEmpleado(int nif) {
 
 		Connection con = ConexionBD.getConex();
-
+		double sueldo = 0;
 		try {
-			String sql = "SELECT e.nif, e.sueldoBase + (0.10 * SUM(p.mensualidad)) AS sueldo_total "
-					+ "FROM empleados e " + "LEFT JOIN pisos p ON e.nif = p.nif_empleado " + "WHERE e.nif = " + nif
-					+ " and " + "p.alquilado!=0 " + "GROUP BY e.nif, e.sueldoBase;";
+			/*String sql = "SELECT e.nif, e.sueldoBase + 0.10 * COALESCE(SUM(p.mensualidad), 0) AS sueldo_total "
+					+ "FROM empleados e " + "LEFT JOIN pisos p ON e.nif = p.nif_empleado " + "WHERE e.nif = ? "
+					+ "GROUP BY e.nif, e.sueldoBase;";
 
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, nif);
@@ -47,17 +47,47 @@ public class EmpleadoImpl implements EmpleadoDao {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				System.out.println(rs.getInt("id") + ": " + rs.getDouble("sueldo_total"));
+				System.out.println(rs.getInt("nif") + ": " + rs.getDouble("sueldo_total"));
 			}
 
 			ps.executeQuery();
+			 */
+			
+			
+			// Primero, obtener el sueldo base del empleado
+			String sqlBase = "SELECT e.sueldoBase FROM empleados e WHERE e.nif = ?";
+			PreparedStatement psBase = con.prepareStatement(sqlBase);
+			psBase.setInt(1, nif);  // 'nifEmpleado' es el NIF del empleado que deseas consultar
+			ResultSet rsBase = psBase.executeQuery();
+
+			double sueldoBase = 0;
+			while (rsBase.next()) {
+			    sueldoBase = rsBase.getDouble("sueldoBase");
+			    System.out.println("Sueldo Base: " + sueldoBase);
+			}
+
+			// Luego, obtener el 10% de las mensualidades de los pisos alquilados
+			String sqlPisos = "SELECT 0.10 * SUM(p.mensualidad) AS sueldoPorPisos " +
+			                  "FROM pisos p WHERE p.nif_Empleado = "+nif+" AND p.codigo = 1";  // Solo los pisos alquilados
+			PreparedStatement psPisos = con.prepareStatement(sqlPisos);
+			ResultSet rsPisos = psPisos.executeQuery();
+
+			double sueldoPorPisos = 0;
+			while (rsPisos.next()) {
+			    sueldoPorPisos = rsPisos.getDouble("sueldoPorPisos");
+			    System.out.println("Sueldo por Pisos (10% mensualidad de pisos alquilados): " + sueldoPorPisos);
+			}
+
+			// Finalmente, puedes calcular el sueldo total si lo deseas
+			double sueldoTotal = sueldoBase + sueldoPorPisos;
+			System.out.println("Sueldo Total: " + sueldoTotal);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-
+			return sueldo;
 		}
 
-		return 0;
+		return sueldo;
 	}
 
 	@Override

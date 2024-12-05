@@ -2,17 +2,9 @@ package func;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.List;
-import java.util.TreeMap;
 
-import beans.Datos;
 import beans.Empleado;
-import beans.Piso;
-import connection.ConexionBD;
-import io.IO;
 import jakarta.xml.bind.JAXBException;
 
 public class Func {

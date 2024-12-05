@@ -54,6 +54,13 @@ public class Piso {
 		this.nif_Empleado = nif_Empleado;
 	}
 
+	public Piso(String direccion, double mensualidad, int nif) {
+		super();
+		this.direccion = direccion;
+		this.mensualidad = mensualidad;
+		this.nif_Empleado = nif;
+	}
+
 	public Piso() {
 		super();
 	}
