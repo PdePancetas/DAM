@@ -174,7 +174,8 @@ public class Main {
 					break;
 				}
 			} catch (Exception e) {
-				System.err.println("Hubo un error: " + e.getLocalizedMessage());
+				System.err.println("Hubo un error: ");
+				e.printStackTrace();
 			}
 
 		} while (op != 0);

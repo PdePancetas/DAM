@@ -16,14 +16,23 @@ public class PisoImpl implements PisoDao {
 		Connection con = ConexionBD.getConex();
 
 		try {
-			PreparedStatement ps = con.prepareStatement("INSERT INTO pisos(direccion, mensualidad, alquilado, nif_Empleado) VALUES(?,?,?,?)");
+
+			PreparedStatement ps = con.prepareStatement(
+					"INSERT INTO pisos(direccion, mensualidad, alquilado, nif_Empleado) VALUES(?,?,?,?)",
+					PreparedStatement.RETURN_GENERATED_KEYS);// SI QUEREMOS SABER LA CLAVE PRIMARIA QUE SE HA GENERADO:
 			ps.setString(1, piso.getDireccion());
 			ps.setDouble(2, piso.getMensualidad());
-			ps.setBoolean(3, false);
+			ps.setInt(3, 0);
 			ps.setInt(4, piso.getNif_Empleado());
 
 			ps.executeUpdate();
 
+			ResultSet rs = ps.getGeneratedKeys();
+			int clave = 0;
+			while(rs.next())
+				clave = rs.getInt(1);
+			
+			System.out.println("La clave generada es: "+clave);
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
@@ -34,7 +43,7 @@ public class PisoImpl implements PisoDao {
 
 	@Override
 	public boolean modMensualidad(int codigo, double mensualidad) {
-		
+
 		Connection con = ConexionBD.getConex();
 
 		try {
@@ -51,6 +60,7 @@ public class PisoImpl implements PisoDao {
 
 		return true;
 	}
+
 	@Override
 	public boolean cambiarEmpleadoPiso(Piso piso, int nif) {
 
@@ -73,12 +83,12 @@ public class PisoImpl implements PisoDao {
 
 	@Override
 	public boolean alquilar_noAlquilar(boolean alquilado, Piso piso) {
-		
+
 		Connection con = ConexionBD.getConex();
 
 		try {
 			PreparedStatement ps = con.prepareStatement("UPDATE pisos SET alquilado = ? WHERE codigo = ?");
-			ps.setDouble(1, alquilado?1:0);
+			ps.setDouble(1, alquilado ? 1 : 0);
 			ps.setInt(2, piso.getId());
 
 			ps.executeUpdate();
@@ -97,14 +107,12 @@ public class PisoImpl implements PisoDao {
 		String nombre = "";
 		try {
 			PreparedStatement ps = con.prepareStatement("SELECT e.nombre FROM pisos p "
-					+ "JOIN empleados e ON p.nifEmpleado = e.nif "
-					+ "WHERE p.nif_Empleado = ?"
-					+ "");
-			
+					+ "JOIN empleados e ON p.nifEmpleado = e.nif " + "WHERE p.nif_Empleado = ?" + "");
+
 			ps.setInt(2, id);
 
-			ResultSet rs= ps.executeQuery();
-			while(rs.next()) {
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
 				nombre = rs.getString("nombre");
 			}
 

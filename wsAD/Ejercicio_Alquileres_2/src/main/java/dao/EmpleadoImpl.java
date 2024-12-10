@@ -130,5 +130,32 @@ public class EmpleadoImpl implements EmpleadoDao {
 
 		return e;
 	}
+	
+	public Empleado getEmpleado(int nif) {
+		
+		Connection con = ConexionBD.getConex();
+		
+		Empleado e = null;
+		try {
+			String sql = "SELECT * FROM empleados WHERE nif = ?";
+					
+
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, nif);
+
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				e = new Empleado(rs.getInt("nif"), rs.getString("nombre"), rs.getDouble("sueldoBase"));
+			}
+
+			ps.executeQuery();
+
+		} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
+
+		return e;
+	}
 
 }
