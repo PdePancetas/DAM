@@ -15,7 +15,7 @@ public class Properties {
 		config = new java.util.Properties();
 		
 		try {
-			config.load(Properties.class.getClassLoader().getResourceAsStream("/config.properties"));
+			config.load(Properties.class.getClassLoader().getResourceAsStream("resources/config.properties"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
