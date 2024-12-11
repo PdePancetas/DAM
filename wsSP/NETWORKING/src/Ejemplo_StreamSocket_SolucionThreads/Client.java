@@ -1,4 +1,4 @@
-package Ejemplo_Server_Client;
+package Ejemplo_StreamSocket_SolucionThreads;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -15,7 +15,8 @@ public class Client {
 			s.connect(isa);
 			BufferedWriter osw = new BufferedWriter( new OutputStreamWriter(s.getOutputStream()));
 			BufferedReader isr = new BufferedReader( new InputStreamReader(s.getInputStream()));
-			osw.write("C: Hooola. desde el puerto "+isa.getPort()+"\n");
+			osw.write("C: Hooola. desde el puerto "+s.getLocalPort());
+			osw.newLine();
 			osw.flush();
 			String data = isr.readLine();
 			System.out.println("C: recibido: " + new String(data));
