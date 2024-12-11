@@ -87,7 +87,7 @@ public class Main {
 					System.out.print("Nif Propietario: ");
 					nif = Teclado.leerEntero();
 
-					if(piso.addPiso(new Piso(direccion, mensualidad, nif))) {
+					if (piso.addPiso(new Piso(direccion, mensualidad, nif))) {
 						System.out.println("Se añadio correctamente el piso");
 					} else
 						System.err.println("Hubo un error, no se pudo añadir el piso");
@@ -98,7 +98,10 @@ public class Main {
 					System.out.print("Nueva mensualidad: ");
 					mensualidad = Teclado.leerDecimal();
 
-					piso.modMensualidad(codigo, mensualidad);
+					if (piso.modMensualidad(codigo, mensualidad))
+						System.out.println("Se ha modificado la mensualidad del piso");
+					else
+						System.err.println("Hubo un error, no se pudo modificar la mensualidad");
 
 					break;
 				case 4:
@@ -107,34 +110,21 @@ public class Main {
 					System.out.print("Nif nuevo propietario: ");
 					nif = Teclado.leerEntero();
 
-					Func.cambiarEmpleadoPiso(codigo, nif);
-
+					if (piso.cambiarEmpleadoPiso(codigo, nif))
+						System.out.println("Se ha modificado el empleado del piso");
+					else
+						System.err.println("Hubo un error, no se pudo cambiar de empleado");
 					break;
 
 				case 5:
 					System.out.print("Codigo: ");
 					codigo = Teclado.leerEntero();
-					if (Func.estaAlquilado(codigo)) {
-						System.out.print("Este piso esta alquilado, quieres dejar de alquilarlo? (y/n) ");
-						switch (Teclado.leerCadena()) {
-						case "y":
-							Func.alquilar_noAlquilar(false, codigo);
-							System.out.println("Este piso se dejado de alquilar");
-							break;
-						case "n":
 
-						}
-					} else {
-						System.out.print("Este piso no esta alquilado, quieres alquilarlo? (y/n) ");
-						switch (Teclado.leerCadena()) {
-						case "y":
-							Func.alquilar_noAlquilar(true, codigo);
-							System.out.println("Este piso se ha alquilado");
-							break;
-						case "n":
+					if (piso.alquilar_noAlquilar(true, codigo))
+						System.out.println("Se ha alquilado el piso");
+					else
+						System.err.println("Hubo un error, no se pudo cambiar el estado del piso");
 
-						}
-					}
 					break;
 				case 6:
 					System.out.print("Codigo: ");

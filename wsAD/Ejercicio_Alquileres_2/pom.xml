@@ -6,19 +6,6 @@
 	<artifactId>Ejercicio_Alquileres</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Ejercicio_Alquileres</name>
-	<!--
-	<build>
-		<sourceDirectory>${project.build.directory}/generated-sources/java</sourceDirectory>
-		<resources>
-			<resource>
-				<directory>src/main/resources</directory>
-				<includes>
-					<include>*.properties</include>
-				</includes>
-			</resource>
-		</resources>
-	</build>
-	-->
 	
 	<dependencies>
 

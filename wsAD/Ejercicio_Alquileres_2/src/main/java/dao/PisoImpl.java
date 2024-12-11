@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import beans.Empleado;
 import beans.Piso;
 import connection.ConexionBD;
 
@@ -62,14 +61,14 @@ public class PisoImpl implements PisoDao {
 	}
 
 	@Override
-	public boolean cambiarEmpleadoPiso(Piso piso, int nif) {
+	public boolean cambiarEmpleadoPiso(int codigo, int nif) {
 
 		Connection con = ConexionBD.getConex();
 
 		try {
 			PreparedStatement ps = con.prepareStatement("UPDATE pisos SET nif_Empleado = ? WHERE codigo = ?");
 			ps.setDouble(1, nif);
-			ps.setInt(2, piso.getId());
+			ps.setInt(2, codigo);
 
 			ps.executeUpdate();
 
@@ -82,14 +81,14 @@ public class PisoImpl implements PisoDao {
 	}
 
 	@Override
-	public boolean alquilar_noAlquilar(boolean alquilado, Piso piso) {
+	public boolean alquilar_noAlquilar(boolean alquilado, int cod) {
 
 		Connection con = ConexionBD.getConex();
 
 		try {
 			PreparedStatement ps = con.prepareStatement("UPDATE pisos SET alquilado = ? WHERE codigo = ?");
 			ps.setDouble(1, alquilado ? 1 : 0);
-			ps.setInt(2, piso.getId());
+			ps.setInt(2, cod);
 
 			ps.executeUpdate();
 

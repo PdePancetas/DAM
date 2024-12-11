@@ -12,10 +12,10 @@ public interface PisoDao {
 	boolean modMensualidad(int codigo, double mensualidad);
 
 	/*-	Cambiar en un piso el empleado que lo lleva*/
-	boolean cambiarEmpleadoPiso(Piso piso, int nif);
+	boolean cambiarEmpleadoPiso(int codigo, int nif);
 
 	/*-	Alquilar piso/dejar de alquilarlo*/
-	boolean alquilar_noAlquilar(boolean alquilado, Piso piso);
+	boolean alquilar_noAlquilar(boolean alquilado, int cod);
 
 	/*-	Dado un código de piso, mostrar el nombre del empleado que lo lleva*/
 	String mostrarEmpleadoPiso(int id);
