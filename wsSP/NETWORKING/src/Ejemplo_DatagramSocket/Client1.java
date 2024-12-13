@@ -1,6 +1,5 @@
 package Ejemplo_DatagramSocket;
 
-import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
@@ -9,32 +8,62 @@ import java.util.Random;
 
 public class Client1 {
 
-	static int puntuacion = 0;
-
 	public static void main(String[] args) {
-		while (puntuacion > 5) {
-			try {
-
-				DatagramSocket ds = new DatagramSocket();
-
+		try {
+			int puntuacion = 0;
+			boolean acaba = false;
+			DatagramSocket ds;
+			DatagramSocket ds2;
+			ds = new DatagramSocket();
+			ds2 = new DatagramSocket(8889);
+			InetSocketAddress addr2 = new InetSocketAddress("localhost", 8888);
+			while (!acaba) {
+				Thread.sleep(1000);
 				String mensaje = "ping";
 				InetAddress addr = InetAddress.getByName("localhost");
 				DatagramPacket dp1 = new DatagramPacket(mensaje.getBytes(), mensaje.getBytes().length, addr, 8888);
 				ds.send(dp1);
-				ds.close();
-				InetSocketAddress addr2 = new InetSocketAddress("localhost", 8889);
-				ds = new DatagramSocket(addr2);
+
 				byte[] msg = new byte[100];
 				DatagramPacket dpRecibo = new DatagramPacket(msg, 100);
-				ds.receive(dpRecibo);
-
+				ds2.receive(dpRecibo);
+				System.out.println("Recibido: " + new String(msg));
+				String msgenvio = "";
 				Random r = new Random();
-				if (r.nextInt(1, 10) != 10) {
-					System.out.println("Recibido: " + new String(msg));
+				if (new String(msg).equals("FIN")) {
+					System.out.println("Recibido FIN");
+				} else if (new String(msg).equals("WIN")) {
+					System.out.println("Client 1 pierde, 2 gana");
+					acaba = true;
+				} else {
+					DatagramPacket dp2;
+					if (r.nextInt(1, 11) != 10) {
+						msgenvio = "ping";
+						dp2 = new DatagramPacket(msgenvio.getBytes(), msgenvio.getBytes().length, addr2);
+						ds.send(dp2);
+					} else {
+						msgenvio = "FIN";
+						dp2 = new DatagramPacket(msgenvio.getBytes(), msgenvio.getBytes().length, addr2);
+						ds.send(dp2);
+						System.out.println("Enviado FIN");
+						puntuacion++;
+						System.out.println("p: " + puntuacion);
+						if (puntuacion == 5) {
+							msgenvio = "WIN";
+							System.out.println("Client 1 gana");
+							dp2 = new DatagramPacket(msgenvio.getBytes(), msgenvio.getBytes().length, addr2);
+							ds.send(dp2);
+							acaba = true;
+						}
+					}
 				}
-			} catch (IOException e) {
-				e.printStackTrace();
+
 			}
+
+			ds.close();
+			ds2.close();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }
