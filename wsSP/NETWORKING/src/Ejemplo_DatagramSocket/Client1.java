@@ -10,7 +10,7 @@ public class Client1 {
 
 	public static void main(String[] args) {
 		try {
-			int puntuacion = 4;
+			int puntuacion = 0;
 			boolean acaba = false;
 			DatagramSocket ds;
 			DatagramSocket ds2;
