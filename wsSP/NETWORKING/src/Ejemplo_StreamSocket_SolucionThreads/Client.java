@@ -13,16 +13,16 @@ public class Client {
 		InetSocketAddress isa = new InetSocketAddress("localhost", 3333);
 		try {
 			s.connect(isa);
-			BufferedWriter osw = new BufferedWriter( new OutputStreamWriter(s.getOutputStream()));
-			BufferedReader isr = new BufferedReader( new InputStreamReader(s.getInputStream()));
-			osw.write("C: Hooola. desde el puerto "+s.getLocalPort());
-			osw.newLine();
-			osw.flush();
-			String data = isr.readLine();
+			BufferedWriter bw = new BufferedWriter( new OutputStreamWriter(s.getOutputStream()));
+			BufferedReader br = new BufferedReader( new InputStreamReader(s.getInputStream()));
+			bw.write("C: Hooola. desde el puerto "+s.getLocalPort());
+			bw.newLine();
+			bw.flush();
+			String data = br.readLine();
 			System.out.println("C: recibido: " + new String(data));
 			
-			isr.close();
-			osw.close();
+			br.close();
+			bw.close();
 			s.close();
 		} catch (IOException e) {
 			e.printStackTrace();
