@@ -19,11 +19,12 @@ public class Client2 {
 				DatagramPacket dpRecibo = new DatagramPacket(msg, 100);
 				ds.receive(dpRecibo);
 
-				if (new String(msg).equals("FIN")) {
+				if (new String(msg).trim().equals("FIN")) {
 					System.out.println("Recibido " + new String(msg));
-				} else if (new String(msg).equals("WIN")) {
+				} else if (new String(msg).trim().equals("WIN")) {
 					System.out.println("Client 2 pierde, 1 gana");
 					acaba = true;
+					ds.close();
 				} else {
 					System.out.println("Recibido: " + new String(msg));
 					String msgenvio = "";
@@ -43,10 +44,11 @@ public class Client2 {
 						System.out.println("p: " + puntuacion);
 						if (puntuacion == 5) {
 							msgenvio = "WIN";
-							System.out.println("Client 1 gana");
+							System.out.println("Client 2 gana");
 							dp1 = new DatagramPacket(msgenvio.getBytes(), msgenvio.getBytes().length, addr2, 8889);
 							ds.send(dp1);
 							acaba = true;
+							ds.close();
 						}
 					}
 				}

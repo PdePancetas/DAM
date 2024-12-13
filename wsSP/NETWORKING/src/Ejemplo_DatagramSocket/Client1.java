@@ -10,7 +10,7 @@ public class Client1 {
 
 	public static void main(String[] args) {
 		try {
-			int puntuacion = 0;
+			int puntuacion = 4;
 			boolean acaba = false;
 			DatagramSocket ds;
 			DatagramSocket ds2;
@@ -30,11 +30,13 @@ public class Client1 {
 				System.out.println("Recibido: " + new String(msg));
 				String msgenvio = "";
 				Random r = new Random();
-				if (new String(msg).equals("FIN")) {
+				if (new String(msg).trim().equals("FIN")) {
 					System.out.println("Recibido FIN");
-				} else if (new String(msg).equals("WIN")) {
+				} else if (new String(msg).trim().equals("WIN")) {
 					System.out.println("Client 1 pierde, 2 gana");
 					acaba = true;
+					ds.close();
+					ds2.close();
 				} else {
 					DatagramPacket dp2;
 					if (r.nextInt(1, 11) != 10) {
