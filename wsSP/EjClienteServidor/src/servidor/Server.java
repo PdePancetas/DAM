@@ -5,13 +5,11 @@ import java.io.BufferedWriter;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
-import java.io.Writer;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -32,7 +30,6 @@ public class Server {
 					boolean clienteActivo = true;
 					BufferedReader br = new BufferedReader(new InputStreamReader(nsc.getInputStream()));
 					BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(nsc.getOutputStream()));
-					ObjectOutputStream ois = new ObjectOutputStream(nsc.getOutputStream());
 					DataOutputStream dos = new DataOutputStream(nsc.getOutputStream());
 					
 					bw.write("crear (nombre_archivo)");
@@ -66,7 +63,6 @@ public class Server {
 						}
 					br.close();
 					bw.close();
-					ois.close();
 				}
 			}
 		} catch (IOException e) {
