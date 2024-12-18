@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="estilos/insertarEmpleadosXML.css">
+<title>Insertar empleados por XML</title>
+</head>
+<body>
+	<h3>Selecciona el fichero de empleados a cargar</h3>
+	<form action="insertarEmpleadosXML" method="post" enctype="multipart/form-data">
+		<label for="file">Seleccione un archivo de empleados xml:</label>
+		<input type="file" name="ficheroEmpleadosXML" id="ficheroEmpleadosXML" accept=".xml" />
+		<br>
+		<input type="submit" value="Insertar empleados">
+		<input type="button" name="volverMenú" id="volverMenú"
+		 onclick="window.location.href='/Ejercicio_AppWebGestionProyectos/inicio.html'" value="Volver al menú">
+	</form>
+</body>
+</html>

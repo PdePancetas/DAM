@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="estilos/crearProyecto.css">
+<title>Insert title here</title>
+</head>
+<body><!--  los datos de entrada serán el nombre del proyecto, el dni del jefe, 
+		    que tendrá que ser un empleado existente, y los dnis de los empleados asignados,
+			que también deben existir en la tabla). -->
+	<h3>Rellena los datos para crear el proyecto</h3>
+	<form action="crearProyecto" method="post">
+			
+		<label for="nameProy">Escribe el nombre del proyecto:</label>
+		<input type="text" name="nameProy" id="nameProy" />
+		<br>
+		<label for="dniJefeProy">Escribe el dni del jefe de proyecto:</label>
+		<input type="text" name="dniJefeProy" id="dniJefeProy" />
+		<br>
+		<label for="dniEmpProy">Escribe los dni de los empleados asociados:</label>
+		<input type="text" name="dniEmpProy" id="dniEmpProy" placeholder="Ej: 1,2,3,..." />
+		<br><br>
+		<input type="submit" value="Crear proyecto">
+		<input type="button" name="volverMenú" id="volverMenú" 
+			onclick="window.location.href='/Ejercicio_AppWebGestionProyectos/inicio.html'" value="Volver al menú">
+	</form>
+</body>
+</html>

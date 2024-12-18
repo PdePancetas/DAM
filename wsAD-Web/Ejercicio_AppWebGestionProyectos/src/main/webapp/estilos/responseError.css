@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* estilos.css */
+
+/* Estilos para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilos para el título de éxito */
+h3.success {
+    color: #4CAF50; /* Verde */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el título de error */
+h3.error {
+    color: #FF0000; /* Rojo */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el botón */
+input[type="button"] {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo específico para el botón "Volver" */
+input[type="button"].volver {
+    background-color: #008CBA; /* Azul */
+}
+
+/* Estilo al hacer hover sobre el botón "Volver" */
+input[type="button"].volver:hover {
+    background-color: #005f73; /* Azul más oscuro */
+}

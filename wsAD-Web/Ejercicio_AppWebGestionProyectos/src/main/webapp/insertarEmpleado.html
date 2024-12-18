@@ -2,18 +2,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="estilos/insertarEmpleado.css">
 <title>Insertar Empleado</title>
 </head>
 <body>
 	<h3>Inserta los datos del empleado</h3>
 	<form action="insertarEmpleado" method="post">
-		<label for="file">Escribe el id:</label>
-		<input type="text" name="idEmp" id="idEmp" />
+		<label for="dniEmp">Escribe el id:</label>
+		<input type="text" name="dniEmp" id="dniEmp" />
 		<br>
-		<label for="file">Escribe el nombre:</label>
+		<label for="nameEmp">Escribe el nombre:</label>
 		<input type="text" name="nameEmp" id="nameEmp" />
 		<br><br>
-		<input type="submit" value="Enviar datos">
+		<input type="submit" value="Insertar empleado">
+		<input type="button" name="volverMenú" id="volverMenú" 
+			onclick="window.location.href='/Ejercicio_AppWebGestionProyectos/inicio.html'" value="Volver al menú">
 	</form>
 </body>
 </html>

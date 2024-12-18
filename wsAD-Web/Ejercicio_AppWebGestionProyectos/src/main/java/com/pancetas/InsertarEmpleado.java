@@ -6,11 +6,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import response.Respuestas;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 import connection.ConexionBD;
 
@@ -44,32 +44,28 @@ public class InsertarEmpleado extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String idEmp = request.getParameter("idEmp");
-		String nombreEmp = request.getParameter("nameEmp");
-
+		Connection con = null;
+		PreparedStatement ps = null;
 		try {
+			String dniEmp = request.getParameter("dniEmp");
+			String nombreEmp = request.getParameter("nameEmp");
+
+			if (dniEmp.equals("") || nombreEmp.equals(""))
+				throw new Exception();
+
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = ConexionBD.getConex(getServletContext());
-			PreparedStatement ps = con.prepareStatement("INSERT INTO empleado VALUES(?,?)");
-			ps.setString(1, idEmp);
+			con = ConexionBD.getConex(getServletContext());
+			ps = con.prepareStatement("INSERT INTO empleado VALUES(?,?)");
+			ps.setString(1, dniEmp);
 			ps.setString(2, nombreEmp);
 
 			ps.executeUpdate();
-			response.getWriter().println("<html>");
-			response.getWriter().println("<head>");
-			response.getWriter().println("<meta charset=\"UTF-8\">");
-			response.getWriter().println("<title>Empleado insertado</title>");
-			response.getWriter().println("</head>");
-			response.getWriter().println("<body>");
-			response.getWriter().println("<h1>Empleado insertado con éxito en la base de datos</h1>");
-			response.getWriter().println("</body>");
-			response.getWriter().println("<html>");
+			
+			Respuestas.mensajeOK(response, "Empleado insertado correctamente", "insertarEmpleado.html");
 
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			Respuestas.mensajeError(response, "Hubo un error insertando al empleado", "insertarEmpleado.html");
 		}
 
 	}
