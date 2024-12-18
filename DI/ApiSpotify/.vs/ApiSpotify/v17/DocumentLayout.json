@@ -1,0 +1,79 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D52CC4A0-84C0-448E-BFF5-A147E9C1D894}|ApiSpotify.csproj|c:\\users\\alumno\\dam\\di\\apispotify\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D52CC4A0-84C0-448E-BFF5-A147E9C1D894}|ApiSpotify.csproj|solutionrelative:principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D52CC4A0-84C0-448E-BFF5-A147E9C1D894}|ApiSpotify.csproj|c:\\users\\alumno\\dam\\di\\apispotify\\helpers\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D52CC4A0-84C0-448E-BFF5-A147E9C1D894}|ApiSpotify.csproj|solutionrelative:helpers\\logic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D52CC4A0-84C0-448E-BFF5-A147E9C1D894}|ApiSpotify.csproj|c:\\users\\alumno\\dam\\di\\apispotify\\models\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D52CC4A0-84C0-448E-BFF5-A147E9C1D894}|ApiSpotify.csproj|solutionrelative:models\\token.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 241,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Token.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\Models\\Token.cs",
+              "RelativeDocumentMoniker": "Models\\Token.cs",
+              "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\Models\\Token.cs",
+              "RelativeToolTip": "Models\\Token.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T07:47:27.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Logic.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\Helpers\\Logic.cs",
+              "RelativeDocumentMoniker": "Helpers\\Logic.cs",
+              "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\Helpers\\Logic.cs",
+              "RelativeToolTip": "Helpers\\Logic.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAcwCsAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:49:29.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Principal.cs",
+              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\Principal.cs",
+              "RelativeDocumentMoniker": "Principal.cs",
+              "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\Principal.cs",
+              "RelativeToolTip": "Principal.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAIAwwIwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T16:07:18.624Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

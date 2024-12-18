@@ -82,7 +82,7 @@ public class Cliente {
 
 				// Crear copia local del archivo
 				try (FileOutputStream fileOutputStream = new FileOutputStream("downloads/" + nombre)) {
-					byte[] buffer = new byte[4096];
+					byte[] buffer = new byte[1000];
 					int bytesRead;
 					long totalBytesRead = 0;
 
