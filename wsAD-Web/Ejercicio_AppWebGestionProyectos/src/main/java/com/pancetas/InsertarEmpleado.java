@@ -60,9 +60,8 @@ public class InsertarEmpleado extends HttpServlet {
 			ps.setString(2, nombreEmp);
 
 			ps.executeUpdate();
-			
 			Respuestas.mensajeOK(response, "Empleado insertado correctamente", "insertarEmpleado.html");
-
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			Respuestas.mensajeError(response, "Hubo un error insertando al empleado", "insertarEmpleado.html");

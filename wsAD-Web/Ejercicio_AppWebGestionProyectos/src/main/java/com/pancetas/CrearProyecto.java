@@ -1,5 +1,6 @@
 package com.pancetas;
 
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -9,14 +10,11 @@ import logic.Func;
 import response.Respuestas;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-
 import connection.ConexionBD;
 
 /**
@@ -31,7 +29,6 @@ public class CrearProyecto extends HttpServlet {
 	 */
 	public CrearProyecto() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -41,6 +38,58 @@ public class CrearProyecto extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
+		ServletContext servletContext = getServletContext();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        Connection con = ConexionBD.getConex(servletContext);
+
+        try (PrintWriter out = response.getWriter()) {
+            
+            ArrayList<String> empleados = Func.obtenerDnisEmp(con, servletContext);
+
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<meta charset='UTF-8'>");
+            out.println("<link rel='stylesheet' type='text/css' href='estilos/crearProyecto.css'>");
+            out.println("<title>Crear Proyecto</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h3>Rellena los datos para crear el proyecto</h3>");
+            out.println("<form action='crearProyecto' method='post'>");
+            out.println("<label for='nameProy'>Escribe el nombre del proyecto:</label>");
+            out.println("<input type='text' name='nameProy' id='nameProy' />");
+            out.println("<br>");
+
+            out.println("<label for='dniJefeProy'>Selecciona el DNI del jefe de proyecto:</label>");
+            out.println("<select name='dniJefeProy' id='dniJefeProy'>");
+            //Si se selecciona un dni, los dnis anteriores no muestran el nombre, por lo que si se quieren ver de nuevo
+            //todos los nombres disponibles, elegir la primera opción (de esta forma aparecen todos los nombres)
+            //y luego escoger
+            for (String dni : empleados) {
+                String nombreEmpleado = Func.obtenerEmp(dni, con).getNombre(); 
+                out.println("<option value='" + dni + "' title='" + nombreEmpleado + "'>" + dni + "</option>");
+            }
+            out.println("</select>");
+            out.println("<br>");
+            
+            out.println("<label for='dniEmpProy'>Escribe los DNIs de los empleados asociados:</label>");
+            out.println("<input type='text' name='dniEmpProy' id='dniEmpProy' placeholder='Ej: 1,2,3,...(excluir el DNI del jefe)' />");
+            out.println("<br><br>");
+
+            out.println("<input type='submit' value='Crear proyecto'>");
+            out.println("<input type='button' name='volverMenú' id='volverMenú' " +
+                        "onclick=\"window.location.href='/Ejercicio_AppWebGestionProyectos/inicio.html'\" value='Volver al menú'>");
+            out.println("</form>");
+            out.println("</body>");
+            out.println("</html>");
+        } catch (SQLException e) {
+            throw new ServletException("Error al obtener los DNIs de empleados", e);
+        }
 	}
 
 	/**
@@ -85,7 +134,7 @@ public class CrearProyecto extends HttpServlet {
 
 			con.commit();
 
-			Respuestas.mensajeOK(response, "Proyecto creado correctamente", "crearProyecto.html");
+			Respuestas.mensajeOK(response, "Proyecto creado correctamente", "crearProyecto");
 		} catch (SQLException e) {
 			e.printStackTrace();
 			try {
@@ -93,11 +142,11 @@ public class CrearProyecto extends HttpServlet {
 			} catch (SQLException e1) {
 				e1.printStackTrace();
 			}
-			Respuestas.mensajeError(response, "Hubo un error al crear el proyecto", "crearProyecto.html");
-		} catch (ClassNotFoundException e) {
+			Respuestas.mensajeError(response, "Hubo un error al crear el proyecto", "crearProyecto");
+		} catch (Exception e) {
 			e.printStackTrace();
-			Respuestas.mensajeError(response, "Hubo un error al crear el proyecto", "crearProyecto.html");
-		}
+			Respuestas.mensajeError(response, "Hubo un error al crear el proyecto", "crearProyecto");
+		} 
 	}
 
 }

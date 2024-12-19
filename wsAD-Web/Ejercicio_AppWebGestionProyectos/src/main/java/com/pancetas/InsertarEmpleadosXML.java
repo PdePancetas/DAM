@@ -7,16 +7,12 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
-import jakarta.xml.bind.JAXBContext;
-import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Unmarshaller;
 import logic.Func;
 import models.Empleado;
 import models.Empleados;
 import response.Respuestas;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -59,24 +55,26 @@ public class InsertarEmpleadosXML extends HttpServlet {
 		PreparedStatement ps = null;
 		try {
 			Empleados empleados = Func.leerFichero(filePart);
-			
+
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = ConexionBD.getConex(getServletContext());
 			con.setAutoCommit(false);
-			
 			ps = con.prepareStatement("INSERT INTO empleado (dni, nom_emp) VALUES (?, ?)");
-
+			
+			//Si en la tabla empleado ya está x empleado, simplemente lo salta,
+			//así solo inserta los empleados que sean nuevos
+			//A mejorar: no se le avisa al usuario de qué empleados existen y que por lo tanto
+			//			 no han sido "actualizados"
 			for (Empleado empleado : empleados.getEmpleados()) {
-				ps.setString(1, empleado.getDni());
-				ps.setString(2, empleado.getNombre());
-
-				ps.addBatch();
+				if (!Func.existeEmpleado(empleado.getDni(), "empleado", con)) {
+					ps.setString(1, empleado.getDni());
+					ps.setString(2, empleado.getNombre());
+					ps.executeUpdate();
+				}
 			}
 
-			int[] result = ps.executeBatch();
-
 			con.commit();
-			
+
 			Respuestas.mensajeOK(response, "Empleados insertados correctamente", "insertarEmpleadosXML.html");
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -91,10 +89,15 @@ public class InsertarEmpleadosXML extends HttpServlet {
 		} catch (Exception e) {
 			e.printStackTrace();
 			Respuestas.mensajeError(response, "Hubo un error al insertar a los empleados", "insertarEmpleadosXML.html");
+		} finally {
+//			if (con != null)
+//				try {
+//					con.close();
+//				} catch (SQLException e) {
+//					e.printStackTrace();
+//				}
 		}
 
 	}
-
-	
 
 }

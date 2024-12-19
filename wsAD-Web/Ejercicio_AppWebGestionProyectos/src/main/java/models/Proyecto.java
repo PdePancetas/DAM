@@ -2,6 +2,9 @@ package models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonPropertyOrder({ "id", "nom_proy", "dni_jefe_proy", "empleados" })
 public class Proyecto {
 
 	private int id_proy;
@@ -55,5 +58,6 @@ public class Proyecto {
 		this.nom_proy = nom_proy;
 		this.dni_jefe_proy = dni_jefe_proy;
 	}
+	
 
 }
