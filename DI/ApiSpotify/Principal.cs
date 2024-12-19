@@ -21,8 +21,8 @@ namespace ApiSpotify
     public class Principal
     { 
 
-        public static string clientId = "d54ed1372d8f403b8b09effc7707be66"; // Reemplaza con tu Client ID
-        public static string clientSecret = "85f45d82b6a8463392dc53bc08d356dd"; // Reemplaza con tu Client Secret
+        public static string clientId = "ID_CLIENT"; // Reemplaza con tu Client ID
+        public static string clientSecret = "ID_CLIENT_SECRET"; // Reemplaza con tu Client Secret
         public static string redirectUri = "http://localhost:5000/callback";
         public static string credentials = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{clientId}:{clientSecret}"));
 
