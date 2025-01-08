@@ -50,10 +50,6 @@ public class GenerarJsonProyectos extends HttpServlet {
 
 			JSONArray jsonData = new JSONArray(proyectos);
 	        
-
-			
-			
-			
 	        // Configurar la respuesta para que sea un archivo descargable
 	        response.setContentType("application/json"); // Tipo MIME para JSON
 	        response.setHeader("Content-Disposition", "attachment; filename=\"proyectos.json\""); // Esto hace que se descargue el archivo con el nombre "proyectos.json"
@@ -64,7 +60,7 @@ public class GenerarJsonProyectos extends HttpServlet {
 	        response.getWriter().flush();
 			
 			
-			
+			/////////////////////////////// OTTRA FORMA ///////////////////////////
 			
 		} catch (Exception e) {
 			e.printStackTrace();
