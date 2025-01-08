@@ -11,7 +11,6 @@ public class Escritor implements Runnable {
 			while (System.nanoTime() - actual < 1000000000l) {
 
 			}
-
 			System.out.println("palabra: " + pedidorPalabra.getPalabra());
 
 			actual = System.nanoTime();
