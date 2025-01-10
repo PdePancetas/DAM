@@ -17,6 +17,7 @@ public class Server {
 				while (true) {
 					System.out.println("S: accept");
 					Socket nsc = ss.accept();
+					System.out.println("Conexión establecida, esperando nueva conexión...");
 					Thread worker = new Thread(new ServerWorker(nsc));
 					worker.start();
 				}

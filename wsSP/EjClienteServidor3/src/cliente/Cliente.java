@@ -8,7 +8,7 @@ import java.io.OutputStreamWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 
-import gestionPalabra.PidePalabra;
+import gestionPalabra.EntradaPalabra;
 
 public class Cliente {
 
@@ -16,19 +16,18 @@ public class Cliente {
 		try {
 			Socket s = new Socket();
 			InetSocketAddress isa = new InetSocketAddress("localhost", 3333);
-			
+
 			s.connect(isa);
-			
+
 			BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
-			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
 
 			System.out.println("S: conexión recibida");
-			
-			PidePalabra p = new PidePalabra();
+
+			EntradaPalabra p = new EntradaPalabra(s);
 			new Thread(p).start();
-			
+
 			while (true) {
-				System.out.println("S-Palabra: " +br.readLine());
+				System.out.println(br.readLine());
 			}
 
 		} catch (IOException e) {
