@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class SalidaPalabra implements Runnable {
 
-	String palabra;
+	public String palabra;
 	Socket s;
 
 	@Override
@@ -20,11 +20,11 @@ public class SalidaPalabra implements Runnable {
 			while (true) {
 				while (System.nanoTime() - actual < 5000000000l) {
 				}
-
-				bw.write("S: ");
+				
+				bw.write("S: " + palabra);
 				bw.newLine();
 				bw.flush();
-
+				
 				actual = System.nanoTime();
 			}
 		} catch (IOException e) {

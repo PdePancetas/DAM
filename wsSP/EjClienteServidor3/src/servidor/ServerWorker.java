@@ -29,7 +29,16 @@ public class ServerWorker implements Runnable {
 		new Thread(salida).start();
 		
 		while(true) {
-			
+			actualizarPalabra(br, salida);
+		}
+	}
+
+	private void actualizarPalabra(BufferedReader br, SalidaPalabra salida) {
+		try {
+			salida.palabra = br.readLine();
+			System.out.println(salida.palabra);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 
