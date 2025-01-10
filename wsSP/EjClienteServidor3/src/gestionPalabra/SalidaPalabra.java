@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class SalidaPalabra implements Runnable {
 
-	public String palabra;
+	public String palabra = "esperando palabra";
 	Socket s;
 
 	@Override
@@ -18,7 +18,7 @@ public class SalidaPalabra implements Runnable {
 			bw = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
 			long actual = System.nanoTime();
 			while (true) {
-				while (System.nanoTime() - actual < 5000000000l) {
+				while (System.nanoTime() - actual < 2000000000l) {
 				}
 				
 				bw.write("S: " + palabra);
@@ -28,7 +28,6 @@ public class SalidaPalabra implements Runnable {
 				actual = System.nanoTime();
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
 		}
 
 	}

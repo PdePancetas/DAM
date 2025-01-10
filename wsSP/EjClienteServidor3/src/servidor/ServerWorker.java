@@ -28,18 +28,23 @@ public class ServerWorker implements Runnable {
 		SalidaPalabra salida = new SalidaPalabra(s);
 		new Thread(salida).start();
 		
-		while(true) {
-			actualizarPalabra(br, salida);
+		try {
+		while(true)
+				actualizarPalabra(br, salida);
+			
+		} catch (IOException e) {
+			System.out.println(s.getPort()+" ha cerrado la conexión");
 		}
 	}
 
-	private void actualizarPalabra(BufferedReader br, SalidaPalabra salida) {
-		try {
+	private void actualizarPalabra(BufferedReader br, SalidaPalabra salida) throws IOException {
+		
 			salida.palabra = br.readLine();
-			System.out.println(salida.palabra);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+			System.out.println("Nueva palabra de "+s.getLocalPort()+": "+salida.palabra);
+		
+			
+			
+		
 	}
 
 }

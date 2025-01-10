@@ -15,7 +15,6 @@ public class Server {
 				InetSocketAddress addr = new InetSocketAddress("localhost", 3333);
 				ss.bind(addr);
 				while (true) {
-					System.out.println("S: accept");
 					Socket nsc = ss.accept();
 					System.out.println("Conexión establecida, esperando nueva conexión...");
 					Thread worker = new Thread(new ServerWorker(nsc));
