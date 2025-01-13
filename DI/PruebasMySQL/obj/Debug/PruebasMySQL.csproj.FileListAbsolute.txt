@@ -1,0 +1,96 @@
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\PruebasMySQL.exe.config
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\PruebasMySQL.exe
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\PruebasMySQL.pdb
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\MySqlConnector.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Buffers.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Memory.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\MySqlConnector.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Buffers.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Memory.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\obj\Debug\PruebasMySQL.csproj.AssemblyReference.cache
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\obj\Debug\PruebasMySQL.Properties.Resources.resources
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\obj\Debug\PruebasMySQL.csproj.GenerateResource.cache
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\obj\Debug\PruebasMySQL.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\obj\Debug\PruebasM.5D766BC8.Up2Date
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\obj\Debug\PruebasMySQL.exe
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\obj\Debug\PruebasMySQL.pdb
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\Google.Protobuf.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\MySql.Data.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\ZstdSharp.dll
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\Google.Protobuf.pdb
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\Google.Protobuf.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\K4os.Compression.LZ4.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\K4os.Hash.xxHash.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\MySql.Data.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.Configuration.ConfigurationManager.xml
+C:\Users\Alumno\DAM\DI\repos\PruebasMySQL\bin\Debug\System.IO.Pipelines.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\PruebasMySQL.exe.config
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\PruebasMySQL.exe
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\PruebasMySQL.pdb
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\BouncyCastle.Cryptography.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\Google.Protobuf.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\K4os.Compression.LZ4.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\K4os.Hash.xxHash.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\MySql.Data.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\MySqlConnector.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Buffers.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Configuration.ConfigurationManager.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.IO.Pipelines.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Memory.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Numerics.Vectors.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Threading.Tasks.Extensions.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\ZstdSharp.dll
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\BouncyCastle.Cryptography.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\Google.Protobuf.pdb
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\Google.Protobuf.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\K4os.Compression.LZ4.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\K4os.Compression.LZ4.Streams.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\K4os.Hash.xxHash.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\MySql.Data.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\MySqlConnector.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Buffers.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Configuration.ConfigurationManager.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.IO.Pipelines.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Memory.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Numerics.Vectors.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\bin\Debug\System.Threading.Tasks.Extensions.xml
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\obj\Debug\PruebasMySQL.csproj.AssemblyReference.cache
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\obj\Debug\PruebasMySQL.Properties.Resources.resources
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\obj\Debug\PruebasMySQL.csproj.GenerateResource.cache
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\obj\Debug\PruebasMySQL.csproj.CoreCompileInputs.cache
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\obj\Debug\PruebasM.5D766BC8.Up2Date
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\obj\Debug\PruebasMySQL.exe
+E:\INSTITUTO\Pancetas\DAMN 2 (Ahora es personal)\Desarrollo de Interfaces\PruebasMySQL\obj\Debug\PruebasMySQL.pdb
