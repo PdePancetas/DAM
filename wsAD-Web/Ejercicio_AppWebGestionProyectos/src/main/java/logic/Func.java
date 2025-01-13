@@ -168,10 +168,12 @@ public class Func {
 	}
 
 	/**
-	 * Devuelve la lista de dni de empleados relacionados con un proyecto cuyo id se especifica
-	 * Apunte: En el método obtenerNombreTabla(), el código se comporta de tal forma que, conociendo 
-	 * los campos de la tabla a la que se debe acceder, sin conocer el nombre de la misma, se pueda obtener 
-	 * el nombre para ejecutar sentencias SQL sobre la tabla
+	 * Devuelve la lista de dni de empleados relacionados con un proyecto cuyo id se
+	 * especifica Apunte: En el método obtenerNombreTabla(), el código se comporta
+	 * de tal forma que, conociendo los campos de la tabla a la que se debe acceder,
+	 * sin conocer el nombre de la misma, se pueda obtener el nombre para ejecutar
+	 * sentencias SQL sobre la tabla
+	 * 
 	 * @param idProy
 	 * @param con
 	 * @param servletContext
@@ -191,28 +193,31 @@ public class Func {
 
 		return dniEmpleados;
 	}
-	
+
 	/**
 	 * Devuelve la lista de dni de los empleados existentes en la tabla empleado
+	 * 
 	 * @param con
 	 * @param servletContext
 	 * @return
 	 * @throws SQLException
 	 */
 	public static ArrayList<String> obtenerDnisEmp(Connection con, ServletContext servletContext) throws SQLException {
-	    ArrayList<String> dnis = new ArrayList<>();
+		ArrayList<String> dnis = new ArrayList<>();
 
-	    PreparedStatement ps = con.prepareStatement("SELECT dni FROM empleado");
-	    ResultSet rs = ps.executeQuery();
-	    while (rs.next()) {
-	        dnis.add(rs.getString("dni"));
-	    }
+		PreparedStatement ps = con.prepareStatement("SELECT dni FROM empleado");
+		ResultSet rs = ps.executeQuery();
+		while (rs.next()) {
+			dnis.add(rs.getString("dni"));
+		}
 
-	    return dnis;
+		return dnis;
 	}
 
 	/**
-	 * Devuelve el objeto empleado con todos sus datos de la tabla empleado con un dni especificado
+	 * Devuelve el objeto empleado con todos sus datos de la tabla empleado con un
+	 * dni especificado
+	 * 
 	 * @param dni
 	 * @param con
 	 * @return
@@ -233,6 +238,7 @@ public class Func {
 
 	/**
 	 * Devuelve la lista de id de los proyectos existentes en la tabla proyecto
+	 * 
 	 * @param con
 	 * @param servletContext
 	 * @return
@@ -251,10 +257,12 @@ public class Func {
 	}
 
 	/**
-	 * Genera una lista de objectos Proyecto de la base de datos, teniendo que acceder a la tabla
-	 * proyecto para obtener los datos de cada proyecto además de a la tabla asig_proyecto
-	 * para que a cada dni, se busque en la tabla empleado los datos del empleado correspondiente 
-	 * y se les asigne al proyecto en el que están trabajando
+	 * Genera una lista de objectos Proyecto de la base de datos, teniendo que
+	 * acceder a la tabla proyecto para obtener los datos de cada proyecto además de
+	 * a la tabla asig_proyecto para que a cada dni, se busque en la tabla empleado
+	 * los datos del empleado correspondiente y se les asigne al proyecto en el que
+	 * están trabajando
+	 * 
 	 * @param request
 	 * @param servletContext
 	 * @return
@@ -264,7 +272,6 @@ public class Func {
 	public static List<Proyecto> genProy(HttpServletRequest request, ServletContext servletContext)
 			throws ClassNotFoundException, SQLException {
 
-		List<Empleado> empleados = new ArrayList<Empleado>();
 		List<Proyecto> proyectos = new ArrayList<Proyecto>();
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
@@ -282,7 +289,7 @@ public class Func {
 		}
 
 		for (int i = 0; i < proyectos.size(); i++) {
-			empleados = new ArrayList<Empleado>();
+			List<Empleado> empleados = new ArrayList<Empleado>();
 			String[] empleadosData = dniEmpleados.get(i).split(",");
 			for (int j = 0; j < dniEmpleados.get(i).split(",").length; j++) {
 				empleados.add(Func.obtenerEmp(empleadosData[j], con));
@@ -294,8 +301,9 @@ public class Func {
 	}
 
 	/**
-	 * Devuelve el nombre de la tabla cuyos campos o columnas coincidan exactamente con la lista de 
-	 * campos especificada, dentro de la base de datos 'proyectos'
+	 * Devuelve el nombre de la tabla cuyos campos o columnas coincidan exactamente
+	 * con la lista de campos especificada, dentro de la base de datos 'proyectos'
+	 * 
 	 * @param campos
 	 * @param servletContext
 	 * @return
