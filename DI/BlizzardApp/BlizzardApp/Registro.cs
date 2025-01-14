@@ -35,7 +35,16 @@ namespace BlizzardApp
 
             if (userName == "" || email == "" || password == "")
             {
-                MessageBox.Show("Hay campos vacíos!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, rellene todos los campos", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (Func.UserExists(userName))
+            {
+                MessageBox.Show("Este nombre de usuario no está disponible.", null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUserName.Text = "";
+            } else if (Func.EmailExists(email))
+            {
+                MessageBox.Show("Este email ya está en uso.", null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Text = "";
             }
             else if (Func.registerUser(userName, email, password))
             {

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BlizzardApp
 {
@@ -309,6 +310,72 @@ namespace BlizzardApp
 
             return null;
             
+        }
+
+        internal static bool UserExists(string userName, string email, string password)
+        {
+            MySqlConnection connection = Conectar_BD();
+
+            string sql = "SELECT * FROM users";
+            MySqlCommand query = new MySqlCommand(sql, connection);
+
+            try
+            {
+                connection.Open();
+                using (MySqlDataReader reader = query.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader["name"].Equals(userName) && reader["email"].Equals(email) && reader["password"].Equals(password))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return false;
+        }
+
+        internal static bool EmailExists(string email)
+        {
+            MySqlConnection connection = Conectar_BD();
+
+            string sql = "SELECT * FROM users";
+            MySqlCommand query = new MySqlCommand(sql, connection);
+
+            try
+            {
+                connection.Open();
+                using (MySqlDataReader reader = query.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader["email"].Equals(email))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return false;
         }
     }
 }

@@ -23,11 +23,11 @@ namespace BlizzardApp
 
              if (usuario == "" || contrasena == "") 
              {
-                MessageBox.Show("Hay campos vacíos!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, rellene todos los campos", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
              } 
              else if (Func.UserExists(usuario) && Func.PasswordMatches(usuario, contrasena))
              {
-                 MessageBox.Show("Inicio de sesión exitoso", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 MessageBox.Show($"Bienvenido {usuario}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                  loggedUser = usuario;
                  this.Hide();  
@@ -36,16 +36,18 @@ namespace BlizzardApp
              }
              else if (Func.UserExists(usuario) && !Func.PasswordMatches(usuario, contrasena))
              {
-                MessageBox.Show("Contraseña incorrecta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                MessageBox.Show("La contraseña introducida no es correcta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 //Control de bloqueo de usuario si se introduce 3 veces mal la contraseña
                 txtContrasena.Text = "";
              }
              else
              {
-                DialogResult dr = MessageBox.Show("Usuario no encontrado, puede registrarlo pulsando en 'Registrarse'", "Error 404", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No se encontro al usuario, puede registrarlo pulsando en 'Registrarse'", null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                btnRegister.Visible = true;
              }
         }
-
+        /*
         private void btnListUsers_Click(object sender, EventArgs e)
         {
             List<Usuario> users = Func.getUsers();
@@ -58,7 +60,7 @@ namespace BlizzardApp
 
             MessageBox.Show(data, "Usuarios",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
+        */
         private void btnRegister_Click(object sender, EventArgs e)
         {
             

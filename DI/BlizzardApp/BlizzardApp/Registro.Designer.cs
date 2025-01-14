@@ -41,57 +41,65 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 44);
+            this.label1.Location = new System.Drawing.Point(32, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 16);
+            this.label1.Size = new System.Drawing.Size(104, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre de Usuario :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(114, 77);
+            this.label2.Location = new System.Drawing.Point(86, 63);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 16);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Email :";
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(181, 44);
+            this.txtUserName.Location = new System.Drawing.Point(136, 36);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(189, 22);
+            this.txtUserName.Size = new System.Drawing.Size(143, 20);
             this.txtUserName.TabIndex = 2;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(181, 77);
+            this.txtEmail.Location = new System.Drawing.Point(136, 63);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(189, 22);
+            this.txtEmail.Size = new System.Drawing.Size(143, 20);
             this.txtEmail.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(92, 111);
+            this.label3.Location = new System.Drawing.Point(69, 90);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 16);
+            this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Contraseña :";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(181, 111);
+            this.txtPassword.Location = new System.Drawing.Point(136, 90);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(189, 22);
+            this.txtPassword.Size = new System.Drawing.Size(143, 20);
             this.txtPassword.TabIndex = 5;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnRegistro
             // 
             this.btnRegistro.Font = new System.Drawing.Font("MV Boli", 8.25F);
-            this.btnRegistro.Location = new System.Drawing.Point(79, 144);
+            this.btnRegistro.Location = new System.Drawing.Point(59, 117);
+            this.btnRegistro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnRegistro.Name = "btnRegistro";
-            this.btnRegistro.Size = new System.Drawing.Size(167, 39);
+            this.btnRegistro.Size = new System.Drawing.Size(125, 32);
             this.btnRegistro.TabIndex = 6;
             this.btnRegistro.Text = "Registrar Usuario";
             this.btnRegistro.UseVisualStyleBackColor = true;
@@ -100,9 +108,10 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("MV Boli", 8.25F);
-            this.btnCancel.Location = new System.Drawing.Point(298, 144);
+            this.btnCancel.Location = new System.Drawing.Point(224, 117);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(167, 39);
+            this.btnCancel.Size = new System.Drawing.Size(125, 32);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Salir";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -110,10 +119,10 @@
             // 
             // Registro
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(529, 200);
+            this.ClientSize = new System.Drawing.Size(397, 162);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegistro);
             this.Controls.Add(this.txtPassword);
@@ -122,6 +131,7 @@
             this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Registro";
             this.Text = "Registro";
             this.Load += new System.EventHandler(this.Registro_Load);

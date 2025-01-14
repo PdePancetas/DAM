@@ -33,14 +33,14 @@ namespace BlizzardApp
             // 
             this.txtUsuario.Location = new System.Drawing.Point(120, 30);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(150, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(150, 20);
             this.txtUsuario.TabIndex = 0;
             // 
             // txtContrasena
             // 
             this.txtContrasena.Location = new System.Drawing.Point(120, 70);
             this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(150, 22);
+            this.txtContrasena.Size = new System.Drawing.Size(150, 20);
             this.txtContrasena.TabIndex = 1;
             this.txtContrasena.UseSystemPasswordChar = true;
             // 
@@ -60,7 +60,7 @@ namespace BlizzardApp
             this.lblUser.AutoSize = true;
             this.lblUser.Location = new System.Drawing.Point(40, 33);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(57, 16);
+            this.lblUser.Size = new System.Drawing.Size(46, 13);
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "Usuario:";
             this.lblUser.Click += new System.EventHandler(this.labelUsuario_Click);
@@ -70,14 +70,14 @@ namespace BlizzardApp
             this.labelContrasena.AutoSize = true;
             this.labelContrasena.Location = new System.Drawing.Point(40, 73);
             this.labelContrasena.Name = "labelContrasena";
-            this.labelContrasena.Size = new System.Drawing.Size(79, 16);
+            this.labelContrasena.Size = new System.Drawing.Size(64, 13);
             this.labelContrasena.TabIndex = 4;
             this.labelContrasena.Text = "Contraseña:";
             // 
             // Salir
             // 
             this.Salir.Font = new System.Drawing.Font("MV Boli", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Salir.Location = new System.Drawing.Point(194, 163);
+            this.Salir.Location = new System.Drawing.Point(184, 110);
             this.Salir.Name = "Salir";
             this.Salir.Size = new System.Drawing.Size(124, 35);
             this.Salir.TabIndex = 5;
@@ -94,17 +94,18 @@ namespace BlizzardApp
             this.btnRegister.TabIndex = 6;
             this.btnRegister.Text = "Registrarse";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Visible = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnListUsers
             // 
-            this.btnListUsers.Location = new System.Drawing.Point(194, 110);
+            this.btnListUsers.Location = new System.Drawing.Point(184, 163);
             this.btnListUsers.Name = "btnListUsers";
             this.btnListUsers.Size = new System.Drawing.Size(123, 35);
             this.btnListUsers.TabIndex = 7;
             this.btnListUsers.Text = "Mostrar usuarios";
             this.btnListUsers.UseVisualStyleBackColor = true;
-            this.btnListUsers.Click += new System.EventHandler(this.btnListUsers_Click);
+            this.btnListUsers.Visible = false;
             // 
             // LoginForm
             // 
