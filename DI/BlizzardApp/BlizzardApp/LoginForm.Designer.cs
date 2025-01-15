@@ -106,6 +106,7 @@ namespace BlizzardApp
             this.btnListUsers.Text = "Mostrar usuarios";
             this.btnListUsers.UseVisualStyleBackColor = true;
             this.btnListUsers.Visible = false;
+            this.btnListUsers.Click += new System.EventHandler(this.btnListUsers_Click);
             // 
             // LoginForm
             // 

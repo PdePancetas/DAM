@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jan 15, 2025, 12:31:04 PM by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="Empleado" optimistic-lock="none" table="empleado">
+        <id name="dni" type="string">
+            <column length="9" name="dni"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="nomEmp" type="string">
+            <column length="40" name="nom_emp" not-null="true"/>
+        </property>
+        <set catalog="proyectos" fetch="select" inverse="false" lazy="true" name="proyectos" table="asig_proyecto">
+            <key>
+                <column length="9" name="dni_emp" not-null="true"/>
+            </key>
+            <many-to-many entity-name="Proyecto">
+                <column name="id_proy" not-null="true"/>
+            </many-to-many>
+        </set>
+        <set fetch="select" inverse="true" lazy="true" name="proyectos_1" table="proyecto">
+            <key>
+                <column length="9" name="dni_jefe_proy" not-null="true"/>
+            </key>
+            <one-to-many class="Proyecto"/>
+        </set>
+    </class>
+</hibernate-mapping>

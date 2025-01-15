@@ -33,6 +33,7 @@ namespace BlizzardApp
                  this.Hide();  
                  Home home = new Home();
                  home.Show();
+                
              }
              else if (Func.UserExists(usuario) && !Func.PasswordMatches(usuario, contrasena))
              {
@@ -47,7 +48,7 @@ namespace BlizzardApp
                 btnRegister.Visible = true;
              }
         }
-        /*
+        
         private void btnListUsers_Click(object sender, EventArgs e)
         {
             List<Usuario> users = Func.getUsers();
@@ -60,7 +61,7 @@ namespace BlizzardApp
 
             MessageBox.Show(data, "Usuarios",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        */
+        
         private void btnRegister_Click(object sender, EventArgs e)
         {
             
