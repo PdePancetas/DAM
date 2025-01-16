@@ -12,11 +12,11 @@ public class EntradaPalabra implements Runnable {
 
 	String palabra;
 	Socket s;
+	BufferedWriter bw;
 
 	@Override
 	public void run() {
 		try {
-			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
 			while (true) {
 				pidePalabra();
 				mandaPalabra(bw);
@@ -39,8 +39,9 @@ public class EntradaPalabra implements Runnable {
 
 	}
 
-	public EntradaPalabra(Socket s) {
+	public EntradaPalabra(Socket s, BufferedWriter bw) {
 		this.s = s;
+		this.bw = bw;
 	}
 
 	private void pidePalabra() {

@@ -21,20 +21,24 @@ public class SalidaPalabra implements Runnable {
 
 		BufferedWriter bw;
 		try {
-			
-			
+
 			while (true) {
+				synchronized (s) {
+					s.wait();
+				}
+				long pid = 0;
 				for (Socket socket : grupos.get(grupo)) {
 					bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-					
+//					if(pid== socket.)
 					IOUtility.escribir(bw, mensaje);
-					
+
 				}
-				
-			
-				
+
 			}
 		} catch (IOException e) {
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}

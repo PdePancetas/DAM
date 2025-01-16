@@ -49,7 +49,7 @@ public class ServerWorker implements Runnable {
 					actualizarPalabra(br, salida);
 
 			} catch (IOException e) {
-				System.out.println(s.getPort() + " ha cerrado la conexión");
+				System.out.println(s.getInetAddress() + " ha cerrado la conexión"); //OBTENER NOMBRE
 			}
 		} catch (Exception e) {
 			
@@ -59,7 +59,11 @@ public class ServerWorker implements Runnable {
 	private void actualizarPalabra(BufferedReader br, SalidaPalabra salida) throws IOException {
 
 		salida.mensaje = br.readLine();
-		System.out.println("Nueva palabra de " + s.getLocalPort() + ": " + salida.mensaje);
+		synchronized (s) {
+			s.notifyAll();
+			
+		}
+		System.out.println("Nueva mensaje: " + salida.mensaje);
 
 	}
 }

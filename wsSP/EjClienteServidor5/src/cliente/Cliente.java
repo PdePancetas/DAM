@@ -21,7 +21,7 @@ public class Cliente{
 			BufferedReader br = new BufferedReader(new InputStreamReader(s.getInputStream()));
 			BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(s.getOutputStream()));
 			
-			Thread t = new Thread(new EntradaPalabra(s));
+			Thread t = new Thread(new EntradaPalabra(s,bw));
 			t.start();
 			
 			while(true) {
