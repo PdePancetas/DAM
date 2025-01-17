@@ -5,10 +5,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Server {
 
-	private static HashMap<Integer, ArrayList<Socket>> grupos = new HashMap<>();
+	private static HashSet<Socket> clientes = new HashSet<>();
 	
 	public static void main(String[] args) {
 		try {
@@ -17,7 +18,7 @@ public class Server {
 				while (true) {
 					Socket cliente = ss.accept();
 					System.out.println("Conexión establecida, esperando nueva conexión...");
-					Thread worker = new Thread(new ServerWorker(cliente, grupos));
+					Thread worker = new Thread(new ServerWorker(cliente, clientes));
 					worker.start();
 				}
 			}

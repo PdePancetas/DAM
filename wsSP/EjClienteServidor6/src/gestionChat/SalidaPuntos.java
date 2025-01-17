@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 import io.IOUtility;
 
-public class SalidaPalabra implements Runnable {
+public class SalidaPuntos implements Runnable {
 
 	public String mensaje;
 	private int grupo;
@@ -46,7 +46,7 @@ public class SalidaPalabra implements Runnable {
 
 	}
 
-	public SalidaPalabra(Socket s, int grupo, HashMap<Integer, ArrayList<Socket>> grupos) {
+	public SalidaPuntos() {
 		this.grupo = grupo;
 		this.grupos = grupos;
 		this.s = s;
