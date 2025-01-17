@@ -1,5 +1,5 @@
 package beans;
-// Generated Jan 15, 2025, 12:31:04 PM by Hibernate Tools 6.5.1.Final
+// Generated 17 ene 2025, 19:23:50 by Hibernate Tools 6.5.1.Final
 
 import java.util.HashSet;
 import java.util.Set;

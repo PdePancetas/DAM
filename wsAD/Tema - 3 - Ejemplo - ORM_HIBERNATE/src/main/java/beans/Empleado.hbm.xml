@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated Jan 15, 2025, 12:31:04 PM by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 ene 2025, 19:23:50 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="Empleado" optimistic-lock="none" table="empleado">
+    <class name="beans.Empleado" optimistic-lock="none" table="empleado">
         <id name="dni" type="string">
             <column length="9" name="dni"/>
             <generator class="assigned"/>
@@ -13,7 +13,7 @@
             <key>
                 <column length="9" name="dni_emp" not-null="true"/>
             </key>
-            <many-to-many entity-name="Proyecto">
+            <many-to-many entity-name="beans.Proyecto">
                 <column name="id_proy" not-null="true"/>
             </many-to-many>
         </set>
@@ -21,7 +21,7 @@
             <key>
                 <column length="9" name="dni_jefe_proy" not-null="true"/>
             </key>
-            <one-to-many class="Proyecto"/>
+            <one-to-many class="beans.Proyecto"/>
         </set>
     </class>
 </hibernate-mapping>

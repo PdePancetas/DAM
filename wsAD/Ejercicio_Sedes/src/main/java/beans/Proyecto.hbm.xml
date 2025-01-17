@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 17 ene 2025, 19:31:54 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.Proyecto" optimistic-lock="none" table="proyecto">
+        <id name="idProy" type="java.lang.Integer">
+            <column name="id_proy"/>
+            <generator class="identity"/>
+        </id>
+        <property name="FInicio" type="date">
+            <column length="10" name="f_inicio" not-null="true"/>
+        </property>
+        <property name="FFin" type="date">
+            <column length="10" name="f_fin"/>
+        </property>
+        <property name="nomProy" type="string">
+            <column length="20" name="nom_proy" not-null="true"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="proyectoSedes" table="proyecto_sede">
+            <key>
+                <column name="id_proy" not-null="true"/>
+            </key>
+            <one-to-many class="beans.ProyectoSede"/>
+        </set>
+    </class>
+</hibernate-mapping>

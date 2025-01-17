@@ -13,15 +13,17 @@
     <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlElement"/>
     <fullyQualifiedTypeName name="jakarta.xml.bind.annotation.XmlAttribute"/>
     <fullyQualifiedTypeName name="java.util.Comparator"/>
-    <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.sql.Array"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="estilos.Estilos"/>
-    <fullyQualifiedTypeName name="connection.ConexionBD"/>
     <fullyQualifiedTypeName name="org.json.JSONArray"/>
     <fullyQualifiedTypeName name="logic.Func"/>
     <fullyQualifiedTypeName name="java.util.stream.Collectors"/>
     <fullyQualifiedTypeName name="models.Proyecto"/>
     <fullyQualifiedTypeName name="models.Empleado"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServlet"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="connection.ConexionBD"/>
 </qualifiedTypeNameHistroy>

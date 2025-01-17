@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 17 ene 2025, 19:31:54 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="beans.EmpleadoDatosProf" optimistic-lock="none" table="empleado_datos_prof">
+        <id name="dni" type="string">
+            <column length="9" name="dni"/>
+            <generator class="foreign"/>
+        </id>
+        <one-to-one class="beans.Empleado" constrained="true" name="empleado"/>
+        <property name="categoria" type="string">
+            <column length="2" name="categoria" not-null="true"/>
+        </property>
+        <property name="sueldoBrutoAnual" type="big_decimal">
+            <column name="sueldo_bruto_anual" precision="8" scale="2"/>
+        </property>
+    </class>
+</hibernate-mapping>

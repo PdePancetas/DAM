@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+                                         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+ <session-factory name="">
+  <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+  <property name="hibernate.connection.password">1234</property>
+  <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/sedes</property>
+  <property name="hibernate.connection.username">root</property>
+  <property name="hibernate.default_catalog">sedes</property>
+  <property name="hibernate.default_schema">sedes</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  <property name="hibernate.hbm2ddl.auto">none</property>
+  <property name="hibernate.search.autoregister_listeners">true</property>
+  <property name="hibernate.validator.apply_to_ddl">false</property>
+  <mapping class="beans.Departamento" resource="beans/Departamento.hbm.xml"/>
+  <mapping class="beans.ProyectoSede" resource="beans/ProyectoSede.hbm.xml"/>
+  <mapping class="beans.EmpleadoDatosProf" resource="beans/EmpleadoDatosProf.hbm.xml"/>
+  <mapping class="beans.Sede" resource="beans/Sede.hbm.xml"/>
+  <mapping class="beans.Empleado" resource="beans/Empleado.hbm.xml"/>
+  <mapping class="beans.Proyecto" resource="beans/Proyecto.hbm.xml"/>
+ </session-factory>
+</hibernate-configuration>
