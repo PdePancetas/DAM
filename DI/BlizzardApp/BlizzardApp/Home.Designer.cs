@@ -293,7 +293,7 @@
             this.textoBienvenida.Name = "textoBienvenida";
             this.textoBienvenida.Size = new System.Drawing.Size(100, 20);
             this.textoBienvenida.TabIndex = 10;
-            this.textoBienvenida.Text = "Bienvenido "+LoginForm.loggedUser;
+            this.textoBienvenida.Text = "Bienvenido "+ LoggedUser.User.Nombre;
             // 
             // Home
             // 
@@ -317,7 +317,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Home";
             this.Text = "BlizzForm";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Home_Load);
             this.panel_ultimosLanzamientos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

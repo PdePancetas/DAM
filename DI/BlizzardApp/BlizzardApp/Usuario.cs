@@ -5,12 +5,14 @@
         public string Nombre { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string rol {  get; set; }
         public Usuario() { }
-        public Usuario(string nombre, string email, string password)
+        public Usuario(string nombre, string email, string password, string rol)
         {
-            Nombre = nombre;
-            Email = email;
-            Password = password;
+            this.Nombre = nombre;
+            this.Email = email;
+            this.Password = password;
+            this.rol = rol;
         }
     }
 }

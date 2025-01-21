@@ -10,12 +10,17 @@ namespace BlizzardApp
         {
            
             InitializeComponent();
+            if (LoggedUser.User.rol.Equals("admin"))
+            {
+                comboBox_Perfil.Items.Add("Opciones Admin");
+            }
             comboBox_Perfil.DropDownStyle = ComboBoxStyle.DropDownList;
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Home_Load(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnTienda_Click(object sender, EventArgs e)
@@ -50,6 +55,11 @@ namespace BlizzardApp
             else if (comboBox_Perfil.SelectedItem.Equals("Salir"))
             {
                 Application.Exit();
+            }
+            else if (comboBox_Perfil.SelectedItem.Equals("Opciones Admin"))
+            {
+                AdminOps adminOps = new AdminOps();
+                adminOps.Show();
             }
         }
     }

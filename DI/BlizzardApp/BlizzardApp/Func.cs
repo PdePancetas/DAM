@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace BlizzardApp
@@ -38,140 +39,6 @@ namespace BlizzardApp
 
             return null;
         }
-
-        /*
-         Ejemplo para crear una tabla 
-         
-        public static void CreateTable(MySqlConnection connection)
-        {
-            string createTableSql = "CREATE TABLE IF NOT EXISTS users (" +
-                                    "id INT AUTO_INCREMENT PRIMARY KEY," +
-                                    "name VARCHAR(255) NOT NULL," +
-                                    "email VARCHAR(255) NOT NULL)";
-            MySqlCommand createTableCommand = new MySqlCommand(createTableSql, connection);
-
-            try
-            {
-                connection.Open();
-                createTableCommand.ExecuteNonQuery();
-                Console.WriteLine("Table created!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-        }
-        */
-
-        /*
-         Ejemplo para insertar algo en una tabla
-         
-        public static void InsertData(MySqlConnection connection)
-        {
-            string insertSql = "INSERT INTO users (name, email) VALUES (@name, @email)";
-            MySqlCommand insertCommand = new MySqlCommand(insertSql, connection);
-
-            // Parameters
-            insertCommand.Parameters.AddWithValue("@name", "John Doe");
-            insertCommand.Parameters.AddWithValue("@email", "john@example.com");
-
-            try
-            {
-                connection.Open();
-                int rowsAffected = insertCommand.ExecuteNonQuery();
-                Console.WriteLine($"Inserted {rowsAffected} row(s)!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-        }
-        */
-
-        /*
-         Ejemplo de una consulta
-         
-        public static void RetrieveData(MySqlConnection connection)
-        {
-            string query = "SELECT * FROM users";
-            MySqlCommand queryCommand = new MySqlCommand(query, connection);
-
-            try
-            {
-                connection.Open();
-                using (MySqlDataReader reader = queryCommand.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        Console.WriteLine($"ID: {reader["id"]}, Name: {reader["name"]}, Email: {reader["email"]}");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-        }
-        */
-
-        /*
-         Ejemplo de una actualización en una tabla
-         
-        public static void UpdateData(MySqlConnection connection)
-        {
-            string updateSql = "UPDATE users SET email = @newEmail WHERE name = @name";
-            MySqlCommand updateCommand = new MySqlCommand(updateSql, connection);
-
-            // Parameters
-            updateCommand.Parameters.AddWithValue("@newEmail", "updated@example.com");
-            updateCommand.Parameters.AddWithValue("@name", "John Doe");
-
-            try
-            {
-                connection.Open();
-                int rowsAffected = updateCommand.ExecuteNonQuery();
-                Console.WriteLine($"Updated {rowsAffected} row(s)!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
-            }
-            finally
-            {
-                connection.Close();
-            }
-
-        }
-        */
-
-        /*
-         Ejemplo para eliminar datos de una tabla
-         
-        public static void DeleteData(MySqlConnection connection)
-        {
-            string deleteSql = "DELETE FROM users WHERE name = @name";
-            MySqlCommand deleteCommand = new MySqlCommand(deleteSql, connection);
-
-            // Parameter
-            deleteCommand.Parameters.AddWithValue("@name", "John Doe");
-
-        }
-        */
 
         internal static bool UserExists(string usuario)
         {
@@ -249,7 +116,7 @@ namespace BlizzardApp
         {
             MySqlConnection connection = Conectar_BD();
 
-            string sql = "INSERT INTO users (name, email, password) VALUES (@name, @email, @password)";
+            string sql = "INSERT INTO users (name, email, password, rol) VALUES (@name, @email, @password, @rol)";
 
             MySqlCommand statement = new MySqlCommand(sql, connection);
 
@@ -257,6 +124,41 @@ namespace BlizzardApp
             statement.Parameters.AddWithValue("@name", userName);
             statement.Parameters.AddWithValue("@email", email);
             statement.Parameters.AddWithValue("@password", password);
+            statement.Parameters.AddWithValue("@rol", "user");
+
+            try
+            {
+                connection.Open();
+                int rowsAffected = statement.ExecuteNonQuery();
+                Console.WriteLine($"Inserted {rowsAffected} row(s)!");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return false;
+        }
+
+        internal static bool registerAdmin(string userName, string email, string password)
+        {
+            MySqlConnection connection = Conectar_BD();
+
+            string sql = "INSERT INTO users (name, email, password, rol) VALUES (@name, @email, @password, @rol)";
+
+            MySqlCommand statement = new MySqlCommand(sql, connection);
+
+            // Parameters
+            statement.Parameters.AddWithValue("@name", userName);
+            statement.Parameters.AddWithValue("@email", email);
+            statement.Parameters.AddWithValue("@password", password);
+            statement.Parameters.AddWithValue("@rol", "admin");
 
             try
             {
@@ -284,9 +186,9 @@ namespace BlizzardApp
 
             MySqlConnection connection = Conectar_BD();
 
-            string sql = "SELECT * FROM users";
+            string sql = "SELECT * FROM users WHERE rol = @rol";
             MySqlCommand statement = new MySqlCommand( sql, connection);
-
+            statement.Parameters.AddWithValue("@rol", "user");
             try
             {
                 connection.Open();
@@ -294,7 +196,7 @@ namespace BlizzardApp
 
                 while (reader.Read())
                 {
-                    users.Add(new Usuario(reader.GetString("name"), reader.GetString("email"), reader.GetString("password")));
+                    users.Add(new Usuario(reader.GetString("name"), reader.GetString("email"), reader.GetString("password"), reader.GetString("rol")));
                 }
 
                 return users;
@@ -345,6 +247,40 @@ namespace BlizzardApp
             return false;
         }
 
+        internal static bool AdminExists(string userName, string email, string password)
+        {
+            MySqlConnection connection = Conectar_BD();
+
+            string sql = "SELECT * FROM users";
+            MySqlCommand query = new MySqlCommand(sql, connection);
+
+            try
+            {
+                connection.Open();
+                using (MySqlDataReader reader = query.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        if (reader["name"].Equals(userName) && reader["email"].Equals(email) && reader["password"].Equals(password) && reader["rol"].Equals("admin"))
+                        {
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return false;
+        }
+
+
         internal static bool EmailExists(string email)
         {
             MySqlConnection connection = Conectar_BD();
@@ -376,6 +312,40 @@ namespace BlizzardApp
             }
 
             return false;
+        }
+
+        internal static Usuario getUser(string usuario, string contrasena)
+        {
+
+            MySqlConnection connection = Conectar_BD();
+
+            string sql = "SELECT * FROM users";
+            MySqlCommand query = new MySqlCommand(sql, connection);
+
+            try
+            {
+                connection.Open();
+                using (MySqlDataReader reader = query.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+
+                        if(reader.GetString("name").Equals(usuario) && reader.GetString("password").Equals(contrasena))
+                            return new Usuario(reader.GetString("name"), reader.GetString("email"), reader.GetString("password"), reader.GetString("rol"));
+                    
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return null;
         }
     }
 }

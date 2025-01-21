@@ -6,10 +6,6 @@ namespace BlizzardApp
 {
     public partial class LoginForm : Form
     {
-        public static string loggedUser;
-
-
-
         public LoginForm()
         {
             InitializeComponent();
@@ -25,16 +21,6 @@ namespace BlizzardApp
              {
                 MessageBox.Show("Por favor, rellene todos los campos", null, MessageBoxButtons.OK, MessageBoxIcon.Information);
              } 
-             else if (Func.UserExists(usuario) && Func.PasswordMatches(usuario, contrasena))
-             {
-                 MessageBox.Show($"Bienvenido {usuario}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                 loggedUser = usuario;
-                 this.Hide();  
-                 Home home = new Home();
-                 home.Show();
-                
-             }
              else if (Func.UserExists(usuario) && !Func.PasswordMatches(usuario, contrasena))
              {
                 
@@ -42,7 +28,30 @@ namespace BlizzardApp
                 //Control de bloqueo de usuario si se introduce 3 veces mal la contraseña
                 txtContrasena.Text = "";
              }
-             else
+             else if (Func.UserExists(usuario))
+             {
+                if (Func.PasswordMatches(usuario, "Admin1234"))
+                {
+                    MessageBox.Show($"Bienvenido admin {usuario}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Usuario user = Func.getUser(usuario, contrasena);
+                    LoggedUser.User = user;
+
+                    Home home = new Home();
+                    home.Show();
+                    this.Hide();
+                }
+                else if (Func.PasswordMatches(usuario, contrasena))
+                {
+                    MessageBox.Show($"Bienvenido {usuario}", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Usuario user = Func.getUser(usuario, contrasena);
+                    LoggedUser.User = user;
+
+                    Home home = new Home();
+                    home.Show();
+                    this.Hide();
+                }
+             }
+            else
              {
                 MessageBox.Show("No se encontro al usuario, puede registrarlo pulsando en 'Registrarse'", null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 btnRegister.Visible = true;
