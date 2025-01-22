@@ -9,10 +9,14 @@ import java.util.Set;
  */
 public class Proyecto implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer idProy;
 	private Empleado empleado;
 	private String nomProy;
-	private Set empleados = new HashSet(0);
+	private Set<Empleado> empleados = new HashSet<>(0);
 
 	public Proyecto() {
 	}
@@ -22,7 +26,7 @@ public class Proyecto implements java.io.Serializable {
 		this.nomProy = nomProy;
 	}
 
-	public Proyecto(Empleado empleado, String nomProy, Set empleados) {
+	public Proyecto(Empleado empleado, String nomProy, Set<Empleado> empleados) {
 		this.empleado = empleado;
 		this.nomProy = nomProy;
 		this.empleados = empleados;
@@ -52,11 +56,11 @@ public class Proyecto implements java.io.Serializable {
 		this.nomProy = nomProy;
 	}
 
-	public Set getEmpleados() {
+	public Set<Empleado> getEmpleados() {
 		return this.empleados;
 	}
 
-	public void setEmpleados(Set empleados) {
+	public void setEmpleados(Set<Empleado> empleados) {
 		this.empleados = empleados;
 	}
 

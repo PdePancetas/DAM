@@ -2,6 +2,12 @@ package main;
 
 import java.sql.SQLException;
 
+import org.hibernate.boot.SessionFactoryBuilder;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.internal.util.ConfigHelper;
+
+import com.mysql.cj.xdevapi.SessionFactory;
+
 import controllers.EmpleadoController;
 
 @SuppressWarnings("unused")
@@ -19,7 +25,11 @@ public class Main {
 //		System.out.println(new EmpleadoController().updateNombreEmpleado("123", "José Pérez"));
 		
 		//Read
-//		System.out.println(new EmpleadoController().getEmpleado("12"));
+		System.out.println(new EmpleadoController().getEmpleado("12"));
+		
+		
+		
+		
 	}
 
 }
