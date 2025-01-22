@@ -5,7 +5,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import beans.Empleado;
-
+//CRUD Empleado
 public class EmpleadoController {
 
 	public String createEmpleado(String dni, String nom_emp) {
@@ -26,6 +26,7 @@ public class EmpleadoController {
 										// (save está en desuso)
 			session.getTransaction().commit();// Ejecuto la transacción
 			factory.close();// Cierro el factory
+			
 
 			return "Empleado creado";
 		} catch (Exception e) {
