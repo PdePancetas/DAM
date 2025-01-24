@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\blanc\\DAM\\DI\\repos\\ApiSpotify\\ApiSpotify.csproj": {}
+    "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\ApiSpotify.csproj": {}
   },
   "projects": {
-    "C:\\Users\\blanc\\DAM\\DI\\repos\\ApiSpotify\\ApiSpotify.csproj": {
+    "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\ApiSpotify.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\blanc\\DAM\\DI\\repos\\ApiSpotify\\ApiSpotify.csproj",
+        "projectUniqueName": "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\ApiSpotify.csproj",
         "projectName": "ApiSpotify",
-        "projectPath": "C:\\Users\\blanc\\DAM\\DI\\repos\\ApiSpotify\\ApiSpotify.csproj",
-        "packagesPath": "C:\\Users\\blanc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\blanc\\DAM\\DI\\repos\\ApiSpotify\\obj\\",
+        "projectPath": "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\ApiSpotify.csproj",
+        "packagesPath": "C:\\Users\\Alumno\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alumno\\DAM\\DI\\ApiSpotify\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\blanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Alumno\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
