@@ -5,7 +5,7 @@
 	<groupId>com.pancetas</groupId>
 	<artifactId>Tema_2_Ejemplo_JDBC</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Tema 2 Ejemplo_JDBC</name>
+	<name>Tema - 3 - Ejemplo - ORM_HIBERNATE</name>
 	<dependencies>
 		
 		<!-- Teclado -->
