@@ -125,6 +125,9 @@
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="AdminOps.resx">
+      <DependentUpon>AdminOps.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
