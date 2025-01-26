@@ -40,13 +40,17 @@ namespace BlizzardApp
 
         private void Home_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            Application.Exit();
         }
 
 
         private void comboBox_Perfil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox_Perfil.SelectedItem.Equals("Cerrar sesión"))
+            if(comboBox_Perfil.SelectedIndex == -1)
+            {
+                
+            }
+            else if (comboBox_Perfil.SelectedItem.Equals("Cerrar sesión"))
             {
                 this.Hide();
                 LoginForm loginForm = new LoginForm();
