@@ -1,34 +1,35 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-                                   "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 18 ene 2025, 17:26:50 by Hibernate Tools 6.5.1.Final -->
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jan 27, 2025, 9:32:33 AM by Hibernate Tools 6.5.1.Final -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class name="beans.ProyectoSede" optimistic-lock="none" table="proyecto_sede">
-    <composite-id class="beans.ProyectoSedeId" mapped="false" name="id" unsaved-value="undefined">
-      <key-property name="idProy" type="int">
-        <column name="id_proy"/>
-      </key-property>
-      <key-property name="idSede" type="int">
-        <column name="id_sede"/>
-      </key-property>
-    </composite-id>
-    
-    <!-- Relación con Proyecto sin mapeo de columna duplicada -->
-    <many-to-one class="beans.Proyecto" fetch="select" insert="false" update="false" name="proyecto">
-      <column name="id_proy" not-null="true"/>
-    </many-to-one>
-    
-    <!-- Relación con Sede sin mapeo de columna duplicada -->
-    <many-to-one class="beans.Sede" fetch="select" insert="false" update="false" name="sede">
-      <column name="id_sede" not-null="true"/>
-    </many-to-one>
-    
-    <property generated="never" lazy="false" name="FInicio" type="date">
-      <column length="10" name="f_inicio" not-null="true"/>
-    </property>
-    
-    <property generated="never" lazy="false" name="FFin" type="date">
-      <column length="10" name="f_fin"/>
-    </property>
-  </class>
+    <class name="beans.ProyectoSede" optimistic-lock="none" table="proyecto_sede">
+        <composite-id class="beans.ProyectoSedeId" name="id">
+            <key-property name="idProy" type="int">
+                <column name="id_proy"/>
+            </key-property>
+            <key-property name="idSede" type="int">
+                <column name="id_sede"/>
+            </key-property>
+        </composite-id>
+
+        <!-- Relación con Proyecto, sin permitir inserción ni actualización de la columna id_proy -->
+        <many-to-one class="beans.Proyecto" fetch="select" insert="false" update="false" name="proyecto">
+            <column name="id_proy" not-null="true"/>
+        </many-to-one>
+
+        <!-- Relación con Sede, sin permitir inserción ni actualización de la columna id_sede -->
+        <many-to-one class="beans.Sede" fetch="select" insert="false" update="false" name="sede">
+            <column name="id_sede" not-null="true"/>
+        </many-to-one>
+
+        <!-- Propiedades adicionales -->
+        <property name="FInicio" type="date">
+            <column length="10" name="f_inicio" not-null="true"/>
+        </property>
+
+        <property name="FFin" type="date">
+            <column length="10" name="f_fin"/>
+        </property>
+    </class>
 </hibernate-mapping>
+

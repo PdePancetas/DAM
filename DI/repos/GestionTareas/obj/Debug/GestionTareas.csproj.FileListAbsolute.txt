@@ -1,0 +1,10 @@
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\bin\Debug\GestionTareas.exe.config
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\bin\Debug\GestionTareas.exe
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\bin\Debug\GestionTareas.pdb
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.csproj.AssemblyReference.cache
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.Properties.Resources.resources
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.TaskItem.resources
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.csproj.GenerateResource.cache
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.exe
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.pdb

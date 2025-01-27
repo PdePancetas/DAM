@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 17 ene 2025, 19:23:50 by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 27, 2025, 9:55:07 AM by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="beans.Proyecto" optimistic-lock="none" table="proyecto">
         <id name="idProy" type="java.lang.Integer">
             <column name="id_proy"/>
             <generator class="identity"/>
         </id>
-        <many-to-one class="beans.Empleado" fetch="select" name="empleado">
+        <many-to-one class="beans.Empleado" fetch="select" name="empleadoJefe">
             <column length="9" name="dni_jefe_proy" not-null="true"/>
         </many-to-one>
         <property name="nomProy" type="string">
