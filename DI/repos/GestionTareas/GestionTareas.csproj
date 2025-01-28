@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Gestión de Tareas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Gestión de Tareas.Designer.cs">
+      <DependentUpon>Gestión de Tareas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,12 +60,21 @@
     <Compile Include="TaskBoard.Designer.cs">
       <DependentUpon>TaskBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="TaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaskForm.Designer.cs">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="TaskItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TaskItem.Designer.cs">
       <DependentUpon>TaskItem.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Gestión de Tareas.resx">
+      <DependentUpon>Gestión de Tareas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -78,9 +87,13 @@
     <EmbeddedResource Include="TaskBoard.resx">
       <DependentUpon>TaskBoard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TaskForm.resx">
+      <DependentUpon>TaskForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TaskItem.resx">
       <DependentUpon>TaskItem.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -90,9 +103,54 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="webfonts\fa-brands-400.eot" />
+    <None Include="webfonts\fa-brands-400.ttf" />
+    <None Include="webfonts\fa-brands-400.woff" />
+    <None Include="webfonts\fa-brands-400.woff2" />
+    <None Include="webfonts\fa-regular-400.eot" />
+    <None Include="webfonts\fa-regular-400.ttf" />
+    <None Include="webfonts\fa-regular-400.woff" />
+    <None Include="webfonts\fa-regular-400.woff2" />
+    <None Include="webfonts\fa-solid-900.eot" />
+    <None Include="webfonts\fa-solid-900.ttf" />
+    <None Include="webfonts\fa-solid-900.woff" />
+    <None Include="webfonts\fa-solid-900.woff2" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\all.css" />
+    <Content Include="Content\all.min.css" />
+    <Content Include="Content\brands.css" />
+    <Content Include="Content\brands.min.css" />
+    <Content Include="Content\fontawesome.css" />
+    <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\regular.css" />
+    <Content Include="Content\regular.min.css" />
+    <Content Include="Content\solid.css" />
+    <Content Include="Content\solid.min.css" />
+    <Content Include="Content\svg-with-js.css" />
+    <Content Include="Content\svg-with-js.min.css" />
+    <Content Include="Content\v4-shims.css" />
+    <Content Include="Content\v4-shims.min.css" />
+    <Content Include="Scripts\fontawesome\all.js" />
+    <Content Include="Scripts\fontawesome\all.min.js" />
+    <Content Include="Scripts\fontawesome\brands.js" />
+    <Content Include="Scripts\fontawesome\brands.min.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.js" />
+    <Content Include="Scripts\fontawesome\conflict-detection.min.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.js" />
+    <Content Include="Scripts\fontawesome\fontawesome.min.js" />
+    <Content Include="Scripts\fontawesome\regular.js" />
+    <Content Include="Scripts\fontawesome\regular.min.js" />
+    <Content Include="Scripts\fontawesome\solid.js" />
+    <Content Include="Scripts\fontawesome\solid.min.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.js" />
+    <Content Include="Scripts\fontawesome\v4-shims.min.js" />
+    <Content Include="webfonts\fa-brands-400.svg" />
+    <Content Include="webfonts\fa-regular-400.svg" />
+    <Content Include="webfonts\fa-solid-900.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

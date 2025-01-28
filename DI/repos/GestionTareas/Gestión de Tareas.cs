@@ -15,6 +15,17 @@ namespace GestionTareas
         public Form1()
         {
             InitializeComponent();
+            TaskBoard board = new TaskBoard();
+            Controls.Add(board);
+            Text = "Gestión de Tareas";
+
+
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

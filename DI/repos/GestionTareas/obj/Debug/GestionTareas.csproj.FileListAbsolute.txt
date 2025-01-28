@@ -8,3 +8,6 @@ C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.csproj.Genera
 C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.csproj.CoreCompileInputs.cache
 C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.exe
 C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.pdb
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.Form1.resources
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.TaskBoard.resources
+C:\Users\Alumno\DAM\DI\repos\GestionTareas\obj\Debug\GestionTareas.TaskForm.resources
