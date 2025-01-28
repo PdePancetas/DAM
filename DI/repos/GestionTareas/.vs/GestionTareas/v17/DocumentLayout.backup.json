@@ -3,27 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\repos\\gestiontareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\repos\\gestiontareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\repos\\gestiontareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\repos\\gestiontareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\repos\\gestiontareas\\taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\repos\\gestiontareas\\taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,8 +54,7 @@
               "RelativeToolTip": "TaskForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T09:04:00.61Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-28T09:04:00.61Z"
             },
             {
               "$type": "Document",
@@ -66,25 +65,24 @@
               "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\TaskForm.cs [Dise\u00F1o]",
               "RelativeToolTip": "TaskForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T09:03:59.256Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-01-28T09:03:59.256Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TaskItem.cs",
               "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\TaskItem.cs",
               "RelativeDocumentMoniker": "TaskItem.cs",
               "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\TaskItem.cs",
               "RelativeToolTip": "TaskItem.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAmwF8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAmwF8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T08:24:15.359Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "TaskItem.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\TaskItem.cs",
               "RelativeDocumentMoniker": "TaskItem.cs",
@@ -96,13 +94,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TaskBoard.cs",
               "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\TaskBoard.cs",
               "RelativeDocumentMoniker": "TaskBoard.cs",
               "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\TaskBoard.cs",
               "RelativeToolTip": "TaskBoard.cs",
-              "ViewState": "AgIAAJAAAAAAAAAAAAAkwIoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAUwIoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T07:47:29.865Z",
               "EditorCaption": ""
