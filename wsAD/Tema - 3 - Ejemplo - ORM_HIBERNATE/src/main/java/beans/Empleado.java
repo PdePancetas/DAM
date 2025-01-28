@@ -15,8 +15,8 @@ public class Empleado implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 	private String dni;
 	private String nomEmp;
-	private Set<Proyecto> proyectosEnLosQueEstaInvolucrado = new HashSet<>(0);
-	private Set<Proyecto> proyectosInvolucradosEnLosQueEsJefe = new HashSet<>(0);
+	private Set<Proyecto> proyectosTrabaja = new HashSet<>(0);
+	private Set<Proyecto> proyectosJefe = new HashSet<>(0);
 
 	public Empleado() {
 	}
@@ -26,11 +26,11 @@ public class Empleado implements java.io.Serializable {
 		this.nomEmp = nomEmp;
 	}
 
-	public Empleado(String dni, String nomEmp, Set<Proyecto> proyectos, Set<Proyecto> proyectos_1) {
+	public Empleado(String dni, String nomEmp, Set<Proyecto> proyectosTrabaja, Set<Proyecto> proyectosJefe) {
 		this.dni = dni;
 		this.nomEmp = nomEmp;
-		this.proyectosEnLosQueEstaInvolucrado = proyectos;
-		this.proyectosInvolucradosEnLosQueEsJefe = proyectos_1;
+		this.proyectosTrabaja = proyectosTrabaja;
+		this.proyectosJefe = proyectosJefe;
 	}
 
 	public String getDni() {
@@ -49,20 +49,20 @@ public class Empleado implements java.io.Serializable {
 		this.nomEmp = nomEmp;
 	}
 
-	public Set<Proyecto> getProyectos() {
-		return this.proyectosEnLosQueEstaInvolucrado;
+	public Set<Proyecto> getProyectosTrabaja() {
+		return this.proyectosTrabaja;
 	}
 
-	public void setProyectos(Set<Proyecto> proyectos) {
-		this.proyectosEnLosQueEstaInvolucrado = proyectos;
+	public void setProyectosTrabaja(Set<Proyecto> proyectosTrabaja) {
+		this.proyectosTrabaja = proyectosTrabaja;
 	}
 
-	public Set<Proyecto> getProyectos_1() {
-		return this.proyectosInvolucradosEnLosQueEsJefe;
+	public Set<Proyecto> getProyectosJefe() {
+		return this.proyectosJefe;
 	}
 
-	public void setProyectos_1(Set<Proyecto> proyectos_1) {
-		this.proyectosInvolucradosEnLosQueEsJefe = proyectos_1;
+	public void setProyectosJefe(Set<Proyecto> proyectosJefe) {
+		this.proyectosJefe = proyectosJefe;
 	}
 
 	@Override

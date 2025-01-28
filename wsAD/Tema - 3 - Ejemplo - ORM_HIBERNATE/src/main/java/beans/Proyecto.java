@@ -1,5 +1,4 @@
 package beans;
-// Generated 17 ene 2025, 19:23:50 by Hibernate Tools 6.5.1.Final
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,12 +8,8 @@ import java.util.Set;
  */
 public class Proyecto implements java.io.Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	private Integer idProy;
-	private Empleado empleado;
+	private Empleado empleadoJefe;
 	private String nomProy;
 	private Set<Empleado> empleados = new HashSet<>(0);
 
@@ -22,12 +17,12 @@ public class Proyecto implements java.io.Serializable {
 	}
 
 	public Proyecto(Empleado empleado, String nomProy) {
-		this.empleado = empleado;
+		this.empleadoJefe = empleado;
 		this.nomProy = nomProy;
 	}
 
-	public Proyecto(Empleado empleado, String nomProy, Set<Empleado> empleados) {
-		this.empleado = empleado;
+	public Proyecto(Empleado empleadoJefe, String nomProy, Set<Empleado> empleados) {
+		this.empleadoJefe = empleadoJefe;
 		this.nomProy = nomProy;
 		this.empleados = empleados;
 	}
@@ -40,12 +35,12 @@ public class Proyecto implements java.io.Serializable {
 		this.idProy = idProy;
 	}
 
-	public Empleado getEmpleado() {
-		return this.empleado;
+	public Empleado getEmpleadoJefe() {
+		return this.empleadoJefe;
 	}
 
-	public void setEmpleado(Empleado empleado) {
-		this.empleado = empleado;
+	public void setEmpleadoJefe(Empleado empleadoJefe) {
+		this.empleadoJefe = empleadoJefe;
 	}
 
 	public String getNomProy() {
@@ -64,4 +59,10 @@ public class Proyecto implements java.io.Serializable {
 		this.empleados = empleados;
 	}
 
+	@Override
+	public String toString() {
+		return "Proyecto [idProy=" + idProy + ", empleadoJefe=" + empleadoJefe + ", nomProy=" + nomProy + "]";
+	}
+
+	
 }
