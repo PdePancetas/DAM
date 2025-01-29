@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fragments_v2.AdaptadorImagen
 
 
 class FragmentImagenes : androidx.fragment.app.Fragment() {
@@ -46,17 +45,18 @@ class FragmentImagenes : androidx.fragment.app.Fragment() {
             DividerItemDecoration(this.context, DividerItemDecoration.VERTICAL)
         )
 
-        //lstListado.adapter = adaptador
+        lstListado.adapter = adaptador
     }
 
-    fun setImageListener(l: () -> Unit) {
+    fun setImageListener(l: ImageListener) {
         listener = l
     }
+
 
     /*
     * Defino una función que establece un listener que se activa cuando se seleccione un Correo
     */
-    fun setCorreosListener(seleccion: (Image) -> Unit) {
+    fun setImageListener(seleccion: (Image) -> Unit) {
 
         /*
         * object:CorreosListener crea una implementación de la interface CorreosListener

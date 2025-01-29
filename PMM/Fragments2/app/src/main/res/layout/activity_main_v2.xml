@@ -6,7 +6,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView2"
-        android:name="com.example.fragments_v2.FragmentImagenes"
+        android:name="com.example.fragments2.FragmentImagenes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

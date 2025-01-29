@@ -1,4 +1,4 @@
-package com.example.fragments_v2
+package com.example.fragments2
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.fragments2.Image
-import com.example.fragments2.R
 
 class AdaptadorImagen(private val datos: Array<Image>,
                          private val clickListener : (Image) -> Unit) :
@@ -18,9 +16,10 @@ class AdaptadorImagen(private val datos: Array<Image>,
         val image = item.findViewById(R.id.imageView3) as ImageView
         val lblAño = item.findViewById(R.id.fragmentTextView) as TextView
 
-        fun bindTitular(image: Image){
-            //.setImageResource(image.imagen)
-            //fragmentText.text = image.texto
+        fun bindImage(imagen: Image) {
+            // Aquí asignas la imagen y la descripción a las vistas del ítem
+            itemView.findViewById<ImageView>(R.id.imageView).setImageResource(imagen.imagen)
+            itemView.findViewById<TextView>(R.id.fragmentTextView).text = imagen.texto
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImagenesViewHolder {
@@ -30,10 +29,10 @@ class AdaptadorImagen(private val datos: Array<Image>,
     }
 
     override fun onBindViewHolder(holder: ImagenesViewHolder, position: Int) {
-        val titular = datos[position]
-        holder.bindTitular(titular)
+        val image = datos[position]
+        holder.bindImage(image)
 
-        holder.item.setOnClickListener { clickListener(titular) };
+        holder.item.setOnClickListener { clickListener(image) };
     }
 
     override fun getItemCount() = datos.size
