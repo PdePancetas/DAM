@@ -86,8 +86,15 @@ namespace GestionTareas
         {
             this.Parent.Controls.Remove(this);
         }
+        
+        public void UpdateTaskType(string newType)
+        {
+            // Actualizar lógica interna y visualización según el tipo
+            TaskType = newType;
+            // (Ej: cambiar color del borde, iconos, etc)
+        }
 
-        private void TaskItem_MouseDown_1(object sender, MouseEventArgs e)
+        private void TaskItem_MouseDown(object sender, MouseEventArgs e)
         {
             // Inicia el arrastre
             if (e.Button == MouseButtons.Left)

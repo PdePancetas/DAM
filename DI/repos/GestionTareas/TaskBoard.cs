@@ -1,183 +1,174 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GestionTareas
 {
     public partial class TaskBoard : UserControl
     {
+        private FlowLayoutPanel[] columnPanels;
+
         public TaskBoard()
         {
             InitializeComponent();
+            InitializeBoard();
+        }
 
-            // Configuración inicial del TableLayoutPanel
+        private void InitializeBoard()
+        {
             tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.RowCount = 1; // Para incluir los encabezados
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33)); // Columna para "Pendiente"
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33)); // Columna para "En curso"
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33)); // Columna para "Completado"
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.ColumnStyles.Clear();
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33f));
 
-            
+            CreateColumnHeader("Pendiente", 0);
+            CreateColumnHeader("En curso", 1);
+            CreateColumnHeader("Completado", 2);
+
+            columnPanels = new FlowLayoutPanel[3];
+            for (int i = 0; i < 3; i++)
+            {
+                columnPanels[i] = new FlowLayoutPanel
+                {
+                    Dock = DockStyle.Fill,
+                    AutoScroll = true,
+                    BackColor = GetColumnColor(i),
+                    Padding = new Padding(5),
+                    AllowDrop = true // Asegúrate de que el panel permita el arrastre
+                };
+                tableLayoutPanel1.Controls.Add(columnPanels[i], i, 1);
+
+                columnPanels[i].DragEnter += ColumnPanel_DragEnter;
+                columnPanels[i].DragLeave += ColumnPanel_DragLeave;
+                columnPanels[i].DragDrop += ColumnPanel_DragDrop;
+            }
+
+            tableLayoutPanel1.RowCount++;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100f));
+        }
+
+        private Color GetColumnColor(int columnIndex)
+        {
+            switch (columnIndex)
+            {
+                case 0:
+                    return Color.LightCoral;
+                case 1:
+                    return Color.LightGoldenrodYellow;
+                case 2:
+                    return Color.LightGreen;
+                default:
+                    return Color.White;
+            }
         }
 
         private void CreateColumnHeader(string headerText, int columnIndex)
         {
-            Panel headerPanel = new Panel();
-            headerPanel.Dock = DockStyle.Fill;
+            Panel headerPanel = new Panel
+            {
+                Dock = DockStyle.Fill,
+                BackColor = GetColumnColor(columnIndex)
+            };
+
             Label headerLabel = new Label
             {
                 Text = headerText,
                 TextAlign = ContentAlignment.MiddleCenter,
-                Dock = DockStyle.Fill
+                Dock = DockStyle.Fill,
+                Font = new Font("Segoe UI", 10, FontStyle.Bold)
             };
+
             headerPanel.Controls.Add(headerLabel);
-            tableLayoutPanel1.Controls.Add(headerPanel, columnIndex, 0); // Fila 0, columna "columnIndex"
+            tableLayoutPanel1.Controls.Add(headerPanel, columnIndex, 0);
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-            // Definir los colores para cada columna (por ejemplo, 3 columnas)
-            Color[] colores = { Color.Red, Color.Orange, Color.LightGreen };
-
-            // Obtener las dimensiones de cada columna
-            int totalColumnas = tableLayoutPanel1.ColumnCount;
-            int x = 0;
-
-            for (int col = 0; col < totalColumnas; col++)
-            {
-                // Obtiene el ancho de la columna
-                int columnWidth = tableLayoutPanel1.GetColumnWidths()[col];
-
-                // Dibujar el color de fondo para cada columna
-                using (Brush brush = new SolidBrush(colores[col % colores.Length]))  // Utiliza un color para cada columna
-                {
-                    e.Graphics.FillRectangle(brush, x, 0, columnWidth, tableLayoutPanel1.Height);
-                }
-
-                // Actualizar la posición X para la siguiente columna
-                x += columnWidth;
-            }
-        }
-
-        /* private void btnAddTarea_Click(object sender, EventArgs e)
-         {
-             // Mostrar el formulario emergente para agregar una tarea
-             TaskForm taskForm = new TaskForm();
-
-             if (taskForm.ShowDialog() == DialogResult.OK)
-             {
-                 // Al pulsar Aceptar, obtenemos la información de la tarea
-                 string taskContent = taskForm.TaskContent;
-                 string taskType = taskForm.TaskType;
-
-                 // Crear un nuevo control para mostrar la tarea (puede ser un Label o un TextBox)
-                 TaskItem task = new TaskItem(taskContent);
-
-                 // Según el tipo de tarea, agregamos el Label en la columna correspondiente
-                 int columnIndex = taskType == "Pendiente" ? 0 : taskType == "En curso" ? 1 : 2;
-
-                 // Añadir la tarea en una nueva fila
-                 tableLayoutPanel1.RowCount++;
-                 tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-
-                 // Añadir el Label a la celda correspondiente
-                 tableLayoutPanel1.Controls.Add(task, columnIndex, tableLayoutPanel1.RowCount - 1);
-             }
-         }*/
 
         private void btnAddTarea_Click(object sender, EventArgs e)
         {
-            // Mostrar el formulario emergente para agregar una tarea
-            TaskForm taskForm = new TaskForm();
-
-            if (taskForm.ShowDialog() == DialogResult.OK)
-            {
-                // Al pulsar Aceptar, obtenemos la información de la tarea
-                string taskContent = taskForm.TaskContent;
-                string taskType = taskForm.TaskType;
-
-                // Crear un nuevo control para mostrar la tarea
-                TaskItem task = new TaskItem(taskContent, taskType);
-
-                // Según el tipo de tarea, agregamos el Label en la columna correspondiente
-                int columnIndex = taskType == "Pendiente" ? 0 : taskType == "En curso" ? 1 : 2;
-
-                // Encontrar la primera fila vacía en la columna especificada
-                int rowIndex = 0;
-                while (rowIndex < tableLayoutPanel1.RowCount && tableLayoutPanel1.GetControlFromPosition(columnIndex, rowIndex) != null)
+            using (TaskForm taskForm = new TaskForm())
+                if (taskForm.ShowDialog() == DialogResult.OK)
                 {
-                    rowIndex++;
-                }
-
-                // Si hemos llegado al final de las filas, agregamos una nueva fila
-                if (rowIndex == tableLayoutPanel1.RowCount)
-                {
-                    tableLayoutPanel1.RowCount++;
-                }
-
-                // Insertamos el TaskItem en la fila y columna correspondientes
-                tableLayoutPanel1.Controls.Add(task, columnIndex, rowIndex);
-
-                // Si hay otros elementos en la misma columna, desplazamos las filas hacia abajo
-                for (int i = rowIndex; i < tableLayoutPanel1.RowCount - 1; i++)
-                {
-                    var control = tableLayoutPanel1.GetControlFromPosition(columnIndex, i);
-                    if (control != null)
+                    TaskItem newTask = new TaskItem(taskForm.TaskContent, taskForm.TaskType)
                     {
-                        // Desplazamos el control hacia la fila siguiente
-                        tableLayoutPanel1.SetCellPosition(control, new TableLayoutPanelCellPosition(columnIndex, i));
+                        Margin = new Padding(3, 3, 3, 10)
+                    };
+
+                    int targetColumn;
+                    switch (taskForm.TaskType)
+                    {
+                        case "Pendiente":
+                            targetColumn = 0;
+                            break;
+                        case "En curso":
+                            targetColumn = 1;
+                            break;
+                        default:
+                            targetColumn = 2;
+                            break;
                     }
+
+                    columnPanels[targetColumn].Controls.Add(newTask);
+                    ConfigureTaskDragEvents(newTask);
                 }
-            }
         }
 
-        private void tableLayoutPanel_DragEnter(object sender, DragEventArgs e)
+        private void ConfigureTaskDragEvents(TaskItem task)
         {
-            // Permitir el drop solo si el objeto arrastrado es un TaskItem
+            task.MouseDown += (sender, e) =>
+            {
+                if (e.Button == MouseButtons.Left)
+                {
+                    task.DoDragDrop(task, DragDropEffects.Move);
+                }
+            };
+        }
+
+        private void ColumnPanel_DragEnter(object sender, DragEventArgs e)
+        {
             if (e.Data.GetDataPresent(typeof(TaskItem)))
             {
                 e.Effect = DragDropEffects.Move;
-            }
-            else
-            {
-                e.Effect = DragDropEffects.None;
+                (sender as Control).BackColor = Color.LightGray;
             }
         }
 
-        private void tableLayoutPanel_DragDrop(object sender, DragEventArgs e)
+        private void ColumnPanel_DragLeave(object sender, EventArgs e)
         {
-            // Obtener el TaskItem arrastrado
-            TaskItem draggedTask = e.Data.GetData(typeof(TaskItem)) as TaskItem;
+            int columnIndex = Array.IndexOf(columnPanels, sender);
+            (sender as Control).BackColor = GetColumnColor(columnIndex);
+        }
 
-            if (draggedTask != null)
+        private void ColumnPanel_DragDrop(object sender, DragEventArgs e)
+        {
+            FlowLayoutPanel targetPanel = sender as FlowLayoutPanel;
+            if (e.Data.GetDataPresent(typeof(TaskItem)))
             {
-                // Eliminar el TaskItem del panel original (si es necesario)
-                // Este paso es opcional dependiendo de si deseas copiar o mover el control
-                ((Panel)sender).Controls.Add(draggedTask);
-                draggedTask.Location = ((Panel)sender).PointToClient(new Point(e.X, e.Y));
+                TaskItem task = (TaskItem)e.Data.GetData(typeof(TaskItem));
 
-                // Cambiar de columna (panel) según el tipo de tarea
-                int columnIndex = draggedTask.TaskType == "Pendiente" ? 0 : draggedTask.TaskType == "En curso" ? 1 : 2;
+                var parentPanel = task.Parent as FlowLayoutPanel;
+                parentPanel?.Controls.Remove(task);
 
-                if (columnIndex == 0)
+                targetPanel.Controls.Add(task);
+
+                string taskType;
+                int columnIndex = Array.IndexOf(columnPanels, targetPanel);
+                switch (columnIndex)
                 {
-                    tableLayoutPanel1.Controls.Add(draggedTask);
+                    case 0:
+                        taskType = "Pendiente";
+                        break;
+                    case 1:
+                        taskType = "En curso";
+                        break;
+                    default:
+                        taskType = "Completado";
+                        break;
                 }
-                else if (columnIndex == 1)
-                {
-                    panelEnCurso.Controls.Add(draggedTask);
-                }
-                else
-                {
-                    tableLayoutPanel1.Controls.Add(draggedTask);
-                }
+
+                task.UpdateTaskType(taskType);
             }
+            targetPanel.BackColor = GetColumnColor(Array.IndexOf(columnPanels, targetPanel));
         }
     }
 }

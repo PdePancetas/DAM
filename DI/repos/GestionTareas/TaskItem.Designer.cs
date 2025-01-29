@@ -82,7 +82,7 @@
             this.Name = "TaskItem";
             this.Size = new System.Drawing.Size(160, 63);
             this.Load += new System.EventHandler(this.TaskItem_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TaskItem_MouseDown_1);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TaskItem_MouseDown);
             this.ResumeLayout(false);
 
         }
