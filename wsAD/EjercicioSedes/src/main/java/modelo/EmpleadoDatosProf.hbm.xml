@@ -5,12 +5,12 @@
         <id name="dni" type="string">
             <column length="9" name="dni"/>
             <generator class="foreign">
-            	<param name="property">Empleado.dni</param>
+            	<param name="property">empleado</param>
             </generator>
         </id>
         <one-to-one class="modelo.Empleado" constrained="true" name="empleado"/>
         <property name="categoria" type="string">
-            <column length="2" name="categoria" not-null="true"/>
+            <column length="45" name="categoria" not-null="true"/>
         </property>
         <property name="sueldoBrutoAnual" type="big_decimal">
             <column name="sueldo_bruto_anual" precision="8" scale="2"/>
