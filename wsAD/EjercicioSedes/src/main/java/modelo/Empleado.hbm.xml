@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated Jan 29, 2025, 10:03:18 AM by Hibernate Tools 6.5.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="modelo.Empleado" optimistic-lock="none" table="empleado">
+        <id name="dni" type="string">
+            <column length="9" name="dni"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="modelo.Departamento" fetch="select" name="departamento">
+            <column name="id_depto" not-null="true"/>
+        </many-to-one>
+        <property name="nomEmp" type="string">
+            <column length="40" name="nom_emp" not-null="true"/>
+        </property>
+        <one-to-one class="modelo.EmpleadoDatosProf" name="empleadoDatosProf"/>
+    </class>
+</hibernate-mapping>
