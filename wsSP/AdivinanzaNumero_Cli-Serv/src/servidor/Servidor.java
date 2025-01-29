@@ -1,0 +1,46 @@
+package servidor;
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class Servidor {
+	private static final int PUERTO = 12345;
+	static Map<Integer, List<ManejadorCliente>> grupos = new HashMap<>();
+	
+	static int numConexiones = 0;
+	static int numGrupo = 1;
+	static int numCliente = 0;
+	
+	public static void main(String[] args) throws IOException {
+		ServerSocket servidor = new ServerSocket(PUERTO);
+		System.out.println("Servidor iniciado en el puerto " + PUERTO);
+
+		while (true) {
+			try {
+				Socket clienteSocket = servidor.accept();
+				numConexiones++;
+				numCliente++;
+				
+				Random r = new Random();
+				int numAleatorio = r.nextInt(1, 1001);
+
+				System.out.println("Nuevo cliente conectado desde: " + clienteSocket.getInetAddress());
+
+				Thread manejadorThread = new Thread(new ManejadorCliente(clienteSocket, numGrupo, numAleatorio, numCliente));
+				manejadorThread.start();
+				
+				if (numConexiones == 2) {
+					numGrupo++;
+					
+					numConexiones = 0;
+					numCliente = 0;
+					numAleatorio = r.nextInt(1, 1001);
+					
+				}
+			} catch (IOException e) {
+				System.err.println("Error al aceptar la conexión: " + e.getMessage());
+			}
+		}
+	}
+}
