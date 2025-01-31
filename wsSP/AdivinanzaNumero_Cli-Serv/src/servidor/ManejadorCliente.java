@@ -14,42 +14,23 @@ class ManejadorCliente implements Runnable {
 	private Socket socket;
 	private ObjectInputStream entrada;
 	private ObjectOutputStream salida;
-	private Integer numeroAleatorio;
+	private Integer numAleatorio;
 	private int numGrupo;
 	private Random r = new Random();
 
-	public ManejadorCliente(Socket socket, int numGrupo) throws IOException {
+	public ManejadorCliente(Socket socket, int numGrupo, int numAleatorio) throws IOException {
 		this.socket = socket;
 		this.entrada = new ObjectInputStream(socket.getInputStream());
 		this.salida = new ObjectOutputStream(socket.getOutputStream());
 		this.numGrupo = numGrupo;
+		this.numAleatorio = numAleatorio;
 	}
 
 	@Override
 	public void run() {
 		try {
 
-			synchronized (Servidor.grupos) {
-				Servidor.grupos.computeIfAbsent(numGrupo, _ -> new ArrayList<>()).add(this);
-
-			}
-
-			synchronized (Servidor.grupos.get(numGrupo)) {
-				while (!(Servidor.grupos.get(numGrupo).size() == 2)) {
-					System.out.println("Cliente esperando rival...");
-					Servidor.grupos.get(numGrupo).wait();
-				}
-				Servidor.grupos.get(numGrupo).notify();
-
-				numeroAleatorio = r.nextInt(1, 1001);
-				if(Servidor.grupos.get(numGrupo).get(0).numeroAleatorio == null) {
-				Servidor.grupos.get(numGrupo).get(0).numeroAleatorio = numeroAleatorio;
-				Servidor.grupos.get(numGrupo).get(1).numeroAleatorio = numeroAleatorio;
-				}
-			}
-
-			System.out.println("Clientes asignados al grupo " + numGrupo+"numero a adivinar: "+numeroAleatorio);
-
+			
 			int numeroCliente;
 			boolean deNuevo = true;
 			while (deNuevo) {
@@ -62,18 +43,18 @@ class ManejadorCliente implements Runnable {
 				numeroCliente = (Integer) mensaje.getDatos();
 				mensaje.setNumConexion(mensaje.getNumConexion() + 1);
 
-				System.out.println("Mensaje recibido de cliente en grupo " + numGrupo + ": " + numeroCliente);
+				
 
-				if (numeroCliente < numeroAleatorio) {
-					enviarMensaje(mensaje, "El numero es mayor, intentalo de nuevo");
+				if (numeroCliente < numAleatorio) {
+					enviarMensaje(mensaje, "El numero es mayor, turno del otro jugador");
 
 					synchronized (Servidor.grupos.get(numGrupo)) {
 						Servidor.grupos.get(numGrupo).notify();
 						Servidor.grupos.get(numGrupo).wait();
 					}
 
-				} else if (numeroCliente > numeroAleatorio) {
-					enviarMensaje(mensaje, "El numero es menor, intentalo de nuevo");
+				} else if (numeroCliente > numAleatorio) {
+					enviarMensaje(mensaje, "El numero es menor, turno del otro jugador");
 
 					synchronized (Servidor.grupos.get(numGrupo)) {
 						Servidor.grupos.get(numGrupo).notify();
@@ -87,26 +68,26 @@ class ManejadorCliente implements Runnable {
 						if (Servidor.grupos.containsKey(numGrupo)) {
 							for (ManejadorCliente cliente : Servidor.grupos.get(numGrupo)) {
 								if (cliente != this && cliente.equals(Servidor.grupos.get(numGrupo).get(1))) {
-									cliente.enviarMensaje(mensaje, "Tiesnes una ultima oportunidad para advinar el numero:");
+									cliente.enviarMensaje(mensaje, "El jugador 1 adivinó el número, tienes una ultima oportunidad para adivinarlo:");
 									mensaje = (Mensaje) entrada.readObject();
 
 									int ultimoN = (Integer) mensaje.getDatos();
 									mensaje.setNumConexion(mensaje.getNumConexion() + 1);
 
-									if (ultimoN == numeroAleatorio) {
-										Servidor.grupos.get(numGrupo).get(0).enviarMensaje(mensaje,
-												"Habeis quedado empate");
-										Servidor.grupos.get(numGrupo).get(1).enviarMensaje(mensaje,
-												"Habeis quedado empate");
+									if (ultimoN == numAleatorio) {
+										for (ManejadorCliente mc : Servidor.grupos.get(numGrupo)) {
+											mc.enviarMensaje(mensaje, "Habeis quedado empate");
+										}
 
-									} else if (ultimoN != numeroAleatorio) {
-										Servidor.grupos.get(numGrupo).get(0).enviarMensaje(mensaje, "Has ganado");
-										Servidor.grupos.get(numGrupo).get(1).enviarMensaje(mensaje, "Has perdido");
-
+									} else if (ultimoN != numAleatorio) {
+										for (ManejadorCliente mc : Servidor.grupos.get(numGrupo)) {
+											mc.enviarMensaje(mensaje, "Ha ganado el jugador 1");
+										}
 									}
 								} else if (cliente != this && cliente.equals(Servidor.grupos.get(numGrupo).get(0))) {
-									Servidor.grupos.get(numGrupo).get(0).enviarMensaje(mensaje, "Has perdido");
-									Servidor.grupos.get(numGrupo).get(1).enviarMensaje(mensaje, "Has ganado");
+									for (ManejadorCliente mc : Servidor.grupos.get(numGrupo)) {
+										mc.enviarMensaje(mensaje, "Ha ganado el jugador 2");
+									}
 
 								}
 							}
@@ -125,7 +106,7 @@ class ManejadorCliente implements Runnable {
 							deNuevo = true;
 
 							// llamar otra vez al hilo
-							numeroAleatorio = r.nextInt(1, 1001);
+							numAleatorio = r.nextInt(1, 1001);
 
 							// si la
 						} else {
