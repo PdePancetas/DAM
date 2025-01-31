@@ -1,6 +1,8 @@
-package servidor;
+package mensaje;
 
-public class Mensaje {
+import java.io.Serializable;
+
+public class Mensaje implements Serializable{
 
 	private int numConexion;
 	private Object datos;

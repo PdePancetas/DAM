@@ -10,7 +10,6 @@ public class Servidor {
 	
 	static int numConexiones = 0;
 	static int numGrupo = 1;
-	static int numCliente = 0;
 	
 	public static void main(String[] args) throws IOException {
 		ServerSocket servidor = new ServerSocket(PUERTO);
@@ -20,22 +19,17 @@ public class Servidor {
 			try {
 				Socket clienteSocket = servidor.accept();
 				numConexiones++;
-				numCliente++;
-				
-				Random r = new Random();
-				int numAleatorio = r.nextInt(1, 1001);
 
 				System.out.println("Nuevo cliente conectado desde: " + clienteSocket.getInetAddress());
 
-				Thread manejadorThread = new Thread(new ManejadorCliente(clienteSocket, numGrupo, numAleatorio, numCliente));
+				Thread manejadorThread = new Thread(new ManejadorCliente(clienteSocket, numGrupo));
 				manejadorThread.start();
 				
 				if (numConexiones == 2) {
 					numGrupo++;
 					
 					numConexiones = 0;
-					numCliente = 0;
-					numAleatorio = r.nextInt(1, 1001);
+					
 					
 				}
 			} catch (IOException e) {
