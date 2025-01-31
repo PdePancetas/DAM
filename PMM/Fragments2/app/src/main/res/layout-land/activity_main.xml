@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView"
-        android:name="com.example.adapter.FragmentListado"
-        android:layout_width="100dp"
+        android:id="@+id/fragmentContainerView4"
+        android:name="com.example.fragments2.FragmentA"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_listado" />
+        android:layout_weight="1" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerViewHorz"
-        android:name="com.example.adapter.FragmentDetalle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_detalle"/>
+        android:id="@+id/fragmentContainerView5"
+        android:name="com.example.fragments2.FragmentB"
+        android:layout_width="462dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView6"
+        android:name="com.example.fragments2.FragmentC"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 </LinearLayout>

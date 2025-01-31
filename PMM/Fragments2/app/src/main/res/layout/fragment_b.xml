@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".FragmentB">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lstListado"
+    <TextView
+        android:id="@+id/txtFrB"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="match_parent"
+        android:text="Pulse una imagen de la izquierda" />
 </LinearLayout>
