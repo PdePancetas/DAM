@@ -1,37 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\",
+  "WorkspaceRootPath": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\gestiontareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\blanc\\dam\\di\\gestiontareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\taskboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\taskitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,27 +50,32 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TaskItem.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskItem.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskItem.Designer.cs",
               "RelativeDocumentMoniker": "TaskItem.Designer.cs",
-              "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskItem.Designer.cs",
+              "ToolTip": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskItem.Designer.cs",
               "RelativeToolTip": "TaskItem.Designer.cs",
               "ViewState": "AgIAADoAAAAAAAAAAAAEwFMAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T11:20:10.706Z"
+              "WhenOpened": "2025-01-28T11:20:10.706Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "TaskForm.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskForm.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskForm.cs",
               "RelativeDocumentMoniker": "TaskForm.cs",
-              "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskForm.cs",
+              "ToolTip": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskForm.cs",
               "RelativeToolTip": "TaskForm.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -80,10 +85,10 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "TaskForm.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskForm.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskForm.cs",
               "RelativeDocumentMoniker": "TaskForm.cs",
               "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\TaskForm.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\repos\\GestionTareas\\TaskForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\Alumno\\DAM\\DI\\repos\\GestionTareas\\TaskForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T09:03:59.256Z"
             },
@@ -91,45 +96,47 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "TaskItem.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskItem.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskItem.cs",
               "RelativeDocumentMoniker": "TaskItem.cs",
-              "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskItem.cs",
+              "ToolTip": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskItem.cs",
               "RelativeToolTip": "TaskItem.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAwwF8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAYwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T08:24:15.359Z"
+              "WhenOpened": "2025-01-28T08:24:15.359Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "TaskItem.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskItem.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskItem.cs",
               "RelativeDocumentMoniker": "TaskItem.cs",
-              "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\repos\\GestionTareas\\TaskItem.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\repos\\GestionTareas\\TaskItem.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskItem.cs [Dise\u00F1o]",
+              "RelativeToolTip": "TaskItem.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-28T10:09:29.187Z"
+              "WhenOpened": "2025-01-28T10:09:29.187Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "TaskBoard.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskBoard.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskBoard.Designer.cs",
               "RelativeDocumentMoniker": "TaskBoard.Designer.cs",
-              "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskBoard.Designer.cs",
+              "ToolTip": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskBoard.Designer.cs",
               "RelativeToolTip": "TaskBoard.Designer.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAvwC4AAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAADwvxcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-28T11:45:47.026Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "TaskBoard.cs",
-              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskBoard.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskBoard.cs",
               "RelativeDocumentMoniker": "TaskBoard.cs",
-              "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskBoard.cs",
+              "ToolTip": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskBoard.cs",
               "RelativeToolTip": "TaskBoard.cs",
               "ViewState": "AgIAAD8AAAAAAAAAAIAwwIMAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -140,9 +147,9 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "TaskBoard.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskBoard.cs",
+              "DocumentMoniker": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskBoard.cs",
               "RelativeDocumentMoniker": "TaskBoard.cs",
-              "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskBoard.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\blanc\\DAM\\DI\\GestionTareas\\TaskBoard.cs [Dise\u00F1o]",
               "RelativeToolTip": "TaskBoard.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-01-27T13:13:55.102Z",

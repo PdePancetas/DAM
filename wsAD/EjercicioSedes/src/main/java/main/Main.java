@@ -11,15 +11,23 @@ import utils.HibernateUtil;
 public class Main {
 
 	public static void main(String[] args) throws SQLException {
+//		Func.insertEmpleado();
 		
-//		pruebaConfig();
+		//1
 //		try {
 //			Func.insertProyecto();
 //		} catch (ParseException e) {
 //			e.printStackTrace();
 //		}
 		
-		Func.insertEmpleadoDatosProf();
+		//2
+//		Func.insertEmpleadoDatosProf();
+		
+		//3
+		Func.insertSedeEnProyecto();
+		
+		
+		
 	}
 	private static void pruebaConfig() {
 		Session sesion = HibernateUtil.getSessionFactory().openSession();

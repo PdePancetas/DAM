@@ -11,8 +11,8 @@ public class Sede implements java.io.Serializable {
 
 	private int idSede;
 	private String nomSede;
-	private Set departamentos = new HashSet(0);
-	private Set proyectoSedes = new HashSet(0);
+	private Set<Departamento> departamentos = new HashSet<>(0);
+	private Set<ProyectoSede> proyectoSedes = new HashSet<>(0);
 
 	public Sede() {
 	}
@@ -22,7 +22,7 @@ public class Sede implements java.io.Serializable {
 		this.nomSede = nomSede;
 	}
 
-	public Sede(int idSede, String nomSede, Set departamentos, Set proyectoSedes) {
+	public Sede(int idSede, String nomSede, Set<Departamento> departamentos, Set<ProyectoSede> proyectoSedes) {
 		this.idSede = idSede;
 		this.nomSede = nomSede;
 		this.departamentos = departamentos;
@@ -45,19 +45,19 @@ public class Sede implements java.io.Serializable {
 		this.nomSede = nomSede;
 	}
 
-	public Set getDepartamentos() {
+	public Set<Departamento> getDepartamentos() {
 		return this.departamentos;
 	}
 
-	public void setDepartamentos(Set departamentos) {
+	public void setDepartamentos(Set<Departamento> departamentos) {
 		this.departamentos = departamentos;
 	}
 
-	public Set getProyectoSedes() {
+	public Set<ProyectoSede> getProyectoSedes() {
 		return this.proyectoSedes;
 	}
 
-	public void setProyectoSedes(Set proyectoSedes) {
+	public void setProyectoSedes(Set<ProyectoSede> proyectoSedes) {
 		this.proyectoSedes = proyectoSedes;
 	}
 

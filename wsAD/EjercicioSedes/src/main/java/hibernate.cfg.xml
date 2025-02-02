@@ -9,7 +9,7 @@
         <property name="hibernate.default_catalog">sedes</property>
         <property name="hibernate.default_schema">sedes</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">none</property>
         <property name="show_sql">true</property>
         <property name="hibernate.search.autoregister_listeners">true</property>
         <property name="hibernate.validator.apply_to_ddl">false</property>

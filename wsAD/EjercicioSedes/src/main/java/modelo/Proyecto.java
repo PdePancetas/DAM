@@ -15,6 +15,10 @@ public class Proyecto implements java.io.Serializable {
 	private Date FFin;
 	private String nomProy;
 	private Set<ProyectoSede> proyectoSedes = new HashSet<>(0);
+	
+	public Proyecto() {
+		super();
+	}
 
 	public Proyecto(java.util.Date fechaInicio, java.util.Date fechaFin, String nombre) {
 		this.FInicio = fechaInicio;

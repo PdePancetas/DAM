@@ -24,3 +24,16 @@ C:\Users\Alumno\DAM\DI\GestionTareas\obj\Debug\GestionTareas.csproj.GenerateReso
 C:\Users\Alumno\DAM\DI\GestionTareas\obj\Debug\GestionTareas.csproj.CoreCompileInputs.cache
 C:\Users\Alumno\DAM\DI\GestionTareas\obj\Debug\GestionTareas.exe
 C:\Users\Alumno\DAM\DI\GestionTareas\obj\Debug\GestionTareas.pdb
+C:\Users\blanc\DAM\DI\GestionTareas\bin\Debug\GestionTareas.exe.config
+C:\Users\blanc\DAM\DI\GestionTareas\bin\Debug\GestionTareas.exe
+C:\Users\blanc\DAM\DI\GestionTareas\bin\Debug\GestionTareas.pdb
+C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.csproj.AssemblyReference.cache
+C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.Form1.resources
+C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.Properties.Resources.resources
+C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.TaskBoard.resources
+C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.TaskForm.resources
+C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.TaskItem.resources
+C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.csproj.GenerateResource.cache
+C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.csproj.CoreCompileInputs.cache
+C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.exe
+C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.pdb

@@ -6,21 +6,21 @@
     android:orientation="horizontal">
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView4"
+        android:id="@+id/fragmentContainerViewA"
         android:name="com.example.fragments2.FragmentA"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView5"
+        android:id="@+id/fragmentContainerViewB"
         android:name="com.example.fragments2.FragmentB"
-        android:layout_width="462dp"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView6"
+        android:id="@+id/fragmentContainerViewC"
         android:name="com.example.fragments2.FragmentC"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

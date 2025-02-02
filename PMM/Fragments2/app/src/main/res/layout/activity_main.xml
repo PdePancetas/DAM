@@ -9,11 +9,13 @@
         android:id="@+id/fragmentContainerViewA"
         android:name="com.example.fragments2.FragmentA"
         android:layout_width="match_parent"
-        android:layout_height="315dp" />
+        android:layout_height="315dp"
+        tools:layout="@layout/fragment_a" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerViewB"
         android:name="com.example.fragments2.FragmentB"
         android:layout_width="match_parent"
-        android:layout_height="412dp" />
+        android:layout_height="412dp"
+        tools:layout="@layout/fragment_b" />
 </LinearLayout>

@@ -1,6 +1,3 @@
-/Arena.form
-/Choose.form
-/Files/
 /Arena$1.class
 /Arena$2.class
 /Arena$3.class
@@ -15,8 +12,10 @@
 /Choose$6.class
 /Choose$7.class
 /Choose.class
+/Choose.form
 /Client.class
 /Drilldata.class
+/Files/
 /Guest.class
 /Guest/
 /Images/
