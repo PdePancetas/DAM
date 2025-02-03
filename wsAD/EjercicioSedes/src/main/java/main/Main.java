@@ -35,7 +35,7 @@ public class Main {
 //		System.out.println("Departamento con mayor gasto en sueldo: "+Func.depMayorGastoSueldo().getNomDepto());
 		
 		//7
-		Func.generarProyectosXML();
+//		Func.generarProyectosXML();
 		
 		//8
 //		try {
