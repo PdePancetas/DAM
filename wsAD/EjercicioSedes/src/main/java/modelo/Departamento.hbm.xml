@@ -4,7 +4,7 @@
     <class name="modelo.Departamento" optimistic-lock="none" table="departamento">
         <id name="idDepto" type="int">
             <column name="id_depto"/>
-            <generator class="assigned"/>
+            <generator class="identity"/>
         </id>
         <many-to-one class="modelo.Sede" fetch="select" name="sede">
             <column name="id_sede" not-null="true"/>

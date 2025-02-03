@@ -12,7 +12,6 @@ import java.util.List;
 import java.util.Properties;
 
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerException;
@@ -27,7 +26,11 @@ import org.hibernate.query.Query;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 import modelo.Departamento;
+import modelo.Departamentos;
 import modelo.Empleado;
 import modelo.EmpleadoDatosProf;
 import modelo.Proyecto;
@@ -60,6 +63,21 @@ public class Func {
 		transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 
 		transformer.transform(source, result);
+	}
+
+	public static Departamentos leerFichero(File f) throws JAXBException {
+		// Leer el documento xml (leer contenido y pasar a objeto Libros)
+
+		// Contexto : Clase Raiz
+		JAXBContext jaxbContext = JAXBContext.newInstance(Departamentos.class);
+
+		// Como el parser
+		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+
+		// Traspaso de fichero a objeto
+		Departamentos departamentos = (Departamentos) unmarshaller.unmarshal(f);
+
+		return departamentos;
 	}
 
 	public static String insertProyecto() {
@@ -321,9 +339,8 @@ public class Func {
 //			List<Sede> sedes = sesion.createQuery("FROM Sede", Sede.class).stream()
 //					.filter(sede -> sede.getProyectoSedes() != null).toList();
 
-			Query<Sede> sedesQuery = sesion.createQuery("FROM Sede", Sede.class);
-			List<Sede> sedes = sedesQuery.getResultList().stream().filter(sede -> sede.getProyectoSedes() != null)
-					.toList();
+			List<Sede> sedes = sesion.createQuery("FROM Sede", Sede.class).getResultList().stream()
+					.filter(sede -> sede.getProyectoSedes() != null).toList();
 
 			int max = sedes.stream().map(x -> x.getProyectoSedes().size()).max(Comparator.naturalOrder()).get();
 
@@ -401,7 +418,7 @@ public class Func {
 			for (Proyecto p : proyectos) {
 				Element proy = doc.createElement("proyecto");
 				proy.appendChild(doc.createElement("nombre").appendChild(doc.createTextNode(p.getNomProy())));
-				if (p.getProyectoSedes() != null) {
+				if (!p.getProyectoSedes().isEmpty()) {
 					Element sedes = doc.createElement("sedes");
 					for (ProyectoSede ps : p.getProyectoSedes()) {
 						Element sede = doc.createElement("sede");
@@ -418,6 +435,38 @@ public class Func {
 
 			escribirFicheroXML(doc, "fileProy");
 		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sesion.close();
+		}
+	}
+
+	public static void cargarDepartamentos() throws FileNotFoundException, JAXBException, IOException {
+		Session sesion = HibernateUtil.getSession();
+		Transaction tx = sesion.beginTransaction();
+		try {
+			Departamentos deps = leerFichero(getFichero("fileDep"));
+			List<Departamento> listDeps = deps.getDepartamentos();
+
+			List<Sede> sedes = sesion.createQuery("FROM Sede", Sede.class).getResultList();
+
+			for (Departamento departamento : listDeps) {
+				departamento.setSede(
+						sedes.stream().filter(s -> s.getIdSede() == departamento.getIdSedeXml())
+						.findFirst().get());
+				
+				sesion.persist(departamento);
+
+				departamento.getEmpleados().stream()
+					.forEach(emp -> {
+				        emp.setDepartamento(departamento); // Asigna el departamento
+				        sesion.persist(emp); 
+					});
+			}
+
+			tx.commit();
+		} catch (Exception e) {
+			tx.rollback();
 			e.printStackTrace();
 		} finally {
 			sesion.close();

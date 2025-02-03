@@ -1,7 +1,9 @@
 package main;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
+import jakarta.xml.bind.JAXBException;
 import logic.Func;
 
 public class Main {
@@ -33,7 +35,14 @@ public class Main {
 //		System.out.println("Departamento con mayor gasto en sueldo: "+Func.depMayorGastoSueldo().getNomDepto());
 		
 		//7
-		Func.generarProyectosXML();
+//		Func.generarProyectosXML();
+		
+		//8
+//		try {
+//			Func.cargarDepartamentos();
+//		} catch (JAXBException | IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 }

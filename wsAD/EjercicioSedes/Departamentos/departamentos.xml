@@ -1,0 +1,30 @@
+<departamentos>
+		<departamento>
+			<nombre>Departamento44</nombre>
+			<id_sede>2</id_sede>
+			<empleados>
+				<empleado>
+					<nombre>Miguelito</nombre>
+					<dni>1231</dni>
+				</empleado>
+				<empleado>
+					<nombre>Arbertito</nombre>
+					<dni>1232</dni>
+				</empleado>
+			</empleados>
+		</departamento>
+		<departamento>
+			<nombre>Departamento55</nombre>
+			<id_sede>3</id_sede>
+			<empleados>
+				<empleado>
+					<nombre>Javier</nombre>
+					<dni>2333</dni>
+				</empleado>
+				<empleado>
+					<nombre>Johnathan</nombre>
+					<dni>2332</dni>
+				</empleado>
+			</empleados>
+		</departamento>
+</departamentos>
