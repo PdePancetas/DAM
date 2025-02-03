@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <proyectos>
-    <proyecto>Proy1</proyecto>
+    <proyecto>
+        Proy1
+        <sedes>
+            <sede>Sede1</sede>
+        </sedes>
+    </proyecto>
 </proyectos>
