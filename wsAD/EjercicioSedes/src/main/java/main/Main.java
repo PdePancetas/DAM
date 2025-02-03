@@ -1,12 +1,8 @@
 package main;
 
 import java.sql.SQLException;
-import java.text.ParseException;
-
-import org.hibernate.Session;
 
 import logic.Func;
-import utils.HibernateUtil;
 
 public class Main {
 
@@ -14,24 +10,30 @@ public class Main {
 //		Func.insertEmpleado();
 		
 		//1
-//		try {
 //			Func.insertProyecto();
-//		} catch (ParseException e) {
-//			e.printStackTrace();
-//		}
 		
 		//2
 //		Func.insertEmpleadoDatosProf();
 		
 		//3
-		Func.insertSedeEnProyecto();
+//		Func.insertSedeEnProyecto();
 		
+//		Func.asociarProyectoYSede(2,1);
 		
+		//4
+//		Func.eliminarSede(33);
 		
-	}
-	private static void pruebaConfig() {
-		Session sesion = HibernateUtil.getSessionFactory().openSession();
-		sesion.close();
+		//5
+//		System.out.println("Sede/s con más proyectos: ");
+//		Func.masProyectos().stream()
+//			.map(x -> x.getNomSede())
+//			.forEach(System.out::println);
+		
+		//6
+//		System.out.println("Departamento con mayor gasto en sueldo: "+Func.depMayorGastoSueldo().getNomDepto());
+		
+		//7
+		Func.generarProyectosXML();
 	}
 
 }

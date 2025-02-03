@@ -17,6 +17,7 @@ public class Properties {
 		
 		try {
 			config.load(new FileInputStream("src/main/resources/archivo"));
+//			config.load(Properties.class.getClassLoader().getResourceAsStream("archivo"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

@@ -9,6 +9,10 @@ import java.util.Set;
  */
 public class Sede implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int idSede;
 	private String nomSede;
 	private Set<Departamento> departamentos = new HashSet<>(0);
