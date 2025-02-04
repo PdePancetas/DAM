@@ -52,7 +52,7 @@ namespace BlizzardApp
             // 
             // Videojuego
             // 
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.lblTitulo);
