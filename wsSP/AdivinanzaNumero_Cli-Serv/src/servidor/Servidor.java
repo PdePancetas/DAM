@@ -35,6 +35,8 @@ public class Servidor {
 						for (Thread cliente : threadsGrupo)
 							cliente.start();
  
+						threadsGrupo = new ArrayList<>(); 
+						
 						System.out.println("2 Clientes conectados en el grupo " + numGrupo + "\nadivinando el numero "
 								+ numAleatorio);
 
@@ -42,6 +44,7 @@ public class Servidor {
 						numConexiones = 0;
 						numAleatorio = r.nextInt(1,1001);
 					}
+					
 				} catch (IOException e) {
 					System.err.println("Error al aceptar la conexión: " + e.getMessage());
 				}
