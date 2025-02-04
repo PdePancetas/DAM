@@ -19,7 +19,7 @@ namespace BlizzardApp
         public static MySqlConnection Conectar_BD()
         {
 
-            string datos_conexion = @"server=localhost;userid=root;password=1234;database=prueba_users";
+            string datos_conexion = @"server=localhost;userid=root;password=1234;database=catalogovideojogos";
             MySqlConnection connection = new MySqlConnection(datos_conexion);
 
             try

@@ -74,7 +74,7 @@ namespace BlizzardApp
         private void btnRegister_Click(object sender, EventArgs e)
         {
             
-            Registro registro = new Registro();
+            RegisterForm registro = new RegisterForm();
             registro.Show();
 
         }

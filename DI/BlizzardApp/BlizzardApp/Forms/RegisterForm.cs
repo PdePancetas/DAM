@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace BlizzardApp
 {
-    public partial class Registro : Form
+    public partial class RegisterForm : Form
     {
-        public Registro()
+        public RegisterForm()
         {
             InitializeComponent();
         }

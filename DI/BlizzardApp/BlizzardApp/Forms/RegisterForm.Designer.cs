@@ -1,6 +1,6 @@
 ﻿namespace BlizzardApp
 {
-    partial class Registro
+    partial class RegisterForm
     {
         /// <summary>
         /// Required designer variable.

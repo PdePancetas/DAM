@@ -12,7 +12,9 @@ namespace BlizzardApp
             InitializeComponent();
             if (LoggedUser.User.rol.Equals("admin"))
             {
-                comboBox_Perfil.Items.Add("Opciones Admin");
+                comboBox_Perfil.Items.Add("Gestion de Usuarios");
+                comboBox_Perfil.Items.Add("Gestion de Videojuegos");
+
             }
             comboBox_Perfil.DropDownStyle = ComboBoxStyle.DropDownList;
 
@@ -46,9 +48,9 @@ namespace BlizzardApp
 
         private void comboBox_Perfil_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBox_Perfil.SelectedIndex == -1)
+            if (comboBox_Perfil.SelectedIndex == -1)
             {
-                
+
             }
             else if (comboBox_Perfil.SelectedItem.Equals("Cerrar sesión"))
             {
@@ -60,10 +62,15 @@ namespace BlizzardApp
             {
                 Application.Exit();
             }
-            else if (comboBox_Perfil.SelectedItem.Equals("Opciones Admin"))
+            else if (comboBox_Perfil.SelectedItem.Equals("Gestion de Usuarios"))
             {
-                AdminOps adminOps = new AdminOps();
-                adminOps.Show();
+                AdminUserOps adminUserOps = new AdminUserOps();
+                adminUserOps.Show();
+            }
+            else if (comboBox_Perfil.SelectedItem.Equals("Gestion de Videojuegos"))
+            {
+                AdminCatalogOps adminCatalogOps= new AdminCatalogOps(catalogo);
+                adminCatalogOps.Show();
             }
         }
     }

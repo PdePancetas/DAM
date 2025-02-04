@@ -13,9 +13,9 @@ using MySqlConnector;
 
 namespace BlizzardApp
 {
-    public partial class AdminOps : Form
+    public partial class AdminUserOps : Form
     {
-        public AdminOps()
+        public AdminUserOps()
         {
             InitializeComponent();
             
@@ -23,7 +23,7 @@ namespace BlizzardApp
 
         private void btnMostrarUsuarios_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Database=prueba_users;User ID=root;Password=1234";
+            string connectionString = "Server=localhost;Database=catalogovideojogos;User ID=root;Password=1234";
             string query = "SELECT * FROM users";
 
             using(MySqlConnection conection = new MySqlConnection(connectionString))
@@ -42,7 +42,7 @@ namespace BlizzardApp
         {
             try
             {
-                string connectionString = "Server=localhost;Database=prueba_users;User ID=root;Password=1234";
+                string connectionString = "Server=localhost;Database=catalogovideojogos;User ID=root;Password=1234";
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
@@ -168,7 +168,7 @@ namespace BlizzardApp
 
         private void btnEliminarUsuario_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=localhost;Database=prueba_users;User ID=root;Password=1234";
+            string connectionString = "Server=localhost;Database=catalogovideojogos;User ID=root;Password=1234";
 
             if (string.IsNullOrWhiteSpace(txtUsuarioID.Text) || !int.TryParse(txtUsuarioID.Text, out int id))
             {
@@ -197,12 +197,13 @@ namespace BlizzardApp
 
         private void btnConsultaUsuario_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtUsuarioID.Text) || !int.TryParse(txtUsuarioID.Text, out int id))
+            if (string.IsNullOrWhiteSpace(txtUsuarioName.Text))
             {
-                MessageBox.Show("Por favor, introduce un ID válido.");
+                MessageBox.Show("Por favor, introduce un nombre válido.");
                 return;
             }
 
+            string name = txtUsuarioName.Text;
             bool found = false;
 
             
@@ -214,7 +215,7 @@ namespace BlizzardApp
             
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells["id"].Value != null && int.Parse(row.Cells["id"].Value.ToString()) == id)
+                if (row.Cells["name"].Value != null && row.Cells["name"].Value.ToString() == name)
                 {
                     row.Selected = true;
                     found = true;

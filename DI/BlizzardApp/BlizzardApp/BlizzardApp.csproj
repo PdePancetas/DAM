@@ -96,11 +96,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminOps.cs">
+    <Compile Include="Forms\AdminCatalogOps.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminOps.Designer.cs">
-      <DependentUpon>AdminOps.cs</DependentUpon>
+    <Compile Include="Forms\AdminCatalogOps.Designer.cs">
+      <DependentUpon>AdminCatalogOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminUserOps.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminUserOps.Designer.cs">
+      <DependentUpon>AdminUserOps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Catalogo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Catalogo.Designer.cs">
+      <DependentUpon>Catalogo.cs</DependentUpon>
     </Compile>
     <Compile Include="Func.cs" />
     <Compile Include="Home.cs">
@@ -109,29 +121,41 @@
     <Compile Include="Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="Forms\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="Forms\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoggedUser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro.cs">
+    <Compile Include="Forms\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro.Designer.cs">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <Compile Include="Forms\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
-    <EmbeddedResource Include="AdminOps.resx">
-      <DependentUpon>AdminOps.cs</DependentUpon>
+    <Compile Include="UserControls\Videojuego.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Videojuego.Designer.cs">
+      <DependentUpon>Videojuego.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\AdminCatalogOps.resx">
+      <DependentUpon>AdminCatalogOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminUserOps.resx">
+      <DependentUpon>AdminUserOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Catalogo.resx">
+      <DependentUpon>Catalogo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="Forms\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -139,8 +163,11 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registro.resx">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Videojuego.resx">
+      <DependentUpon>Videojuego.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
