@@ -1,15 +1,13 @@
 package main;
 
-import java.io.IOException;
 import java.sql.SQLException;
 
-import jakarta.xml.bind.JAXBException;
 import logic.Func;
 
 public class Main {
 
 	public static void main(String[] args) throws SQLException {
-//		Func.insertEmpleado();
+		Func.insertEmpleado();
 		
 		//1
 //			Func.insertProyecto();

@@ -15,7 +15,7 @@ public class MainExtra {
 //		FuncExtra.cambiarSedeDeProy(1,3,1);
 		
 		//3
-		FuncExtra.verSedesDeProyecto(1);
+//		FuncExtra.verSedesDeProyecto(1);
 	}
 
 }
