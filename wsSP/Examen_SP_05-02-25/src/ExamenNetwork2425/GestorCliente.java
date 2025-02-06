@@ -56,13 +56,13 @@ public class GestorCliente implements Runnable {
 								.filter(tarea -> tarea.nombre.equals(nuevaTarea.nombre)).findFirst();
 
 						if (t.isPresent()) {
-							for(Tarea tarea: tareasCliente) {
-								if(tarea.nombre.equals(t.get().nombre)) {
+							for (Tarea tarea : tareasCliente) {
+								if (tarea.nombre.equals(t.get().nombre)) {
 									tarea.descripcion += " UPDATE " + nuevaTarea.descripcion;
 								}
 							}
 							bw.write("Tarea actualizada con éxito");
-						}else {
+						} else {
 							tareasCliente.add(nuevaTarea);
 							bw.write("Tarea añadida con éxito");
 						}
@@ -77,33 +77,34 @@ public class GestorCliente implements Runnable {
 
 					Tarea tareaAActualizar = new Tarea();
 					tareaAActualizar.nombre = comando.split(",")[1];
-					Optional<Tarea> t = tareasCliente.stream().filter(tarea -> tarea.nombre.equals(tareaAActualizar.nombre))
-							.findFirst();
+					Optional<Tarea> t = tareasCliente.stream()
+							.filter(tarea -> tarea.nombre.equals(tareaAActualizar.nombre)).findFirst();
 
 					if (t.isPresent()) {
-						for(Tarea tarea: tareasCliente) {
-							if(tarea.nombre.equals(tareaAActualizar.nombre)) {
+						for (Tarea tarea : tareasCliente) {
+							if (tarea.nombre.equals(tareaAActualizar.nombre)) {
 								tarea.marcarCompletada();
 							}
 						}
 						bw.write("Tarea completada con éxito");
-						bw.newLine();
-						bw.flush();
+
 					} else {
+						tareaAActualizar.descripcion = "";
+						tareaAActualizar.marcarPendiente();
 						tareasCliente.add(tareaAActualizar);
 						bw.write("No se encontro la tarea especificada");
-						bw.newLine();
-						bw.flush();
+
 					}
-					
-					
+					bw.newLine();
+					bw.flush();
+
 				} else if (comando.equalsIgnoreCase("LISTAR")) {
-					
-					//CUALQUIER MODIFICACION POR COMANDOS ANTERIORES MODIFICA LA LISTA
-					//PERO UNA VEZ QUE SE ENVIA, EL UNICO COMANDO QUE FUNCIONA 
-					//ES AÑADIR (nuevas tareas), NI MODIFICAR UNA NI COMPLETARLA SE VEN
-					//REFLEJADOS LOS CAMBIOS CUANDO SE ENVIA LA LISTA AL CLIENTE
-					
+
+					// CUALQUIER MODIFICACION POR COMANDOS ANTERIORES MODIFICA LA LISTA
+					// PERO UNA VEZ QUE SE ENVIA, EL UNICO COMANDO QUE FUNCIONA
+					// ES AÑADIR (nuevas tareas), NI MODIFICAR UNA NI COMPLETARLA SE VEN
+					// REFLEJADOS LOS CAMBIOS CUANDO SE ENVIA LA LISTA AL CLIENTE
+
 					oos.reset();
 					oos.writeObject(tareasCliente);
 					oos.flush();
@@ -116,6 +117,8 @@ public class GestorCliente implements Runnable {
 
 				} else {
 					bw.write("El comando introducido no existe");
+					bw.newLine();
+					bw.flush();
 				}
 
 			}
@@ -127,7 +130,7 @@ public class GestorCliente implements Runnable {
 
 		} catch (IOException e) {
 			System.out.println("Cliente " + socket.getLocalAddress() + " se ha desconectado");
-			
+
 		}
 
 	}
