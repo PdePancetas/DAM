@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
@@ -22,12 +23,14 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
+import org.json.JSONArray;
+import org.json.JSONObject;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
 import modelo.Departamento;
 import modelo.Departamentos;
@@ -78,6 +81,18 @@ public class Func {
 		Departamentos departamentos = (Departamentos) unmarshaller.unmarshal(f);
 
 		return departamentos;
+	}
+
+	public static void escribirFichero(List<Empleado> empleados)
+			throws JAXBException, FileNotFoundException, IOException {
+
+		JAXBContext jaxbContext = JAXBContext.newInstance(Empleado.class);
+
+		Marshaller marshaller = jaxbContext.createMarshaller();
+
+		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+
+		marshaller.marshal(empleados, getFichero("fileEmp"));
 	}
 
 	public static String insertProyecto() {
@@ -452,16 +467,14 @@ public class Func {
 
 			for (Departamento departamento : listDeps) {
 				departamento.setSede(
-						sedes.stream().filter(s -> s.getIdSede() == departamento.getIdSedeXml())
-						.findFirst().get());
-				
+						sedes.stream().filter(s -> s.getIdSede() == departamento.getIdSedeXml()).findFirst().get());
+
 				sesion.persist(departamento);
 
-				departamento.getEmpleados().stream()
-					.forEach(emp -> {
-				        emp.setDepartamento(departamento); // Asigna el departamento
-				        sesion.persist(emp); 
-					});
+				departamento.getEmpleados().stream().forEach(emp -> {
+					emp.setDepartamento(departamento); // Asigna el departamento
+					sesion.persist(emp);
+				});
 			}
 
 			tx.commit();
@@ -471,6 +484,38 @@ public class Func {
 		} finally {
 			sesion.close();
 		}
+	}
+
+	public static void genFileEmpleadosPorSueldo(double sueldoMinimo) {
+		Session s = HibernateUtil.getSession();
+		try {
+			JSONArray empleados = new JSONArray();
+			List<Empleado> emps = s.createQuery("FROM Empleado", Empleado.class).getResultList().stream()
+					.filter(e -> e.getEmpleadoDatosProf() != null)
+					.filter(e -> e.getEmpleadoDatosProf().getSueldoBrutoAnual().doubleValue() > sueldoMinimo).toList();
+			for (Empleado e : emps) {
+				JSONObject empleado = new JSONObject();
+				empleado.put("nombre", e.getNomEmp());
+				empleado.put("dni", e.getDni());
+
+				JSONObject datosProf = new JSONObject();
+				datosProf.put("categoria", e.getEmpleadoDatosProf().getCategoria());
+				datosProf.put("sueldo", e.getEmpleadoDatosProf().getSueldoBrutoAnual());
+
+				empleado.put("datos_Profesionales", datosProf);
+
+				empleados.put(empleado);
+			}
+
+			try (PrintWriter pw = new PrintWriter(getFichero("fileEmp"))) {
+				pw.write(empleados.toString(4));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			s.close();
+		}
+
 	}
 
 }

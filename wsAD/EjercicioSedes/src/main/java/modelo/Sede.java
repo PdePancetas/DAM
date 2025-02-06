@@ -75,4 +75,10 @@ public class Sede implements java.io.Serializable {
 		this.proyectoSedes = proyectoSedes;
 	}
 
+	@Override
+	public String toString() {
+		return "Sede: idSede=" + idSede + ", nomSede=" + nomSede;
+	}
+
+	
 }

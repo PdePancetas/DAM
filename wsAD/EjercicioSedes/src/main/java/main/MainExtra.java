@@ -16,6 +16,12 @@ public class MainExtra {
 		
 		//3
 //		FuncExtra.verSedesDeProyecto(1);
+		
+		//4
+//		FuncExtra.consultarSedesDadoApartamento("asd");
+		
+		//5
+//		FuncExtra.sedeConMasEmpleados();
 	}
 
 }

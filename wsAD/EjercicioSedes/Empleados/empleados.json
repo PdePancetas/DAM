@@ -1,0 +1,34 @@
+[
+    {
+        "datos_Profesionales": {
+            "categoria": "b",
+            "sueldo": 20000
+        },
+        "nombre": "El Pepe",
+        "dni": "2"
+    },
+    {
+        "datos_Profesionales": {
+            "categoria": "c",
+            "sueldo": 15000
+        },
+        "nombre": "Ete Sech",
+        "dni": "3"
+    },
+    {
+        "datos_Profesionales": {
+            "categoria": "d",
+            "sueldo": 34567
+        },
+        "nombre": "Juanito",
+        "dni": "4"
+    },
+    {
+        "datos_Profesionales": {
+            "categoria": "g",
+            "sueldo": 23465
+        },
+        "nombre": "Pancetas",
+        "dni": "7"
+    }
+]
