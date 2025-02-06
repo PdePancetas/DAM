@@ -8,11 +8,11 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 
-class FragmentA : Fragment() {
+class FragmentA2 : Fragment() {
 
     lateinit var layoutFragmentA: LinearLayout
-    lateinit var imagen1: ImageView
-    lateinit var imagen2: ImageView
+    lateinit var imagen11: ImageView
+    lateinit var imagen21: ImageView
 
     var listener : ImageListener? = null
 
@@ -22,23 +22,23 @@ class FragmentA : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_a, container, false)
+        return inflater.inflate(R.layout.fragment_a2, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        imagen1 = view.findViewById<ImageView>(R.id.img1)
-        imagen2 = view.findViewById<ImageView>(R.id.img2)
-        layoutFragmentA = view.findViewById<LinearLayout>(R.id.layout_fragment_a)
+        imagen11 = view.findViewById<ImageView>(R.id.img11)
+        imagen21 = view.findViewById<ImageView>(R.id.img21)
+        layoutFragmentA = view.findViewById<LinearLayout>(R.id.layout_fragment_a2)
 
-        imagen1.setOnClickListener {
-            listener?.onImageClick(imagen1);
+        imagen11.setOnClickListener {
+            listener?.onImageClick(imagen11);
 
         }
 
-        imagen2.setOnClickListener {
-            listener?.onImageClick(imagen2);
+        imagen21.setOnClickListener {
+            listener?.onImageClick(imagen21);
         }
 
     }
@@ -54,19 +54,6 @@ class FragmentA : Fragment() {
                 seleccion(imagen)
             }
         }
-    }
-
-    fun cambiarOrientacionVertical() {
-        layoutFragmentA.orientation = LinearLayout.VERTICAL
-    }
-
-
-    fun cambiarOrientacionHorizontal() {
-        layoutFragmentA.orientation = LinearLayout.HORIZONTAL
-    }
-
-    fun getLayout() : LinearLayout {
-        return this.layoutFragmentA
     }
 
 

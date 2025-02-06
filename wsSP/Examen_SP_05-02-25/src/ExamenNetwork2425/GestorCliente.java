@@ -103,8 +103,9 @@ public class GestorCliente implements Runnable {
 					//PERO UNA VEZ QUE SE ENVIA, EL UNICO COMANDO QUE FUNCIONA 
 					//ES AÑADIR (nuevas tareas), NI MODIFICAR UNA NI COMPLETARLA SE VEN
 					//REFLEJADOS LOS CAMBIOS CUANDO SE ENVIA LA LISTA AL CLIENTE
+					
 					oos.reset();
-					oos.writeUnshared(tareasCliente);
+					oos.writeObject(tareasCliente);
 					oos.flush();
 
 				} else if (comando.equalsIgnoreCase("SALIR")) {

@@ -7,6 +7,7 @@ import android.os.Looper
 import android.util.Log
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.compose.foundation.gestures.Orientation
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,41 +15,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val frgA = supportFragmentManager.findFragmentById(R.id.fragmentContainerViewA) as FragmentA
-
-        Handler(Looper.getMainLooper()).post {
-            if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
-                frgA.cambiarOrientacionHorizontal()
-            } else if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                frgA.cambiarOrientacionVertical()
-            }
-        }
 
 
-        frgA.setImageListener {
-            val frgB =
-                supportFragmentManager.findFragmentById(R.id.fragmentContainerViewB) as FragmentB
-            if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
+        val frgB =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerViewB) as FragmentB
+
+
+        if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            val frgA = supportFragmentManager.findFragmentById(R.id.fragmentContainerViewA) as FragmentA
+            frgA.setImageListener {
                 frgB.mostrarTexto(it.contentDescription.toString())
-            } else if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-
+            }
+        } else if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            val frgA2 = supportFragmentManager.findFragmentById(R.id.fragmentContainerViewA2) as FragmentA2
+            frgA2.setImageListener {
                 frgB.mostrarTexto(it.contentDescription.toString())
                 val frgC =
                     supportFragmentManager.findFragmentById(R.id.fragmentContainerViewC) as FragmentC
-
                 frgC.intercambiarImagenes()
             }
-
-
         }
 
     }
-
-
-
-
-
-
 
 }
 
