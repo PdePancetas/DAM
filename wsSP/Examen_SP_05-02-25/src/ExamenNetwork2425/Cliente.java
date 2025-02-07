@@ -37,7 +37,7 @@ public class Cliente {
 
 			List<String> comandos = ops.stream().map(s -> s = s.split("-")[0].trim()).toList();
 			String opcionCliente = "";
-			while (!opcionCliente.equals("SALIR")) {
+			while (!opcionCliente.equalsIgnoreCase("SALIR")) {
 				System.out.println();
 				ops.stream().forEach(System.out::println);
 				System.out.print("\n-> ");
@@ -59,12 +59,15 @@ public class Cliente {
 					System.out.println("Mis tareas: \n");
 					tareas.forEach(System.out::println);
 
-				} else if (opcionCliente.split(" ")[0].equalsIgnoreCase(comandos.get(3))) {
+				} else if (opcionCliente.split(",")[0].equalsIgnoreCase(comandos.get(3))) {
 					System.out.println("Desconectandose");
 					teclado.close();
 					br.close();
 					bw.close();
-				} else {
+				} else if(opcionCliente.split(",")[0].equalsIgnoreCase(comandos.get(4).split(" ")[0])) {
+					String respuesta = br.readLine();
+					System.out.println(respuesta);
+			    } else {
 					String respuesta = br.readLine();
 					System.out.println(respuesta);
 				}
