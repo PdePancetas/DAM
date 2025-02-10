@@ -52,7 +52,9 @@ public class Func {
 	}
 
 	/**
-	 * 2. Mostrar la línea en la que prestan servicio más trenes.
+	 *  2. Mostrar la línea en la que prestan servicio más trenes.
+	 * @return una lista que contiene la linea con más trenes, o una lista con 
+	 * las lineas que tienen la misma cantidad maxima de trenes
 	 */
 	public static List<Linea> lineaConMasTrenes() {
 		Session s = HibernateUtil.getSession();

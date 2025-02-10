@@ -43,5 +43,26 @@ public class HibernateUtil {
 	public static void rollbackTransaction(Session session) {
 		session.getTransaction().rollback();
 	}
+	
+	
+	 * Crear sesion:
+	 * Session sesion = HibernateUtil.getSession(); ó HibernateUtil.getSessionFactory().openSession();
+	 *   ** Si se va a modificar la bbdd por seguridad se inicia una transaccion
+	 *   	Transaction tx = sesion.beginTransaction();
+	 * 
+	 * 	try {
+	 * 		//Codigo y operaciones...
+	 * 		
+	 * 		tx.commit(); //Ejecutar las acciones
+	 * 	} catch(Exception e) {
+	 *  	tx.rollback(); 			//Retroceder los cambios en caso de error, por ejemplo en caso de que a medias 
+	 *  	e.printStackTrace();	//de la ejecucion ocurra algun fallo, se revierten las operaciones hechas
+	 *  } finally {
+	 *  	sesion.close();			//Finalmente se cierra la sesion
+	 *  }
+	 * 
+	 
+	
+	
 */
 }
