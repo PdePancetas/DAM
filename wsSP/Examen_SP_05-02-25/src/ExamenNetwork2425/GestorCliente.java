@@ -105,9 +105,22 @@ public class GestorCliente implements Runnable {
 					// ES AÑADIR (nuevas tareas), NI MODIFICAR UNA NI COMPLETARLA SE VEN
 					// REFLEJADOS LOS CAMBIOS CUANDO SE ENVIA LA LISTA AL CLIENTE
 
-					oos.reset();
+					oos.reset(); //El comando que lo solucionó todo. Alabado sea
 					oos.writeObject(tareasCliente);
 					oos.flush();
+
+				} else if (comando.split(",")[0].equalsIgnoreCase("BORRAR")) {
+					try {
+
+						tareasCliente.remove(new Tarea(comando.split(",")[1], null));
+
+						bw.write("Se ha borrado con éxito la tarea de la lista");
+					} catch (Exception e) {
+						bw.write("Hubo un error al borrar la tarea a la lista");
+					}
+
+					bw.newLine();
+					bw.flush();
 
 				} else if (comando.equalsIgnoreCase("SALIR")) {
 
@@ -141,6 +154,8 @@ public class GestorCliente implements Runnable {
 		bw.write("COMPLETAR TAREA - (uso: COMPLETAR,nombre_tarea)");
 		bw.newLine();
 		bw.write("LISTAR TAREAS - (uso: LISTAR)");
+		bw.newLine();
+		bw.write("BORRAR TAREA - (uso: BORRAR,nombre_tarea");
 		bw.newLine();
 		bw.write("SALIR - (uso: SALIR)");
 		bw.newLine();
