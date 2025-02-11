@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using MySqlConnector;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BlizzardApp
@@ -17,11 +10,40 @@ namespace BlizzardApp
     {
         private Catalogo catalogoControl;
         private string imgPath;
+        private string juegoSeleccionado;
+
 
         public AdminCatalogOps(Catalogo catalogoControl)
         {
             InitializeComponent();
+            CargarJuegosLista();
             this.catalogoControl = catalogoControl;
+        }
+
+        private void CargarJuegosLista()
+        {
+            lstJuegos.Items.Clear();
+            string query = "SELECT titulo FROM videojogos";
+            using (MySqlConnection conexion = Func.Conectar_BD())
+            {
+                conexion.Open();
+
+                MySqlCommand command = new MySqlCommand(query, conexion);
+
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string titulo = reader["titulo"].ToString();
+                        lstJuegos.Items.Add(titulo);
+
+                        // Crear un nuevo VideojuegoUserControl y agregarlo al TableLayoutPanel
+                        
+                    }
+                }
+
+            }
         }
 
         private void btnInsertarVideojuego_Click(object sender, EventArgs e)
@@ -46,6 +68,7 @@ namespace BlizzardApp
 
             
             // Notificar al CatalogoUserControl para recargar el catálogo y mostrar el nuevo videojuego
+            CargarJuegosLista();
             catalogoControl.RecargarCatalogo();
         }
 
@@ -74,7 +97,69 @@ namespace BlizzardApp
                 pBoxImgPreview.SizeMode = PictureBoxSizeMode.Zoom; // Para ajustar la imagen al tamaño del PictureBox
             }
         }
+
+        private void lstJuegos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            juegoSeleccionado = lstJuegos.SelectedItem.ToString();
+        }
+
+        private void btnDeleteVideojuego_Click(object sender, EventArgs e)
+        {
+            
+            if (lstJuegos.SelectedItem != null)
+            {
+                string juegoSeleccionado = lstJuegos.SelectedItem.ToString();
+
+                using (MySqlConnection conexion = Func.Conectar_BD())
+                {
+                    conexion.Open();
+                    string query = "DELETE FROM videojogos WHERE titulo = @nombre";
+                    MySqlCommand cmd = new MySqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@nombre", juegoSeleccionado);
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                    {
+                        MessageBox.Show("Juego eliminado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarJuegosLista(); // Recargar la lista
+                        catalogoControl.RecargarCatalogo();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el juego.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un juego antes de eliminar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+        }
+
+        private void txtBuscarJuego_TextChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < lstJuegos.Items.Count; i++)
+            {
+                if (lstJuegos.Items[i].ToString().Contains(txtBuscarJuego.Text))
+                    lstJuegos.SelectedItems.Add(lstJuegos.Items[i]);
+            }
+        }
+
+
+        private void lstJuegos_DoubleClick(object sender, EventArgs e)
+        {
+            if (lstJuegos.SelectedItem != null)
+            {
+                string juegoSeleccionado = lstJuegos.SelectedItem.ToString();
+                VideojuegoPropertiesForm  formDetalles = new VideojuegoPropertiesForm(juegoSeleccionado);
+                formDetalles.ShowDialog();
+            }
+        }
+
+
     }
+
 }
 
 

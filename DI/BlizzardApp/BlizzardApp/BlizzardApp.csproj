@@ -108,6 +108,12 @@
     <Compile Include="Forms\AdminUserOps.Designer.cs">
       <DependentUpon>AdminUserOps.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VideojuegoPropertiesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VideojuegoPropertiesForm.Designer.cs">
+      <DependentUpon>VideojuegoPropertiesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Catalogo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AdminUserOps.resx">
       <DependentUpon>AdminUserOps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideojuegoPropertiesForm.resx">
+      <DependentUpon>VideojuegoPropertiesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Catalogo.resx">
       <DependentUpon>Catalogo.cs</DependentUpon>
