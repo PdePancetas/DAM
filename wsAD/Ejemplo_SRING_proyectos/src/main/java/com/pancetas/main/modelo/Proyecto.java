@@ -46,6 +46,7 @@ public class Proyecto implements java.io.Serializable {
 		this.empleados = empleados;
 	}
 
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 
@@ -58,7 +59,7 @@ public class Proyecto implements java.io.Serializable {
 		this.idProy = idProy;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "dni_jefe_proy", nullable = false)
 	public Empleado getEmpleadoJefe() {
 		return this.empleadoJefe;
@@ -77,10 +78,10 @@ public class Proyecto implements java.io.Serializable {
 		this.nomProy = nomProy;
 	}
 
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "asig_proyecto", joinColumns = {
-			@JoinColumn(name = "id_proy", nullable = false, updatable = false) }, inverseJoinColumns = {
-					@JoinColumn(name = "dni_emp", nullable = false, updatable = false) })
+			@JoinColumn(name = "id_proy", nullable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "dni_emp", nullable = false, updatable = false, insertable = false) })
 	public Set<Empleado> getEmpleados() {
 		return this.empleados;
 	}
@@ -88,5 +89,12 @@ public class Proyecto implements java.io.Serializable {
 	public void setEmpleados(Set<Empleado> empleados) {
 		this.empleados = empleados;
 	}
+
+	@Override
+	public String toString() {
+		return "Proyecto [idProy=" + idProy + ", empleadoJefe=" + empleadoJefe + ", nomProy=" + nomProy + "]";
+	}
+	
+	
 
 }

@@ -65,10 +65,10 @@ public class Empleado implements java.io.Serializable {
 		this.nomEmp = nomEmp;
 	}
 
-	@ManyToMany(fetch = FetchType.LAZY)
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "asig_proyecto", joinColumns = {
-			@JoinColumn(name = "dni_emp", nullable = false, updatable = false) }, inverseJoinColumns = {
-					@JoinColumn(name = "id_proy", nullable = false, updatable = false) })
+			@JoinColumn(name = "dni_emp", nullable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "id_proy", nullable = false) })
 	public Set<Proyecto> getProyectosTrabaja() {
 		return this.proyectosTrabaja;
 	}
@@ -77,7 +77,7 @@ public class Empleado implements java.io.Serializable {
 		this.proyectosTrabaja = proyectosTrabaja;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "empleado")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "empleadoJefe")
 	public Set<Proyecto> getProyectosJefe() {
 		return this.proyectosJefe;
 	}
@@ -85,5 +85,12 @@ public class Empleado implements java.io.Serializable {
 	public void setProyectosJefe(Set<Proyecto> proyectosJefe) {
 		this.proyectosJefe = proyectosJefe;
 	}
+
+	@Override
+	public String toString() {
+		return "Empleado [dni=" + dni + ", nomEmp=" + nomEmp + "]";
+	}
+	
+	
 
 }
