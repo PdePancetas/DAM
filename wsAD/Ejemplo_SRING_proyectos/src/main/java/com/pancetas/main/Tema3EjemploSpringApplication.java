@@ -24,15 +24,15 @@ public class Tema3EjemploSpringApplication {
 		
 		//Listar los empleados asociados a un proyecto
 		///////////////////////////////
-		proyRepo.findById(11).ifPresent(p -> p.getEmpleados().stream().forEach(System.out::println));
+		proyRepo.findById(13).ifPresent(p -> p.getEmpleados().stream().forEach(System.out::println));
 		///////////////////////////////
 		
 		//Asociar un empleado con un proyecto
 		///////////////////////////////
-		Empleado empleado = empRepo.findById("2").orElseThrow();
-		Proyecto proyecto = proyRepo.findById(11).orElseThrow();
-		empleado.getProyectosTrabaja().add(proyecto);
-		empRepo.save(empleado);
+//		Empleado empleado = empRepo.findById("2").orElseThrow();
+//		Proyecto proyecto = proyRepo.findById(11).orElseThrow();
+//		empleado.getProyectosTrabaja().add(proyecto);
+//		empRepo.save(empleado);
 		///////////////////////////////
 		
 	}
