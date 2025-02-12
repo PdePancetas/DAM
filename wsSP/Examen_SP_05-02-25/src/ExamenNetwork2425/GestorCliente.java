@@ -59,6 +59,7 @@ public class GestorCliente implements Runnable {
 							for (Tarea tarea : tareasCliente) {
 								if (tarea.nombre.equals(t.get().nombre)) {
 									tarea.descripcion += " UPDATE " + nuevaTarea.descripcion;
+									tarea.marcarPendiente();
 								}
 							}
 							bw.write("Tarea actualizada con éxito");
