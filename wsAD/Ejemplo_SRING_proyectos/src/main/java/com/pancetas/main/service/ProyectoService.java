@@ -1,5 +1,7 @@
 package com.pancetas.main.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +26,11 @@ public class ProyectoService {
 		//FUERZA LOS CAMBIOS, A VECES PUEDE SER NECESARIO
 		proyRepo.flush();
 	}
+	
+	public List<Proyecto> ProySuperanId(Integer id){
+		return proyRepo.findByIdProyGreaterThan(id);
+	}
+	
+
 	
 }

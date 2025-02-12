@@ -1,5 +1,7 @@
 package com.pancetas.main.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,7 +36,12 @@ public class EmpleadoService {
 		proyecto.getEmpleados().add(empleado);
 		proyRepo.save(proyecto);
 	}
+	public List<Empleado> findEmps(String nombre) {
+		return empRepo.findByNomEmp(nombre);
+	}
 	
+	public List<Empleado> getJefesFromNomProy(String nomProy){
+		return empRepo.findJefesDeNomProy(nomProy);
+	}
 	
-
 }

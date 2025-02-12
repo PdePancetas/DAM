@@ -12,6 +12,6 @@ import java.util.List;
 @Repository
 public interface ProyectoRepository extends JpaRepository<Proyecto, Integer>{ //Bean y tipo de dato de la clave primaria
 	
-	
+	List<Proyecto> findByIdProyGreaterThan(int idCorte);
 	
 }
