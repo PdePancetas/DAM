@@ -25,7 +25,6 @@ namespace BlizzardApp
             try
             {
                 connection.Open();
-                Console.WriteLine("Connected to MySQL DB!");
                 return connection;
             }
             catch (Exception ex)

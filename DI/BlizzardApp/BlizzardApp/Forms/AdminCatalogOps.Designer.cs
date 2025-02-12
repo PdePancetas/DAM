@@ -39,14 +39,18 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtPrecioInicial = new System.Windows.Forms.TextBox();
             this.btnDeleteVideojuego = new System.Windows.Forms.Button();
+            this.lstJuegos = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblBuscarJuego = new System.Windows.Forms.Label();
+            this.txtBuscarJuego = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pBoxImgPreview)).BeginInit();
             this.SuspendLayout();
             // 
             // btnInsertarVideojuego
             // 
-            this.btnInsertarVideojuego.Location = new System.Drawing.Point(449, 319);
+            this.btnInsertarVideojuego.Location = new System.Drawing.Point(332, 178);
             this.btnInsertarVideojuego.Name = "btnInsertarVideojuego";
-            this.btnInsertarVideojuego.Size = new System.Drawing.Size(141, 42);
+            this.btnInsertarVideojuego.Size = new System.Drawing.Size(133, 42);
             this.btnInsertarVideojuego.TabIndex = 0;
             this.btnInsertarVideojuego.Text = "Insertar Videojuego";
             this.btnInsertarVideojuego.UseVisualStyleBackColor = true;
@@ -131,18 +135,58 @@
             // 
             // btnDeleteVideojuego
             // 
-            this.btnDeleteVideojuego.Location = new System.Drawing.Point(606, 22);
+            this.btnDeleteVideojuego.Location = new System.Drawing.Point(584, 303);
             this.btnDeleteVideojuego.Name = "btnDeleteVideojuego";
             this.btnDeleteVideojuego.Size = new System.Drawing.Size(182, 48);
             this.btnDeleteVideojuego.TabIndex = 10;
             this.btnDeleteVideojuego.Text = "Eliminar videojuego";
             this.btnDeleteVideojuego.UseVisualStyleBackColor = true;
+            this.btnDeleteVideojuego.Click += new System.EventHandler(this.btnDeleteVideojuego_Click);
+            // 
+            // lstJuegos
+            // 
+            this.lstJuegos.FormattingEnabled = true;
+            this.lstJuegos.Location = new System.Drawing.Point(563, 59);
+            this.lstJuegos.Name = "lstJuegos";
+            this.lstJuegos.Size = new System.Drawing.Size(225, 225);
+            this.lstJuegos.TabIndex = 11;
+            this.lstJuegos.SelectedIndexChanged += new System.EventHandler(this.lstJuegos_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(560, 287);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(228, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Seleccione un juego de la lista y pulse el botón";
+            // 
+            // lblBuscarJuego
+            // 
+            this.lblBuscarJuego.AutoSize = true;
+            this.lblBuscarJuego.Location = new System.Drawing.Point(581, 9);
+            this.lblBuscarJuego.Name = "lblBuscarJuego";
+            this.lblBuscarJuego.Size = new System.Drawing.Size(184, 13);
+            this.lblBuscarJuego.TabIndex = 13;
+            this.lblBuscarJuego.Text = "Escribe el nombre del juego a buscar:";
+            // 
+            // txtBuscarJuego
+            // 
+            this.txtBuscarJuego.Location = new System.Drawing.Point(584, 33);
+            this.txtBuscarJuego.Name = "txtBuscarJuego";
+            this.txtBuscarJuego.Size = new System.Drawing.Size(178, 20);
+            this.txtBuscarJuego.TabIndex = 14;
+            this.txtBuscarJuego.TextChanged += new System.EventHandler(this.txtBuscarJuego_TextChanged);
             // 
             // AdminCatalogOps
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtBuscarJuego);
+            this.Controls.Add(this.lblBuscarJuego);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lstJuegos);
             this.Controls.Add(this.btnDeleteVideojuego);
             this.Controls.Add(this.txtPrecioInicial);
             this.Controls.Add(this.txtDescripcion);
@@ -175,5 +219,9 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtPrecioInicial;
         private System.Windows.Forms.Button btnDeleteVideojuego;
+        private System.Windows.Forms.ListBox lstJuegos;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblBuscarJuego;
+        private System.Windows.Forms.TextBox txtBuscarJuego;
     }
 }

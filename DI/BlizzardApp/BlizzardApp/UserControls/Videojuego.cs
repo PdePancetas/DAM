@@ -7,9 +7,12 @@ namespace BlizzardApp
 {
     public partial class Videojuego : UserControl
     {
+        string titulo;
+
         public Videojuego(string titulo, decimal precio_original, byte[] imagenBytes)
         {
             InitializeComponent();
+            this.titulo = titulo;
             SetVideojuego(titulo, precio_original, imagenBytes);
         }
 
@@ -30,6 +33,12 @@ namespace BlizzardApp
             // Establecer el título y la valoración
             lblTitulo.Text = titulo;
             lblPrecio_original.Text = $"Precio: {precio_original}";
+        }
+
+        private void Videojuego_DoubleClick(object sender, System.EventArgs e)
+        {
+            VideojuegoPropertiesForm juego = new VideojuegoPropertiesForm(titulo);
+            juego.Show();
         }
     }
 }
