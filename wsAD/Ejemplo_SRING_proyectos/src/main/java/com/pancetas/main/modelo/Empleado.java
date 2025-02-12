@@ -65,10 +65,7 @@ public class Empleado implements java.io.Serializable {
 		this.nomEmp = nomEmp;
 	}
 
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "asig_proyecto", joinColumns = {
-			@JoinColumn(name = "dni_emp", nullable = false) }, inverseJoinColumns = {
-					@JoinColumn(name = "id_proy", nullable = false) })
+	@ManyToMany(fetch = FetchType.EAGER, mappedBy = "empleados")
 	public Set<Proyecto> getProyectosTrabaja() {
 		return this.proyectosTrabaja;
 	}

@@ -10,15 +10,7 @@ import java.util.List;
 
 
 @Repository
-public interface ProyectoRepository extends JpaRepository<Proyecto, Integer>{
-	
-	List<Proyecto> findByIdProy(Integer idProy);
-	void deleteByIdProy(Integer idProy);
-	Streamable<Proyecto> streamByIdProy(Integer idProy);
-	List<Proyecto> getByIdProy(Integer idProy);
-	List<Proyecto> getByNomProy(String nomProy);
-	long countByIdProy(Integer idProy);
-	
+public interface ProyectoRepository extends JpaRepository<Proyecto, Integer>{ //Bean y tipo de dato de la clave primaria
 	
 	
 	

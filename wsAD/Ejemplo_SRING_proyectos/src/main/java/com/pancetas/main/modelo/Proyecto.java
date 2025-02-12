@@ -4,6 +4,7 @@ package com.pancetas.main.modelo;
 import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -60,7 +61,9 @@ public class Proyecto implements java.io.Serializable {
 	}
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "dni_jefe_proy", nullable = false)
+	///Si la propiedad updatable esta en false, no sera actualizable una vez cargado el objeto
+	///Proyecto
+	@JoinColumn(name = "dni_jefe_proy", nullable = false, updatable = true)
 	public Empleado getEmpleadoJefe() {
 		return this.empleadoJefe;
 	}
@@ -78,10 +81,12 @@ public class Proyecto implements java.io.Serializable {
 		this.nomProy = nomProy;
 	}
 
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "asig_proyecto", joinColumns = {
-			@JoinColumn(name = "id_proy", nullable = false) }, inverseJoinColumns = {
-					@JoinColumn(name = "dni_emp", nullable = false, updatable = false, insertable = false) })
+	@ManyToMany(fetch = FetchType.EAGER/*, cascade = CascadeType.ALL*/)
+	@JoinTable(
+			name = "asig_proyecto",
+			joinColumns = @JoinColumn(name = "id_proy"/*, nullable = false, updatable = true*/),
+			inverseJoinColumns = @JoinColumn(name = "dni_emp"/*, nullable = false, updatable = false, insertable = false*/) 
+		)
 	public Set<Empleado> getEmpleados() {
 		return this.empleados;
 	}
