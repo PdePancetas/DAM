@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using System.Drawing;
 
 namespace BlizzardApp
 {
@@ -27,7 +28,6 @@ namespace BlizzardApp
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
-            this.pictureBox.DoubleClick += new System.EventHandler(this.Videojuego_DoubleClick);
             // 
             // lblTitulo
             // 
@@ -38,7 +38,6 @@ namespace BlizzardApp
             this.lblTitulo.Size = new System.Drawing.Size(104, 25);
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTitulo.DoubleClick += new System.EventHandler(this.Videojuego_DoubleClick);
             // 
             // lblPrecio_original
             // 
@@ -50,7 +49,6 @@ namespace BlizzardApp
             this.lblPrecio_original.Size = new System.Drawing.Size(104, 25);
             this.lblPrecio_original.TabIndex = 2;
             this.lblPrecio_original.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblPrecio_original.DoubleClick += new System.EventHandler(this.Videojuego_DoubleClick);
             // 
             // Videojuego
             // 
@@ -62,11 +60,9 @@ namespace BlizzardApp
             this.Name = "Videojuego";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(122, 171);
-            this.DoubleClick += new System.EventHandler(this.Videojuego_DoubleClick);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
-
     }
 }
