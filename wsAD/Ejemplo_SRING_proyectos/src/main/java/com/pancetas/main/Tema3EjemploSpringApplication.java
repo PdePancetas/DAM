@@ -37,7 +37,7 @@ public class Tema3EjemploSpringApplication {
 		
 //		proyService.cambiarJefeProyecto(16, "1");
 		
-//		empService.findEmps("Rubenaldo").forEach(System.out::println);
+		empService.findEmps("Rubenaldo").forEach(System.out::println);
 //		proyService.ProySuperanId(15).forEach(System.out::println);
 //		empService.getJefesFromNomProy("p1").forEach(System.out::println);
 		
