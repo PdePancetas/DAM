@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputLayoutNombre"
+        android:layout_width="300dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtInputNombre"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:hint="Nombre"
+            android:maxLength="30"
+            tools:layout_editor_absoluteX="53dp"
+            tools:layout_editor_absoluteY="43dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txtCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Selecciona País"
+        app:layout_constraintStart_toStartOf="@+id/TextInputLayoutNombre"
+        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutNombre" />
+
+    <Spinner
+        android:id="@+id/spinnerPaises"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/txtCountry"
+        app:layout_constraintTop_toBottomOf="@+id/txtCountry" />
+
+    <TextView
+        android:id="@+id/txtGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Selecciona Género"
+        app:layout_constraintStart_toStartOf="@+id/spinnerPaises"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerPaises" />
+
+    <RadioGroup
+        android:id="@+id/rdGgeneros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/txtGender"
+        app:layout_constraintTop_toBottomOf="@+id/txtGender">
+
+        <RadioButton
+            android:id="@+id/rbtnHombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hombre" />
+
+        <RadioButton
+            android:id="@+id/rbtnMujer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mujer" />
+
+        <RadioButton
+            android:id="@+id/rbtnApache"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Helicóptero Apache" />
+
+        <RadioButton
+            android:id="@+id/rbtnCroi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Croissant" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtHobbys"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:layout_marginTop="16dp"
+        android:text="Selecciona Hobbys"
+        app:layout_constraintStart_toStartOf="@+id/rdGgeneros"
+        app:layout_constraintTop_toBottomOf="@+id/rdGgeneros" />
+
+    <CheckBox
+        android:id="@+id/cbOp1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Música"
+        app:layout_constraintStart_toStartOf="@+id/txtHobbys"
+        app:layout_constraintTop_toBottomOf="@+id/txtHobbys" />
+
+    <CheckBox
+        android:id="@+id/cbOp2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deporte"
+        app:layout_constraintStart_toStartOf="@+id/cbOp1"
+        app:layout_constraintTop_toBottomOf="@+id/cbOp1" />
+
+    <CheckBox
+        android:id="@+id/cbOp3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medicina"
+        app:layout_constraintStart_toStartOf="@+id/cbOp2"
+        app:layout_constraintTop_toBottomOf="@+id/cbOp2" />
+
+    <CheckBox
+        android:id="@+id/cbOp4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Márketing"
+        app:layout_constraintStart_toStartOf="@+id/cbOp3"
+        app:layout_constraintTop_toBottomOf="@+id/cbOp3" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="104dp"
+        android:text="Enviar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnDisplay"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mostrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnSubmit"
+        app:layout_constraintTop_toTopOf="@+id/btnSubmit" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

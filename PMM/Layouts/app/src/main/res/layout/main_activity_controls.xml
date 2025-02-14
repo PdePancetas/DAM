@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputLayoutNombre"
+        android:layout_width="300dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:startIconDrawable="@drawable/rdj">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:hint="Nombre"
+            android:maxLength="30" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputLayoutTlfn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="@+id/TextInputLayoutNombre"
+        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutNombre"
+        app:startIconDrawable="@android:drawable/stat_sys_phone_call">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TextInputEditTextTlfn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/TextInputLayoutCorreo"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="@+id/TextInputLayoutTlfn"
+        app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutTlfn"
+        app:startIconDrawable="@android:drawable/ic_dialog_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/TextInputEditTextCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:text="Cancelar"
+        android:textColor="#EECB4454"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonAceptar"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAceptar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonAceptar" />
+
+    <Button
+        android:id="@+id/buttonAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:background="#EECB4454"
+        android:text="Aceptar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonCancelar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

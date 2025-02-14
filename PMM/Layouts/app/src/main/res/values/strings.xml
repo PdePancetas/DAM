@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Layouts</string>
+    <string name="boton1">Es el primer boton</string>
+    <string name="boton2">Es el segundo boton</string>
+</resources>

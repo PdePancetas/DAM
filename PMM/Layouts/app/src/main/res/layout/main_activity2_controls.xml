@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/lblMensaje"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="52dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/buttonControls"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonControls"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Soy un Botón"
+        app:layout_constraintBottom_toTopOf="@+id/toggleButton"
+        app:layout_constraintStart_toStartOf="@+id/lblMensaje"
+        app:layout_constraintTop_toBottomOf="@+id/lblMensaje" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleButton"
+        android:textOff="Estoy desactivado"
+        android:textOn="Estoy activado"
+        app:layout_constraintBottom_toTopOf="@+id/switchButton"
+        app:layout_constraintStart_toStartOf="@+id/buttonControls"
+        app:layout_constraintTop_toBottomOf="@+id/buttonControls" />
+
+    <Switch
+        android:id="@+id/switchButton"
+        android:layout_width="118dp"
+        android:layout_height="50dp"
+        android:text="Switch"
+        android:textOff="OFF"
+        android:textOn="ON"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="@+id/toggleButton"
+        app:layout_constraintTop_toBottomOf="@+id/toggleButton" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="66dp"
+        android:layout_height="61dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/switchButton"
+        app:layout_constraintTop_toBottomOf="@+id/switchButton"
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+    <Button
+        android:id="@+id/buttonIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@android:drawable/stat_sys_data_bluetooth"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        tools:layout_editor_absoluteX="264dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtNombre2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="36dp"
+        android:text="Nombre:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPais2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="País:"
+        app:layout_constraintStart_toStartOf="@+id/txtNombre2"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre2" />
+
+    <TextView
+        android:id="@+id/txtGenero2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Género:"
+        app:layout_constraintStart_toStartOf="@+id/txtPais2"
+        app:layout_constraintTop_toBottomOf="@+id/txtPais2" />
+
+    <TextView
+        android:id="@+id/txtHobbies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Hobbies:"
+        app:layout_constraintStart_toStartOf="@+id/txtGenero2"
+        app:layout_constraintTop_toBottomOf="@+id/txtGenero2" />
+
+    <TextView
+        android:id="@+id/nombreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNombre2"
+        app:layout_constraintStart_toEndOf="@+id/txtNombre2"
+        app:layout_constraintTop_toTopOf="@+id/txtNombre2" />
+
+    <TextView
+        android:id="@+id/paisText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/txtPais2"
+        app:layout_constraintStart_toStartOf="@+id/nombreText"
+        app:layout_constraintTop_toTopOf="@+id/txtPais2" />
+
+    <TextView
+        android:id="@+id/generoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/txtGenero2"
+        app:layout_constraintStart_toStartOf="@+id/paisText"
+        app:layout_constraintTop_toTopOf="@+id/txtGenero2" />
+
+    <TextView
+        android:id="@+id/hobbiesText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/txtHobbies"
+        app:layout_constraintStart_toStartOf="@+id/generoText"
+        app:layout_constraintTop_toTopOf="@+id/txtHobbies" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
