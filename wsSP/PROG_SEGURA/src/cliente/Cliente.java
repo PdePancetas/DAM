@@ -12,6 +12,7 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
 public class Cliente {
 	private final static String SERVIDOR_IP = "localhost";
@@ -24,41 +25,70 @@ public class Cliente {
 			Socket socket = new Socket(SERVIDOR_IP, PUERTO);
 			DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
 			DataInputStream dis = new DataInputStream(socket.getInputStream());
-			
-			
-			
+
 			KeyGenerator keygen = KeyGenerator.getInstance("AES");
 			SecretKey key = keygen.generateKey();
 
-			enviarBytes(dos, key.getEncoded());
+			enviarClave(dos, key);
 			System.out.println("Clave enviada al servidor");
 
-			Cipher c = Cipher.getInstance("AES");
-
-			c.init(Cipher.ENCRYPT_MODE, key);
-
-			String msg = "Mensaje de cliente a servidor";
-
-			byte[] msgCifrado = c.doFinal(msg.getBytes());
-
-			enviarBytes(dos, msgCifrado);
-			System.out.println("Mensaje enviado al servidor");
-
-//    		 byte[] msgRecibidoCifrado = dis.readAllBytes();
-//    		 
-//    		 c.init(Cipher.DECRYPT_MODE, key);
-//    		 
-//    		 String msgDescifrado = new String(c.doFinal(msgRecibidoCifrado));
-//    		 
-//    		 System.out.println("Mensaje descifado: "+msgDescifrado);
-
+			enviarMensaje(dos, key, "Mensaje de cliente a servidor");
+			
+			String respuesta = recibirMensaje(dis, key);
+			System.out.println(respuesta);
+			socket.close();
 		} catch (IOException e) {
 			System.err.println("Error al iniciar el cliente: " + e.getMessage());
 		}
 	}
 
 	private static void enviarBytes(DataOutputStream dos, byte[] bytes) throws IOException {
-		dos.write(bytes);
+		dos.writeInt(bytes.length); // Enviar la longitud del array primero
+		dos.write(bytes); // Luego enviar los datos reales
+		dos.flush();
+	}
+
+	private static byte[] recibirBytes(DataInputStream dis) throws IOException {
+		int longitud = dis.readInt();
+		byte[] datos = new byte[longitud];
+		dis.readFully(datos);
+		return datos;
+	}
+
+	public static void enviarMensaje(DataOutputStream dos, SecretKey key, String mensaje)
+			throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
+			IllegalBlockSizeException, BadPaddingException {
+
+		Cipher c = Cipher.getInstance("AES");
+		c.init(Cipher.ENCRYPT_MODE, key);
+		byte[] msgCifrado = c.doFinal(mensaje.getBytes());
+
+		dos.writeInt(msgCifrado.length);
+
+		dos.write(msgCifrado);
+		dos.flush();
+	}
+
+	public static String recibirMensaje(DataInputStream dis, SecretKey key)
+			throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
+			IllegalBlockSizeException, BadPaddingException {
+
+		int longitud = dis.readInt();
+
+		byte[] msgCifrado = new byte[longitud];
+		dis.readFully(msgCifrado);
+
+		Cipher c = Cipher.getInstance("AES");
+		c.init(Cipher.DECRYPT_MODE, key);
+		byte[] mensajeDescifrado = c.doFinal(msgCifrado);
+
+		return new String(mensajeDescifrado);
+	}
+	
+	public static void enviarClave(DataOutputStream dos, SecretKey key) throws IOException {
+		byte[] clave = key.getEncoded();
+		dos.writeInt(clave.length);
+		dos.write(clave);
 		dos.flush();
 	}
 
