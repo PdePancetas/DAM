@@ -1,0 +1,27 @@
+package servidor;
+
+import java.io.*;
+import java.net.*;
+import java.util.*;
+
+public class Servidor {
+	private static final int PUERTO = 12345;
+
+	public static void main(String[] args) throws IOException {
+		try (ServerSocket servidor = new ServerSocket(PUERTO)) {
+			System.out.println("Servidor iniciado en el puerto " + PUERTO);
+			while (true) {
+				try {
+					Socket clienteSocket = servidor.accept();
+					System.out.println("Nuevo cliente conectado desde: " + clienteSocket.getInetAddress());
+					ManejadorCliente mc = new ManejadorCliente(clienteSocket);
+					Thread manejadorThread = new Thread(mc);
+					manejadorThread.start();
+					
+				} catch (IOException e) {
+					System.err.println("Error al aceptar la conexión: " + e.getMessage());
+				}
+			}
+		}
+	}
+}
