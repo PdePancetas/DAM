@@ -20,6 +20,7 @@ public class Servidor {
 					
 				} catch (IOException e) {
 					System.err.println("Error al aceptar la conexión: " + e.getMessage());
+					e.printStackTrace();
 				}
 			}
 		}
