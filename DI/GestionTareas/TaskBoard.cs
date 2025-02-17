@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GestionTareas
@@ -110,6 +112,11 @@ namespace GestionTareas
 
                     columnPanels[targetColumn].Controls.Add(newTask);
                     ConfigureTaskDragEvents(newTask);
+                    if (this.informeTareas != null)
+                    {
+                        informeTareas.CargarDatosEnCharts(obtenerTareas(tableLayoutPanel1));
+
+                    }
                 }
         }
 
@@ -130,6 +137,11 @@ namespace GestionTareas
             {
                 e.Effect = DragDropEffects.Move;
                 (sender as Control).BackColor = Color.LightGray;
+                if (this.informeTareas == null)
+                {
+                    informeTareas.CargarDatosEnCharts(obtenerTareas(tableLayoutPanel1));
+
+                }
             }
         }
 
@@ -137,6 +149,11 @@ namespace GestionTareas
         {
             int columnIndex = Array.IndexOf(columnPanels, sender);
             (sender as Control).BackColor = GetColumnColor(columnIndex);
+            if (this.informeTareas != null)
+            {
+                informeTareas.CargarDatosEnCharts(obtenerTareas(tableLayoutPanel1));
+
+            }
         }
 
         private void ColumnPanel_DragDrop(object sender, DragEventArgs e)
@@ -169,6 +186,41 @@ namespace GestionTareas
                 task.UpdateTaskType(taskType);
             }
             targetPanel.BackColor = GetColumnColor(Array.IndexOf(columnPanels, targetPanel));
+            if (this.informeTareas != null)
+            {
+                informeTareas.CargarDatosEnCharts(obtenerTareas(tableLayoutPanel1));
+
+            }
+        }
+
+        private void btnInforme_Click(object sender, EventArgs e)
+        {
+
+            List<TaskItem> tareas = obtenerTareas(tableLayoutPanel1);
+            if (this.informeTareas == null || this.informeTareas.IsDisposed)
+            {
+                this.informeTareas = new InformeTareas(tareas);
+                informeTareas.Show();
+            }
+            if (this.informeTareas != null)
+            {
+                informeTareas.CargarDatosEnCharts(obtenerTareas(tableLayoutPanel1));
+
+            }
+
+
+        }
+
+        private List<TaskItem> obtenerTareas(TableLayoutPanel tableLayoutPanel1)
+        {
+            List<TaskItem> tareas = new List<TaskItem>();
+
+            foreach (FlowLayoutPanel panel in columnPanels)
+            {
+                tareas.AddRange(panel.Controls.OfType<TaskItem>());
+            }
+
+            return tareas;
         }
     }
 }

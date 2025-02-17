@@ -33,11 +33,7 @@ namespace GestionTareas
             // Este control se elimina del contenedor (TableLayoutPanel)
             this.Parent.Controls.Remove(this);
         }
-
-        private void TaskItem_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnEdit_Click(object sender, EventArgs e)
         {

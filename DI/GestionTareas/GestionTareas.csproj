@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,12 @@
     </Compile>
     <Compile Include="Gestión de Tareas.Designer.cs">
       <DependentUpon>Gestión de Tareas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InformeTareas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InformeTareas.Designer.cs">
+      <DependentUpon>InformeTareas.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,6 +82,9 @@
     <EmbeddedResource Include="Gestión de Tareas.resx">
       <DependentUpon>Gestión de Tareas.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InformeTareas.resx">
+      <DependentUpon>InformeTareas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

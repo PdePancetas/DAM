@@ -30,6 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnAddTarea = new System.Windows.Forms.Button();
+            this.btnInforme = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -60,10 +61,25 @@
             this.btnAddTarea.UseVisualStyleBackColor = false;
             this.btnAddTarea.Click += new System.EventHandler(this.btnAddTarea_Click);
             // 
+            // btnInforme
+            // 
+            this.btnInforme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnInforme.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnInforme.FlatAppearance.BorderSize = 10;
+            this.btnInforme.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnInforme.Location = new System.Drawing.Point(389, 384);
+            this.btnInforme.Name = "btnInforme";
+            this.btnInforme.Size = new System.Drawing.Size(116, 22);
+            this.btnInforme.TabIndex = 5;
+            this.btnInforme.Text = "Visualizar Tareas";
+            this.btnInforme.UseVisualStyleBackColor = false;
+            this.btnInforme.Click += new System.EventHandler(this.btnInforme_Click);
+            // 
             // TaskBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnInforme);
             this.Controls.Add(this.btnAddTarea);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "TaskBoard";
@@ -76,5 +92,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnAddTarea;
+        private System.Windows.Forms.Button btnInforme;
+        private InformeTareas informeTareas;
     }
 }

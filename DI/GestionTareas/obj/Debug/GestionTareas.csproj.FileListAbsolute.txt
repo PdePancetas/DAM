@@ -37,3 +37,4 @@ C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.csproj.GenerateResou
 C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.csproj.CoreCompileInputs.cache
 C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.exe
 C:\Users\blanc\DAM\DI\GestionTareas\obj\Debug\GestionTareas.pdb
+C:\Users\Alumno\DAM\DI\GestionTareas\obj\Debug\GestionTareas.InformeTareas.resources

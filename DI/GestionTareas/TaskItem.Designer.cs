@@ -86,7 +86,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TaskItem";
             this.Size = new System.Drawing.Size(189, 115);
-            this.Load += new System.EventHandler(this.TaskItem_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.TaskItem_MouseDown);
             this.ResumeLayout(false);
 
@@ -97,5 +96,6 @@
         private System.Windows.Forms.RichTextBox richTextBox;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        
     }
 }
