@@ -102,7 +102,7 @@ public class Main {
 						encontrado = true;
 						System.out.print("	Nombre de la asignatura: ");
 						String nomAsig = Teclado.leerCadena();
-						alumnos.get(i).getAsignaturas().addLast(nomAsig);
+						alumnos.get(i).getAsignaturas().add(nomAsig);
 						System.out.println(alumnos.get(i).getNombre() + " se ha matriculado en " + nomAsig + ".");
 					}
 
