@@ -1,4 +1,5 @@
-﻿using MySqlConnector;
+﻿using BlizzardApp.Forms;
+using MySqlConnector;
 using System;
 using System.Drawing;
 using System.IO;
@@ -56,6 +57,8 @@ namespace BlizzardApp
                             chkSoporteVR.Checked = reader["soporte_VR"] != DBNull.Value ? Convert.ToBoolean(reader["soporte_VR"]) : false;
                             txtTamaño.Text = reader["tamaño"] != DBNull.Value ? reader["tamaño"].ToString() : "";
                             cmbEstado.SelectedItem = reader["estado"] != DBNull.Value ? reader["estado"].ToString() : "Desconocido";
+
+
 
                             // Cargar imagen si existe
                             if (reader["img_src"] != DBNull.Value)
@@ -160,6 +163,11 @@ namespace BlizzardApp
         {
             CargarDetallesJuego();
             HabilitarCampos(false);
+        }
+
+        private void btnAddCesta_Click(object sender, EventArgs e)
+        {
+            CestaForm.AddJuego(tituloJuego);
         }
     }
 }

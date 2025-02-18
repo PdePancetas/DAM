@@ -99,6 +99,7 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAddCesta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImagen)).BeginInit();
             this.SuspendLayout();
             // 
@@ -320,9 +321,19 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // btnAddCesta
+            // 
+            this.btnAddCesta.Location = new System.Drawing.Point(678, 330);
+            this.btnAddCesta.Name = "btnAddCesta";
+            this.btnAddCesta.Size = new System.Drawing.Size(100, 30);
+            this.btnAddCesta.TabIndex = 27;
+            this.btnAddCesta.Text = "Añadir a mi cesta";
+            this.btnAddCesta.Click += new System.EventHandler(this.btnAddCesta_Click);
+            // 
             // VideojuegoPropertiesForm
             // 
             this.ClientSize = new System.Drawing.Size(839, 400);
+            this.Controls.Add(this.btnAddCesta);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.lblDescripcion);
@@ -361,5 +372,7 @@
 
 
         #endregion
+
+        private System.Windows.Forms.Button btnAddCesta;
     }
 }
