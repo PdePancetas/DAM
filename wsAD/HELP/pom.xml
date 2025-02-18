@@ -151,7 +151,12 @@
 		</plugins>
 	</build>
 	-->
-	
+
+		<dependency>
+			<groupId>com.pancetas</groupId>
+			<artifactId>Ejemplo_ApiRestUsuariosPedidos</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 </project>

@@ -69,7 +69,7 @@ namespace BlizzardApp
         private void AgregarVideojuego(string titulo, decimal precio_original, byte[] imagenBytes)
         {
             // Crear una nueva instancia del VideojuegoUserControl
-            Videojuego videojuegoControl = new Videojuego(titulo, precio_original, imagenBytes);
+            VideojuegoUserControl videojuegoControl = new VideojuegoUserControl(titulo, precio_original, imagenBytes);
 
             // Obtener el TableLayoutPanel
             FlowLayoutPanel flowLayoutPanel = (FlowLayoutPanel)this.Controls[0]; // Suponiendo que es el primer control
