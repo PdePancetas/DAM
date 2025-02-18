@@ -14,7 +14,7 @@ namespace BlizzardApp.Forms
 {
     public partial class CestaForm : Form
     {
-        internal static List<Videojuego> juegos;
+        internal static List<Videojuego> juegos = new List<Videojuego>();
 
         public CestaForm()
         {
