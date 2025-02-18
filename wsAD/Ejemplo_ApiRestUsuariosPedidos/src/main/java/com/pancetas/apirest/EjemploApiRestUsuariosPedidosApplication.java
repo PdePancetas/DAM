@@ -17,14 +17,6 @@ public class EjemploApiRestUsuariosPedidosApplication {
 
 		ApplicationContext context = SpringApplication.run(EjemploApiRestUsuariosPedidosApplication.class, args);
 
-		UsuarioRepository userRepo = context.getBean(UsuarioRepository.class, args);
-		PedidoRepository pedRepo = context.getBean(PedidoRepository.class, args);
-
-		UsuarioService userService = new UsuarioService();
-		PedidoService pedService = new PedidoService();
-
-		UsuarioController userControl = new UsuarioController();
-
 	}
 
 }
