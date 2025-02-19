@@ -1,55 +1,47 @@
 package tests;
 
-import org.springframework.http.HttpStatusCode;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pancetas.apirest.models.Pedido;
-import com.pancetas.apirest.models.Usuario;
+import com.pancetas.apirest.dto.PedidoRequest;
+import com.pancetas.apirest.dto.PedidoResponse;
 
-import reactor.core.publisher.Mono;
+import utilidadesTeclado.Teclado;
 
 public class InsertPedido {
-
-	public static void main(String[] args) throws JsonProcessingException {
+	public static void main(String[] args) {
+		
 		WebClient client = WebClient.create("http://localhost:9090");
 
-		Usuario user = client.get().uri("/usuarios/1").retrieve()
-				/*.onStatus(HttpStatusCode::isError, response -> 
-			    response.bodyToMono(String.class)
-			            .map(errorBody -> new RuntimeException("Error en la petición: " + errorBody))
-			            .flatMap(Mono::error))*/
-				.bodyToMono(Usuario.class)
-				.doOnError(e -> System.err.println("Error en la petición: " + e.getMessage()))
-				.block();
-
+		// 2. Construir el objeto DTO
 		
-		System.out.println(user);
+		System.out.print("Id de usuario: ");
+		int id = Teclado.leerEntero();
 		
-		System.out.println(user.toString());
-		Pedido p = new Pedido();
+		System.out.print("Descripcion del pedido: ");
+		
+		String desc = Teclado.leerCadena();
+		
+		PedidoRequest request = new PedidoRequest();
+		request.setDescripcion(desc);
+		request.setUsuarioId(Long.valueOf(id));
 
-		p.setUsuario(user);
-		p.setDescripcion("Pedido Extra del 1");
+		// 3. Hacer la petición POST a "/pedidos/create"
+		PedidoResponse response = client.post().uri("/pedidos/create").bodyValue(request).retrieve()
+				.bodyToMono(PedidoResponse.class) 
+				.doOnError(e -> System.err.println("Error en la petición: " + e.getMessage())).block(); 
 
-		System.out.println(p.getUsuario());
+		// 4. Mostrar la respuesta
+		if (response != null) {
+			System.out.println("Nuevo pedido creado: ");
+			System.out.println("ID: " + response.getId());
+			System.out.println("Descripcion: " + response.getDescripcion());
+			System.out.println("Usuario ID: " + response.getUsuarioId());
+		} else {
+			System.err.println("No se recibió respuesta del servidor.");
+		}
 
-		ObjectMapper objectMapper = new ObjectMapper();
-		String jsonPedido = objectMapper.writeValueAsString(p);
-		System.out.println("JSON enviado: " + jsonPedido);
-
-		Pedido response = client.post().uri("/pedidos/create").bodyValue(p).retrieve()
-				.onStatus(HttpStatusCode::isError, response2 -> 
-			    response2.bodyToMono(String.class)
-			            .map(errorBody -> new RuntimeException("Error en la petición: " + errorBody))
-			            .flatMap(Mono::error))
-				.bodyToMono(Pedido.class)
-				.doOnError(e -> System.err.println("Error en la petición: " + e.getMessage())).block();
-
-		System.out.println(response.toString());
-
-		client.get().uri("/pedidos/listPedidos").retrieve().bodyToFlux(Pedido.class).toStream()
-				.forEach(System.out::println);
+		System.out.println("Pedidos existentes: \n");
+		client.get().uri("/pedidos/listPedidos").retrieve().bodyToFlux(PedidoResponse.class) // O Pedido.class
+				.toStream().forEach(p -> System.out.println("Pedido "+p.getId()+": " + p.getDescripcion()));
 	}
 }

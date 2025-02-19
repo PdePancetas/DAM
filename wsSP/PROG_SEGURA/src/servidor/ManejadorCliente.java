@@ -44,19 +44,7 @@ class ManejadorCliente implements Runnable {
 		}
 
 	}
-
-	private static void enviarBytes(DataOutputStream dos, byte[] bytes) throws IOException {
-		dos.writeInt(bytes.length); // Enviar la longitud del array primero
-		dos.write(bytes); // Luego enviar los datos reales
-		dos.flush();
-	}
-
-	private static byte[] recibirBytes(DataInputStream dis) throws IOException {
-		int longitud = dis.readInt();
-		byte[] datos = new byte[longitud];
-		dis.readFully(datos);
-		return datos;
-	}
+	
 	
 	public static void enviarMensaje(DataOutputStream dos, SecretKey key, String mensaje)
 			throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
@@ -95,5 +83,16 @@ class ManejadorCliente implements Runnable {
 		return new SecretKeySpec(clave, "AES");
 	}
 	
+	private static byte[] recibirBytes(DataInputStream dis) throws IOException {
+		int longitud = dis.readInt();
+		byte[] datos = new byte[longitud];
+		dis.readFully(datos);
+		return datos;
+	}
 	
+	private static void enviarBytes(DataOutputStream dos, byte[] bytes) throws IOException {
+		dos.writeInt(bytes.length); // Enviar la longitud del array primero
+		dos.write(bytes); // Luego enviar los datos reales
+		dos.flush();
+	}
 }

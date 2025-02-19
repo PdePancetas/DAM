@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pancetas.apirest.dto.PedidoRequest;
+import com.pancetas.apirest.dto.PedidoResponse;
 import com.pancetas.apirest.models.Pedido;
 import com.pancetas.apirest.models.Usuario;
 import com.pancetas.apirest.repository.UsuarioRepository;
@@ -30,22 +31,21 @@ public class PedidoController {
 	public List<Pedido> getAllPedidos() {
 		return pedService.getAllPedidos();
 	}
-	
+		
 	@PostMapping("/create")
-    public ResponseEntity<Pedido> createPedido(@RequestBody PedidoRequest pedidoRequest) {
-        // 1. Buscar el usuario en la BD para que sea una entidad "managed" por JPA
-        Usuario usuario = userRepo.findById(pedidoRequest.getUsuarioId())
-                .orElseThrow(() -> new RuntimeException("Usuario con ID " 
-                                      + pedidoRequest.getUsuarioId() + " no existe."));
-
-        // 2. Crear el Pedido a partir del DTO
+    public ResponseEntity<PedidoResponse> createPedido(@RequestBody PedidoRequest request) {
+        // 1. Buscar el usuario en la BD
+        Usuario usuario = userRepo.findById(request.getUsuarioId())
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        
+        // 2. Crear el pedido
         Pedido pedido = new Pedido();
-        pedido.setDescripcion(pedidoRequest.getDescripcion());
-        pedido.setUsuario(usuario);
+        pedido.setDescripcion(request.getDescripcion());
+        pedido.setUsuario(usuario); // Asegurarte de que no sea null
 
-        // 3. Guardar el pedido
-        Pedido savedPedido = pedService.savePedido(pedido);
+        Pedido ped = pedService.savePedido(pedido);
 
-        return ResponseEntity.ok(savedPedido);
+        // 4. Construir la respuesta con el constructor que asigna usuarioId
+        return ResponseEntity.ok(new PedidoResponse(ped));
     }
 }

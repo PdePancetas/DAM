@@ -1,17 +1,24 @@
 package com.pancetas.apirest.dto;
 
+import java.io.Serializable;
+
 import com.pancetas.apirest.models.Pedido;
 
-public class PedidoResponse {
-    private Long id;
-    private String descripcion;
-    private Long usuarioId;
+public class PedidoResponse implements Serializable {
+	private Long id;
+	private String descripcion;
+	private Long usuarioId;
 
-    public PedidoResponse(Pedido pedido) {
-        this.id = pedido.getId();
-        this.descripcion = pedido.getDescripcion();
-        this.usuarioId = pedido.getUsuario().getId();
-    }
+	public PedidoResponse() {
+		super();
+	}
+
+	public PedidoResponse(Pedido pedido) {
+		this.id = pedido.getId();
+		this.descripcion = pedido.getDescripcion();
+		// Asegúrate de asignar el ID del usuario:
+		this.usuarioId = (pedido.getUsuario() != null) ? pedido.getUsuario().getId() : null;
+	}
 
 	public Long getId() {
 		return id;
@@ -42,5 +49,4 @@ public class PedidoResponse {
 		return "PedidoResponse [id=" + id + ", descripcion=" + descripcion + ", usuarioId=" + usuarioId + "]";
 	}
 
-    
 }
