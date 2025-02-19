@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            catalogo = new BlizzardApp.Catalogo();
+            this.catalogo = new BlizzardApp.Catalogo();
             this.lblCesta = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -79,7 +79,7 @@
 
         #endregion
 
-        private static Catalogo catalogo;
+        private BlizzardApp.Catalogo catalogo;
         private System.Windows.Forms.Label lblCesta;
         private System.Windows.Forms.Button button1;
     }

@@ -1,32 +1,32 @@
 package com.pancetas.apirest.models;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Usuario {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
 	private String nombre;
 
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-	@JsonManagedReference // Evita recursividad
-	
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+//	@JsonIgnore // 🔥 Evitamos el ciclo infinito cuando se serializa un pedido
 	private List<Pedido> pedidos;
 
 	public Usuario() {
@@ -82,7 +82,7 @@ public class Usuario {
 
 	@Override
 	public String toString() {
-		return "Usuario id= " + id + ", nombre= " + nombre;
+		return "Usuario id= " + id + ", nombre= " + nombre + ", id de sus pedidos: " + Arrays.toString(pedidos.stream().map(p -> p.getId()).toArray());
 	}
 
 }

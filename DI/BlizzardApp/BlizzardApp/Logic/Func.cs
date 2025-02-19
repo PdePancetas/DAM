@@ -365,31 +365,10 @@ namespace BlizzardApp
                 {
                     while (reader.Read())
                     {
-                        string descripcion = reader.IsDBNull(reader.GetOrdinal("descripcion")) ? null : reader.GetString("descripcion");
-                        string genero = reader.IsDBNull(reader.GetOrdinal("genero")) ? null : reader.GetString("genero");
-                        string desarrollador = reader.IsDBNull(reader.GetOrdinal("desarrollador")) ? null : reader.GetString("desarrollador");
-                        string editor = reader.IsDBNull(reader.GetOrdinal("editor")) ? null : reader.GetString("editor");
-                        decimal? precio = reader.IsDBNull(reader.GetOrdinal("precio")) ? (decimal?)null : reader.GetDecimal("precio");
-                        decimal? precioOriginal = reader.IsDBNull(reader.GetOrdinal("precio_original")) ? (decimal?)null : reader.GetDecimal("precio_original");
-                        decimal? valoracion = reader.IsDBNull(reader.GetOrdinal("valoracion")) ? (decimal?)null : reader.GetDecimal("valoracion");
-                        bool soporteVR = reader.GetBoolean(reader.GetOrdinal("soporteVR"));
-                        string tamano = reader.IsDBNull(reader.GetOrdinal("tamano")) ? null : reader.GetString("tamano");
-                        string estado = reader.IsDBNull(reader.GetOrdinal("estado")) ? null : reader.GetString("estado");
-
-                        videojuego = new Videojuego(
-                            reader.GetString("titulo"),
-                            descripcion,
-                            genero,
-                            desarrollador,
-                            editor,
-                            precio,
-                            precioOriginal,
-                            valoracion,
-                            soporteVR,
-                            tamano,
-                            estado
-                        );
-
+                        videojuego.Id = reader.GetInt32("id");
+                        videojuego.Titulo = reader.GetString("titulo");
+                        videojuego.Descripcion = reader.GetString("descripcion");
+                        videojuego.PrecioOriginal = reader.IsDBNull(reader.GetOrdinal("precio_original")) ? (decimal?)null : reader.GetDecimal("precio_original");
                     }
                 }
             }

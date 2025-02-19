@@ -7,6 +7,8 @@ namespace BlizzardApp
 {
     public partial class Home : Form
     {
+        public static CestaForm cestaForm = new CestaForm();
+
         public Home()
         {
            
@@ -80,8 +82,7 @@ namespace BlizzardApp
             TreeNode selectedNode = e.Node;
             if (selectedNode.Name.Equals("MiCesta"))
             {
-                CestaForm cf = new CestaForm();
-                cf.Show();
+                cestaForm.Show();
             }
 
         }

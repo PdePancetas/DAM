@@ -167,7 +167,7 @@ namespace BlizzardApp
 
         private void btnAddCesta_Click(object sender, EventArgs e)
         {
-            CestaForm.AddJuego(tituloJuego);
+            Home.cestaForm.AddJuego(tituloJuego);
         }
     }
 }

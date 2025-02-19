@@ -1,0 +1,13 @@
+{
+	"id":null,
+	"descripcion":"Pedido Extra extra del 1",
+	"usuario":{
+		"id":1,
+		"nombre":"Miguel",
+		"pedidos":[
+			{"id":5,
+			"descripcion":"Pedido de Miguel",
+			"usuario":{
+				"id":1,
+				"nombre":"Miguel",
+				"pedidos":[5,{"id":11,"descripcion":"Pedido de user1","usuario":{"id":1,"nombre":"Miguel","pedidos":[5,11,{"id":12,"descripcion":"Pedido Extra del 1","usuario":{"id":1,"nombre":"Miguel","pedidos":[5,11,12]}}]}},12]}},11,12]}}

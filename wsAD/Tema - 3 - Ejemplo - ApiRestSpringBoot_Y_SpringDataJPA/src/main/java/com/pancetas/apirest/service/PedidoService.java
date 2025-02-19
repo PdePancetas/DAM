@@ -26,5 +26,4 @@ public class PedidoService {
 		return pedRepo.save(ped);
 	}
 
-	
 }

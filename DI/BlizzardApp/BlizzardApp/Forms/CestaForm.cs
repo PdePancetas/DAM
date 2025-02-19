@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,12 +15,12 @@ namespace BlizzardApp.Forms
 {
     public partial class CestaForm : Form
     {
-        internal static List<Videojuego> juegos = new List<Videojuego>();
+       
 
         public CestaForm()
         {
             InitializeComponent();
-            CargarVideojuegos();
+            RecargarCesta();
         }
 
         private void CestaForm_Load(object sender, EventArgs e)
@@ -27,10 +28,10 @@ namespace BlizzardApp.Forms
 
         }
 
-        public static void AddJuego(string juego)
+        public void AddJuego(string juego)
         {
             Videojuego vjuego = Func.getJuego(juego) as Videojuego;
-            juegos.Add(vjuego);
+            Console.WriteLine(vjuego.Id);
             Usuario user = Func.getUser(LoggedUser.User.Nombre, LoggedUser.User.Password);
 
             AnadirACesta(user, vjuego);
@@ -38,21 +39,37 @@ namespace BlizzardApp.Forms
         }
 
 
-        private static void AnadirACesta(Usuario user, Videojuego juego)
+        private void AnadirACesta(Usuario user, Videojuego juego)
         {
             using (MySqlConnection connection = Func.Conectar_BD())
             {
                 // Sentencia SQL para insertar en la tabla relacional
-                string sql = "INSERT INTO cestajogos_usuario (idUsuario, idJogo) VALUES (@idUsuario, @idJogo)";
+                
+                string checkQuery = "SELECT COUNT(*) FROM videojogos WHERE id = @idJogo";
+                using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, connection))
+                {
+                    connection.Open();
+                    checkCmd.Parameters.AddWithValue("@idJogo", juego.Id);
+                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+                    if (count == 0)
+                    {
+                        Console.WriteLine("El juego con ID " + juego.Id + " no existe en la base de datos.");
+                        return;
+                    }
+                }
+            }
+            string sql = "INSERT INTO cestajogos_usuario (idUsuario, idJogo) VALUES (@idUsuario, @idJogo)";
 
-                using (MySqlCommand cmd = new MySqlCommand(sql, connection))
+            using (MySqlConnection connection2 = Func.Conectar_BD())
+            {
+                using (MySqlCommand cmd = new MySqlCommand(sql, connection2))
                 {
                     cmd.Parameters.AddWithValue("@idUsuario", LoggedUser.User.Id);
                     cmd.Parameters.AddWithValue("@idJogo", juego.Id);
 
                     try
                     {
-                        connection.Open();
+                        connection2.Open();
                         int filasAfectadas = cmd.ExecuteNonQuery();
                         
                     }
@@ -64,20 +81,29 @@ namespace BlizzardApp.Forms
                     }
                 }
             }
+
             RecargarCesta();
         }
 
-        public static void RecargarCesta()
+        public void RecargarCesta()
         {
             // Limpiar el TableLayoutPanel antes de cargar los nuevos videojuegos
-            FlowLayoutPanel flowLayoutPanel = (FlowLayoutPanel)catalogo.Controls[0]; // Obtener el TableLayoutPanel
-            flowLayoutPanel.Controls.Clear(); // Limpiar los controles actuales
+            try
+            {
+                FlowLayoutPanel flowLayoutPanel = (FlowLayoutPanel)catalogo.Controls[0]; // Obtener el TableLayoutPanel
+                flowLayoutPanel.Controls.Clear();
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+                 // Limpiar los controles actuales
 
             // Llamar a CargarVideojuegos para llenar el catalogo
             CargarVideojuegos();
         }
 
-        private static void MostrarMensajeSinVideojuegos()
+        private void MostrarMensajeSinVideojuegos()
         {
             Label lblMensaje = new Label();
             lblMensaje.Text = "Aún no hay videojuegos en el catálogo.";
@@ -89,7 +115,7 @@ namespace BlizzardApp.Forms
             flowLayoutPanel.Controls.Add(lblMensaje);
         }
 
-        private static void CargarVideojuegos()
+        private void CargarVideojuegos()
         {
 
             string query = @"
@@ -126,7 +152,7 @@ namespace BlizzardApp.Forms
             }
         }
 
-        private static void AgregarVideojuego(string titulo, decimal precio_original, byte[] imagenBytes)
+        private void AgregarVideojuego(string titulo, decimal precio_original, byte[] imagenBytes)
         {
             // Crear una nueva instancia del VideojuegoUserControl
             VideojuegoUserControl videojuegoControl = new VideojuegoUserControl(titulo, precio_original, imagenBytes);
