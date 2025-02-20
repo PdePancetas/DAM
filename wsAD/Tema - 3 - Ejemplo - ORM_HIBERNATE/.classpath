@@ -36,6 +36,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/Alumno/DAM/Dependencies/Teclado.jar" sourcepath="C:/Users/blanc/Escritorio/JAR/Teclado.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -30,6 +30,13 @@
 		<java.version>23</java.version>
 	</properties>
 	<dependencies>
+		<!-- Teclado -->
+		<dependency>
+			<groupId>com.pancetas</groupId>
+			<artifactId>teclado</artifactId>
+			<version>1.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
