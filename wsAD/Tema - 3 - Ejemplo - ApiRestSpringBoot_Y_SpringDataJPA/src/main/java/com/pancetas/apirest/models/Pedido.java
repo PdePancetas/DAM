@@ -87,7 +87,7 @@ public class Pedido{
 
 	@Override
 	public String toString() {
-		return "Pedido id= " + id + ", descripcion= " + descripcion + ", usuario= " + usuario.getNombre();
+		return "Pedido id= " + id + ", descripcion= " + descripcion + ", usuario= " + usuario.getNombre()+"(id: "+usuario.getId()+")";
 	}
 
 }

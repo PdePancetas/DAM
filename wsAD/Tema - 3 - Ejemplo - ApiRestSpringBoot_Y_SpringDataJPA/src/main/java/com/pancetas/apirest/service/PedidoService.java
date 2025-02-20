@@ -26,4 +26,8 @@ public class PedidoService {
 		return pedRepo.save(ped);
 	}
 
+	public void deletePedido(String desc, Long userId) {
+		pedRepo.deleteByDescripcionAndUsuarioId(desc,userId);
+	}
+
 }

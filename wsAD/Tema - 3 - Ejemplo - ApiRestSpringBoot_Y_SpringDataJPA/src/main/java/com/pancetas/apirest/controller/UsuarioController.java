@@ -4,6 +4,7 @@ package com.pancetas.apirest.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,8 +24,15 @@ public class UsuarioController {
 	private UsuarioService userService;
 	
 	@GetMapping("/users")
-	public List<Usuario> getAllUsers() {
-		return userService.getAllUsers();
+	public ResponseEntity<StringBuilder> getAllUsers() {
+		
+		StringBuilder users = new StringBuilder();
+		users.append("<html><body><ul>");
+		userService.getAllUsers().stream().forEach(u -> users.append("<li>"+u.toString()+"</li>"));
+		users.append("</ul></body></html>");
+		
+		return 	ResponseEntity.ok(users);
+		
 	}
 	
 	@PostMapping("/create")

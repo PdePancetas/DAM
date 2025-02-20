@@ -26,7 +26,7 @@ public class InsertPedido {
 		request.setUsuarioId(Long.valueOf(id));
 
 		// 3. Hacer la petición POST a "/pedidos/create"
-		PedidoResponse response = client.post().uri("/pedidos/create").bodyValue(request).retrieve()
+		PedidoResponse response = client.post().uri("/pedidos/createPedido").bodyValue(request).retrieve()
 				.bodyToMono(PedidoResponse.class) 
 				.doOnError(e -> System.err.println("Error en la petición: " + e.getMessage())).block(); 
 
