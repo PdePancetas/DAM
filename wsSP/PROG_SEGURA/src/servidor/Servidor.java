@@ -14,10 +14,10 @@ public class Servidor {
 				try {
 					Socket clienteSocket = servidor.accept();
 					System.out.println("Nuevo cliente conectado desde: " + clienteSocket.getInetAddress());
-					ManejadorCliente mc = new ManejadorCliente(clienteSocket);
-					Thread manejadorThread = new Thread(mc);
-					manejadorThread.start();
-					
+//					new Thread(new ManejadorClienteCriptoAsimetrica(clienteSocket)).start();
+//					new Thread(new ManejadorClienteCriptoAsimetricaFirmado(clienteSocket)).start();
+//					new Thread(new ManejadorClienteCriptoAsimetricaCifrado(clienteSocket)).start();
+					new Thread(new ManejadorClienteCriptoAsimetricaHibrido(clienteSocket)).start();
 				} catch (IOException e) {
 					System.err.println("Error al aceptar la conexión: " + e.getMessage());
 					e.printStackTrace();
