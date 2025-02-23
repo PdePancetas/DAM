@@ -1,20 +1,15 @@
 package com.example.misnotas
 
-import android.util.Log
-import android.widget.TextView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.misnotas.MisNotasApp.Companion.database
-import com.example.misnotas.database.TaskDao
 import com.example.misnotas.database.TaskEntity
-import com.example.misnotas.database.TaskDatabase
 
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlin.coroutines.cancellation.CancellationException
@@ -24,8 +19,26 @@ class MainViewModel : ViewModel() {
     // CoroutineScope associated with the ViewModel
     private val viewModelScope = CoroutineScope(Dispatchers.Main + SupervisorJob())
 
-    private val _tarea = MutableLiveData<List<TaskEntity>>()
-    val tarea: LiveData<List<TaskEntity>> get() = _tarea
+    private val _tareas = MutableLiveData<List<TaskEntity>>()
+    val tareas: LiveData<List<TaskEntity>> get() = _tareas
+
+    private val _tarea = MutableLiveData<TaskEntity>()
+    val tarea: LiveData<TaskEntity> get() = _tarea
+
+    fun obtenerTarea(id: Long){
+
+        viewModelScope.launch {
+            try {
+                val task = withContext(Dispatchers.IO){
+                    database.taskDao().getTaskById(id)
+                }
+
+                _tarea.postValue(task)
+            } catch (e: CancellationException){
+                println("Coroutine was canceled")
+            }
+        }
+    }
 
     fun obtenerTareas(){
         // Launch a coroutine within the ViewModel scope
@@ -33,10 +46,10 @@ class MainViewModel : ViewModel() {
             try {
                 // Run the database query on the IO dispatcher
                 val tasks = withContext(Dispatchers.IO) {
-                    MisNotasApp.database.taskDao().getAllTasks()
+                    database.taskDao().getAllTasks()
                 }
                 // Update LiveData on the main thread
-                _tarea.postValue(tasks)
+                _tareas.postValue(tasks)
 
             } catch (e: CancellationException) {
                 // Handle cancellation if needed
@@ -46,7 +59,6 @@ class MainViewModel : ViewModel() {
 
     }
 
-
     fun anyadirTarea(task:TaskEntity){
         // Launch a coroutine within the ViewModel scope
         viewModelScope.launch {
@@ -54,15 +66,15 @@ class MainViewModel : ViewModel() {
 
                 // Perform database operations on IO dispatcher
                 val id = withContext(Dispatchers.IO) {
-                    MisNotasApp.database.taskDao().addTask(task)
+                    database.taskDao().addTask(task)
                 }
 
                 val recoveryTask:List<TaskEntity> = withContext(Dispatchers.IO) {
-                    MisNotasApp.database.taskDao().getAllTasks()
+                    database.taskDao().getAllTasks()
                 }
 
                 // Update LiveData on the main thread
-                _tarea.postValue(recoveryTask)
+                _tareas.postValue(recoveryTask)
 
             } catch (e: CancellationException) {
                 // Handle cancellation if needed
@@ -81,8 +93,15 @@ class MainViewModel : ViewModel() {
                 task.isDone = !task.isDone
 
                 val ident = withContext(Dispatchers.IO) {
-                    MisNotasApp.database.taskDao().updateTask(task)
+                    database.taskDao().updateTask(task)
                 }
+
+                val recoveryTask:List<TaskEntity> = withContext(Dispatchers.IO) {
+                    database.taskDao().getAllTasks()
+                }
+
+                // Update LiveData on the main thread
+                _tareas.postValue(recoveryTask)
 
             } catch (e: CancellationException) {
                 // Handle cancellation if needed
@@ -98,14 +117,14 @@ class MainViewModel : ViewModel() {
             try {
                 // Perform database operations on IO dispatcher
                 val id = withContext(Dispatchers.IO) {
-                    MisNotasApp.database.taskDao().deleteTask(task)
+                    database.taskDao().deleteTask(task)
                 }
                 val recoveryTask:List<TaskEntity> = withContext(Dispatchers.IO) {
-                    MisNotasApp.database.taskDao().getAllTasks()
+                    database.taskDao().getAllTasks()
                 }
 
                 // Update LiveData on the main thread
-                _tarea.postValue(recoveryTask)
+                _tareas.postValue(recoveryTask)
 
             } catch (e: CancellationException) {
                 // Handle cancellation if needed

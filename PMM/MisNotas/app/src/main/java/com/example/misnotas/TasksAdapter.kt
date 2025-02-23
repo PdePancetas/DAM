@@ -3,6 +3,7 @@ package com.example.misnotas
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -30,14 +31,15 @@ class TasksAdapter(
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val tvTask = view.findViewById<TextView>(R.id.tvTask)
-        val cbIsDone = view.findViewById<CheckBox>(R.id.cbIsDone)
+        val tvTask: TextView = view.findViewById(R.id.tvTask)
+        val cbIsDone: CheckBox = view.findViewById(R.id.cbIsDone)
+        val btnDel: Button = view.findViewById(R.id.btnDel)
 
         fun bind(task: TaskEntity, checkTask: (TaskEntity) -> Unit, deleteTask: (TaskEntity) -> Unit) {
             tvTask.text = task.name
             cbIsDone.isChecked = task.isDone
             cbIsDone.setOnClickListener{checkTask(task)}
-            itemView.setOnClickListener { deleteTask(task) }
+            btnDel.setOnClickListener{deleteTask(task)}
         }
     }
 

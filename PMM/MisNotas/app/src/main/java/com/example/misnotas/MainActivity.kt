@@ -1,28 +1,14 @@
 package com.example.misnotas
 
 import android.os.Bundle
-import android.util.Log
+import android.text.Editable
 import android.widget.Button
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.misnotas.database.TaskEntity
-import com.example.misnotas.ui.theme.MisNotasTheme
 import com.google.android.material.textfield.TextInputEditText
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,8 +28,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recyclerView = findViewById(R.id.rvTask)
+
+
+
         // Observa los cambios en el LiveData
-        viewModel.tarea.observe(this) { newTask ->
+        viewModel.tareas.observe(this) { newTask ->
             //texto.text = newText
             //Aquí cargamos la info en el recycler
             adapter = TasksAdapter(newTask, { viewModel.actualizarTarea(it) }, {viewModel.borrarTarea(it)})
@@ -61,6 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         btnAddTask.setOnClickListener {
             viewModel.anyadirTarea(TaskEntity(name = etTask.text.toString()))
+            etTask.text?.clear()
         }
     }
 

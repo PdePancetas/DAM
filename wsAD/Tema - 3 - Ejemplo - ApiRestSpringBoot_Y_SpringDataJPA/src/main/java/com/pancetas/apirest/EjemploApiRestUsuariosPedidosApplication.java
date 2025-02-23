@@ -17,7 +17,7 @@ public class EjemploApiRestUsuariosPedidosApplication {
 
 		ApplicationContext context = SpringApplication.run(EjemploApiRestUsuariosPedidosApplication.class, args);
 		System.out.println("Servidor activo");
-
+		
 	}
 
 }
