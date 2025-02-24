@@ -30,6 +30,7 @@ public class Demo {
 			System.out.println(doc.toJson());
 		}
 
+//		/* INSERTAR NUEVO ALUMNO
 		Document d = new Document();
 		d.append("dni", (int)collection.countDocuments()+1);
 		d.append("nombre", "Adrian");
@@ -37,7 +38,7 @@ public class Demo {
 
 		collection.insertOne(d);
 		System.out.println("Documento insertado correctamente");
-		
+//		*/
 		collection.find().forEach( dc -> {
 			int dni = dc.getInteger("dni");
 			String name=  dc.getString("nombre");
