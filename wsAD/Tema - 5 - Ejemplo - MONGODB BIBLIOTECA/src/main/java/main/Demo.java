@@ -21,15 +21,15 @@ public class Demo {
 		// Crear un cliente de conexión
 		MongoClient mongoClient = MongoClients.create(uri);
 		// Seleccionar la base de datos
-		MongoDatabase database = mongoClient.getDatabase("Instituto");
+		MongoDatabase database = mongoClient.getDatabase("biblioteca");
 
 		// Seleccionar una colección
-		MongoCollection<Document> collection = database.getCollection("alumnos");
+		MongoCollection<Document> collection = database.getCollection("libros");
 
 		for (Document doc : collection.find()) {
 			System.out.println(doc.toJson());
 		}
-
+/*
 //		/* INSERTAR NUEVO ALUMNO
 		Document d = new Document();
 		d.append("dni", (int)collection.countDocuments()+1);
@@ -40,10 +40,8 @@ public class Demo {
 		System.out.println("Documento insertado correctamente");
 //		*/
 		collection.find().forEach( dc -> {
-			int dni = dc.getInteger("dni");
-			String name=  dc.getString("nombre");
-			String clase=  dc.getString("clase");
-			System.out.println("DNI: "+dni+", Nombre: "+name +", Clase: "+clase);
+			
+			System.out.println("Titulo");
 			
 		});
 		
