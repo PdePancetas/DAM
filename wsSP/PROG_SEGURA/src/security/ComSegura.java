@@ -28,7 +28,7 @@ public class ComSegura {
 		KeyPair claves = null;
 		try {
 			gen = KeyPairGenerator.getInstance("RSA");
-			gen.initialize(4096);
+			gen.initialize(2048);
 			claves = gen.generateKeyPair();
 		} catch (NoSuchAlgorithmException e) {
 			e.printStackTrace();
@@ -81,6 +81,43 @@ public class ComSegura {
 		return claveSesion;
 	}
 
+	public static SecretKeySpec recibirClaveSesion(DataInputStream dis, KeyPair claves) {
+	
+		SecretKeySpec claveSesion = null;
+		try {
+			int longitudClave = dis.readInt();
+			byte[] claveSesionCifrada = new byte[longitudClave];
+			dis.readFully(claveSesionCifrada);
+	
+			Cipher c = Cipher.getInstance("RSA");
+			c.init(Cipher.DECRYPT_MODE, claves.getPrivate());
+	
+			claveSesion = new SecretKeySpec(c.doFinal(claveSesionCifrada), "AES");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
+		return claveSesion;
+	}
+
+	public static void enviarClaveSesion(PublicKey clavePublicaReceptor, SecretKey claveSesion, DataOutputStream dos) {
+		try {
+			Cipher c = Cipher.getInstance("RSA");
+			c.init(Cipher.ENCRYPT_MODE, clavePublicaReceptor);
+			byte[] claveSesionCifrada = c.doFinal(claveSesion.getEncoded());
+	
+			dos.writeInt(claveSesionCifrada.length);
+			dos.write(claveSesionCifrada);
+			dos.flush();
+	
+		} catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException
+				| BadPaddingException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public static void enviarMensaje(DataOutputStream dos, SecretKey sessionKey, KeyPair claves, String mensaje)
 			throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
 			IllegalBlockSizeException, BadPaddingException {
@@ -115,43 +152,6 @@ public class ComSegura {
 		byte[] mensajeDescifrado = c.doFinal(msgCifrado);
 
 		return new String(mensajeDescifrado);
-	}
-
-	public static SecretKeySpec recibirClaveSesion(DataInputStream dis, KeyPair claves) {
-
-		SecretKeySpec claveSesion = null;
-		try {
-			int longitudClave = dis.readInt();
-			byte[] claveSesionCifrada = new byte[longitudClave];
-			dis.readFully(claveSesionCifrada);
-
-			Cipher c = Cipher.getInstance("RSA");
-			c.init(Cipher.DECRYPT_MODE, claves.getPrivate());
-
-			claveSesion = new SecretKeySpec(c.doFinal(claveSesionCifrada), "AES");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return claveSesion;
-	}
-
-	public static void enviarClaveSesion(PublicKey clavePublicaServidor, SecretKey claveSesion, DataOutputStream dos) {
-		try {
-			Cipher c = Cipher.getInstance("RSA");
-			c.init(Cipher.ENCRYPT_MODE, clavePublicaServidor);
-			byte[] claveSesionCifrada = c.doFinal(claveSesion.getEncoded());
-
-			dos.writeInt(claveSesionCifrada.length);
-			dos.write(claveSesionCifrada);
-			dos.flush();
-
-		} catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException
-				| BadPaddingException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public static byte[] firmarDatos(byte[] datos, KeyPair claves) throws NoSuchAlgorithmException,
