@@ -33,7 +33,7 @@ public class Plato {
 
 	@Override
 	public String toString() {
-		return "Plato [nombre=" + nombre + ", precio=" + precio + "]";
+		return "Plato " + nombre + " , precio=" + precio;
 	}
 
 }

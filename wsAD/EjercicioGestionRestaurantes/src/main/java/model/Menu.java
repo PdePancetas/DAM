@@ -4,8 +4,16 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
+import org.bson.types.ObjectId;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(value = "_id")
 public class Menu {
 
+	
+	private ObjectId _id; // Si no se especifica, MongoDB creará uno automáticamente
+	
 	private String codigo, nombre;
 	private List<String> restaurantes;
 	private Set<Plato> platos;
@@ -60,6 +68,7 @@ public class Menu {
 		super();
 	}
 
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(codigo);
