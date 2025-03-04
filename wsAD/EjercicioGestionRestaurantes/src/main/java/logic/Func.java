@@ -35,8 +35,9 @@ public class Func {
 
 	public static Menu obtenerPlatosMenu(String cod, MongoCollection<Document> menus) {
 		Document menu = menus.find(Filters.eq("codigo", cod)).first();
+		
 
-		model.Menu m = mapper.convertValue(menu, model.Menu.class);
+		Menu m = mapper.convertValue(menu, Menu.class);
 		return m;
 	}
 
