@@ -1,0 +1,65 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.dam2</groupId>
+  <artifactId>Libros</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Libros</name>
+  
+  <dependencies>
+  	
+  	<!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-sync -->
+	<dependency>
+	    <groupId>org.mongodb</groupId>
+	    <artifactId>mongodb-driver-sync</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.mongodb/mongodb-driver-core -->
+	<dependency>
+	    <groupId>org.mongodb</groupId>
+	    <artifactId>mongodb-driver-core</artifactId>
+	    <version>5.3.1</version>
+	</dependency>
+
+	<!-- Teclado -->
+	<dependency>
+		<groupId>com.pancetas</groupId>
+		<artifactId>teclado</artifactId>
+		<version>1.0</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>slf4j-simple</artifactId>
+	    <version>2.0.16</version>
+	    <scope>test</scope>
+	</dependency>
+	
+	<!-- JSON -->
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+		<groupId>org.json</groupId>
+		<artifactId>json</artifactId>
+		<version>20240303</version>
+	</dependency>
+	
+	
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-core</artifactId>
+		<version>2.15.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-databind</artifactId>
+		<version>2.15.0</version>
+	</dependency>
+	<dependency>
+		<groupId>com.fasterxml.jackson.core</groupId>
+		<artifactId>jackson-annotations</artifactId>
+		<version>2.15.0</version>
+		</dependency>
+	
+  </dependencies>
+</project>
