@@ -27,8 +27,8 @@ public class Main {
 		
 		
 		
-		Func.eliminaLibros(20, libros);
-//		Func.listaLibros("Libertad", libros);
+//		Func.eliminaLibros(20, libros);
+//		Func.listaLibros("Pirataaas", libros);
 	
 	}
 		

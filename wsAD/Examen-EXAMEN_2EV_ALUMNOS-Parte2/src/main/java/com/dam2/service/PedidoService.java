@@ -44,6 +44,7 @@ public class PedidoService {
 		p.setFechaPedido(LocalDateTime.now());
 
 		pedRepo.save(p);
+		
 		System.out.println("Pedido insertado");
 	}
 
@@ -54,9 +55,11 @@ public class PedidoService {
 	 */
 	@Transactional // 🔥 Esto mantiene la sesión abierta hasta que termine el método
 	public List<DetallePedido> listaProductos(Integer idPedido) {
-		Pedido pedido = pedRepo.findById(idPedido).orElseThrow(() -> new RuntimeException("Pedido no encontrado"));
+		
+		Pedido pedido = pedRepo.findById(idPedido)
+				.orElseThrow(() -> new RuntimeException("Pedido no encontrado"));
 
-		return pedido.getDetalles(); // Aquí los detalles se cargan dentro de la sesión
+		return pedido.getDetalles();
 	}
 
 	/**
