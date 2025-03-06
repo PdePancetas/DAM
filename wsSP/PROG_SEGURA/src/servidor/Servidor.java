@@ -2,8 +2,6 @@ package servidor;
 
 import java.io.*;
 import java.net.*;
-import java.security.KeyPair;
-import java.util.*;
 
 import security.ComSegura;
 

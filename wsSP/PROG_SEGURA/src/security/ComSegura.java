@@ -135,6 +135,38 @@ public class ComSegura {
 		dos.write(msgCifradoFirmado);
 		dos.flush();
 	}
+	public static void enviarMensajePorPartes(DataOutputStream dos, SecretKey sessionKey, KeyPair claves, String mensaje, int tamanyoParte)
+			throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
+			IllegalBlockSizeException, BadPaddingException {
+
+		// Primero enviamos el número total de partes que vamos a mandar
+		// Calculate total parts needed
+		int numPartes = (mensaje.length() + tamanyoParte - 1) / tamanyoParte;
+		dos.writeInt(numPartes);
+
+		// Send message in parts
+		for (int i = 0; i < mensaje.length(); i += tamanyoParte) {
+			String parte = mensaje.substring(i, Math.min(i + tamanyoParte, mensaje.length()));
+			enviarMensaje(dos, sessionKey, claves, parte);
+		}
+	}
+
+	public static String recibirMensajePorPartes(DataInputStream dis, SecretKey sessionKey, PublicKey clave)
+			throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
+			IllegalBlockSizeException, BadPaddingException {
+
+		// Primero recibimos el número total de partes
+		int numPartes = dis.readInt();
+
+		// Vamos recibiendo cada parte y construyendo el mensaje final
+		StringBuilder mensajeCompleto = new StringBuilder();
+		for (int i = 0; i < numPartes; i++) {
+			String parte = recibirMensaje(dis, sessionKey, clave);
+			mensajeCompleto.append(parte);
+		}
+
+		return mensajeCompleto.toString();
+	}
 
 	public static String recibirMensaje(DataInputStream dis, SecretKey sessionKey, PublicKey clave)
 			throws IOException, NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException,
