@@ -17,6 +17,7 @@ import javax.crypto.spec.SecretKeySpec;
 import security.ComSegura;
 
 class ManejadorClienteCriptoAsimetricaHibridoFirmado implements Runnable {
+	@SuppressWarnings("unused")
 	private Socket socket;
 	private DataOutputStream dos;
 	private DataInputStream dis;
