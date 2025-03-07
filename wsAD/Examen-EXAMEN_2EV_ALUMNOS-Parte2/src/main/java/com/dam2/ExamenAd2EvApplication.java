@@ -32,7 +32,7 @@ public class ExamenAd2EvApplication {
 		});
 		*/
 		
-//		System.out.println(pedService.pedidoMasCaro().toString());
+		System.out.println(pedService.pedidoMasCaro().toString());
 		
 	}
 	
