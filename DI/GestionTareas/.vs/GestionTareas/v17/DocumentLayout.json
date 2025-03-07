@@ -3,39 +3,39 @@
   "WorkspaceRootPath": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\gestiontareas\\informetareas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:informetareas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\gestiontareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\gestiontareas\\informetareas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\informetareas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:informetareas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\gestiontareas\\informetareas.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\informetareas.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:informetareas.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\gestiontareas\\taskboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\gestiontareas\\taskitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\gestiontareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\gestiontareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|c:\\users\\alumno\\dam\\di\\gestiontareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{3A52B016-FA9F-42B6-8C13-14BBBB4B9AA6}|GestionTareas.csproj|solutionrelative:taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -46,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -71,13 +71,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TaskBoard.cs",
               "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskBoard.cs",
               "RelativeDocumentMoniker": "TaskBoard.cs",
               "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskBoard.cs",
               "RelativeToolTip": "TaskBoard.cs",
-              "ViewState": "AgIAANMAAAAAAAAAAAAkwA4AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAH0AAAAAAAAAAIAwwI0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-17T11:48:06.791Z",
               "EditorCaption": ""
@@ -104,8 +104,7 @@
               "RelativeToolTip": "TaskItem.Designer.cs",
               "ViewState": "AgIAAEgAAAAAAAAAAAAMwGIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T11:47:33.84Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T11:47:33.84Z"
             },
             {
               "$type": "Document",
@@ -117,8 +116,7 @@
               "RelativeToolTip": "TaskItem.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAA9wA0AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T11:47:24.75Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T11:47:24.75Z"
             },
             {
               "$type": "Document",
@@ -129,8 +127,7 @@
               "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\TaskItem.cs [Dise\u00F1o]",
               "RelativeToolTip": "TaskItem.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T11:47:22.416Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-02-17T11:47:22.416Z"
             },
             {
               "$type": "Document",
@@ -142,18 +139,17 @@
               "RelativeToolTip": "InformeTareas.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T11:42:46.404Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T11:42:46.404Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "InformeTareas.cs",
               "DocumentMoniker": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\InformeTareas.cs",
               "RelativeDocumentMoniker": "InformeTareas.cs",
               "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\InformeTareas.cs",
               "RelativeToolTip": "InformeTareas.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAgwDAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAA6wDMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-17T11:13:51.655Z",
               "EditorCaption": ""
@@ -167,8 +163,7 @@
               "ToolTip": "C:\\Users\\Alumno\\DAM\\DI\\GestionTareas\\InformeTareas.cs [Dise\u00F1o]",
               "RelativeToolTip": "InformeTareas.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T11:13:39.984Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-02-17T11:13:39.984Z"
             }
           ]
         }
